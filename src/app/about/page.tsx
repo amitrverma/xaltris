@@ -1,6 +1,27 @@
 export const metadata = {
   title: 'About | Xaltris Technologies',
-  description: 'xaltris blends technology, behavior, and business to deliver practical software that works with instinct, not against it.',
+  description: 'Xaltris blends technology, behavior, and business to deliver practical software that works with instinct, not against it.',
+  openGraph: {
+    title: 'About Xaltris Technologies',
+    description: 'Learn how Xaltris brings clarity, empathy, and execution to every build — with 20+ years of cross-domain tech expertise.',
+    url: 'https://xaltris.com/about',
+    siteName: 'Xaltris',
+    images: [
+      {
+        url: '/xaltris-social.png',
+        width: 1200,
+        height: 630,
+        alt: 'About Xaltris',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Xaltris Technologies',
+    description: 'Software, done right — with clarity, care, and experience that spans startups to scale.',
+    images: ['/xaltris-social.png'],
+  },
 }
 
 export default function AboutPage() {

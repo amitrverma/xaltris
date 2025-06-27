@@ -1,7 +1,29 @@
 export const metadata = {
   title: 'Contact | Xaltris Technologies',
-  description: 'Get in touch with the xaltris team — we’d love to hear from you.',
+  description: 'Get in touch with the Xaltris team — we’d love to hear from you.',
+  openGraph: {
+    title: 'Contact | Xaltris Technologies',
+    description: 'Get in touch with the Xaltris team — whether it’s about a project, partnership, or just to say hi.',
+    url: 'https://xaltris.com/contact',
+    siteName: 'Xaltris',
+    images: [
+      {
+        url: '/xaltris-social.png',
+        width: 1200,
+        height: 630,
+        alt: 'Contact Xaltris',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact | Xaltris',
+    description: 'Reach out to Xaltris — we’re always up for a good conversation.',
+    images: ['/xaltris-social.png'],
+  },
 }
+
 
 export default function ContactPage() {
   return (

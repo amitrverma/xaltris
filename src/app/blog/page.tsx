@@ -14,6 +14,33 @@ type BlogPost = {
   slug: string
 } & PostMeta
 
+export const metadata = {
+  title: 'Blog | Xaltris Technologies',
+  description: 'Ideas, insights, and updates from the builders at Xaltris. Read about software, scale, and smarter execution.',
+  openGraph: {
+    title: 'Xaltris Blog',
+    description: 'Ideas, insights, and updates from the builders at Xaltris. Read about software, scale, and smarter execution.',
+    url: 'https://xaltris.com/blog',
+    siteName: 'Xaltris',
+    images: [
+      {
+        url: '/xaltris-social.png',
+        width: 1200,
+        height: 630,
+        alt: 'Xaltris Blog Banner',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Xaltris Blog',
+    description: 'Ideas, insights, and updates from the builders at Xaltris.',
+    images: ['/xaltris-social.png'],
+  },
+}
+
+
 export default function Blog() {
   const postsDir = path.join(process.cwd(), 'src/content/blog')
   const files = fs.readdirSync(postsDir)

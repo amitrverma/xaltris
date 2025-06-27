@@ -2,7 +2,31 @@ export const metadata = {
   title: 'Momentum | Xaltris Technologies',
   description:
     'Real-time workforce performance, without the guesswork. Track, analyze, and improve how your team works — all in one place.',
+  openGraph: {
+    title: 'Momentum | Xaltris Technologies',
+    description:
+      'A powerful performance management platform that gives you real-time insights into productivity, engagement, and efficiency — without micromanagement.',
+    url: 'https://xaltris.com/products/momentum',
+    siteName: 'Xaltris',
+    images: [
+      {
+        url: '/xaltris-social.png',
+        width: 1200,
+        height: 630,
+        alt: 'Momentum by Xaltris',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Momentum by Xaltris',
+    description:
+      'Real-time insights. Smart tracking. Burnout prevention. Try it free for 30 days.',
+    images: ['/xaltris-social.png'],
+  },
 }
+
 
 export default function MomentumPage() {
   return (

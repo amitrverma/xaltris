@@ -7,18 +7,43 @@ type BlogParams = {
   params: { slug: string }
 }
 
-export async function generateMetadata(context: { params: { slug: string } }) {
-  const { slug } = context.params
-
+export async function generateMetadata({ params }: BlogParams) {
+  const { slug } = params
   const filePath = path.join(process.cwd(), 'src/content/blog', `${slug}.mdx`)
   const source = fs.readFileSync(filePath, 'utf-8')
   const { data } = matter(source)
 
+  const title = data.title ?? slug
+  const description = data.description ?? 'Read this blog post on xaltris.com'
+  const baseUrl = 'https://xaltris.com'
+
   return {
-    title: `${data.title} | Blog – xaltris`,
-    description: data.description ?? '',
+    title: `${title} | Blog – Xaltris`,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `${baseUrl}/blog/${slug}`,
+      siteName: 'Xaltris',
+      images: [
+        {
+          url: `${baseUrl}/xaltris-social.png`,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`${baseUrl}/xaltris-social.png`],
+    },
   }
 }
+
 
 export default async function BlogPost({ params }: BlogParams) {
   const filePath = path.join(process.cwd(), 'src/content/blog', `${params.slug}.mdx`)

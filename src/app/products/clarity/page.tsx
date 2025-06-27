@@ -2,7 +2,31 @@ export const metadata = {
   title: 'Clarity | Xaltris Technologies',
   description:
     'A privacy-first workforce insights tool to help your team work smarter and stay healthier. Free for 30 days.',
+  openGraph: {
+    title: 'Clarity | Xaltris Technologies',
+    description:
+      'Reduce burnout, eliminate waste, and unlock hidden productivity — without surveillance. Try Clarity free for 30 days.',
+    url: 'https://xaltris.com/products/clarity',
+    siteName: 'Xaltris',
+    images: [
+      {
+        url: '/xaltris-social.png',
+        width: 1200,
+        height: 630,
+        alt: 'Clarity by Xaltris',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Clarity by Xaltris',
+    description:
+      'Workforce visibility without the creep factor. Smarter work, less burnout. Free for 30 days.',
+    images: ['/xaltris-social.png'],
+  },
 }
+
 
 export default function ClarityPage() {
   return (

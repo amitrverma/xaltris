@@ -1,3 +1,29 @@
+export const metadata = {
+  title: 'Xaltris Technologies',
+  description: 'Software, done right. Smarter tools, custom platforms, and AI-powered solutions — built with experience, delivered with care.',
+  openGraph: {
+    title: 'Xaltris Technologies',
+    description: 'Smarter tools, custom platforms, and AI-powered solutions — built with experience, delivered with care.',
+    url: 'https://xaltris.com',
+    siteName: 'Xaltris',
+    images: [
+      {
+        url: '/xaltris-social.png',
+        width: 1200,
+        height: 630,
+        alt: 'Xaltris Technologies Banner',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Xaltris Technologies',
+    description: 'Software, done right. Smarter tools, built with care.',
+    images: ['/xaltris-social.png'],
+  },
+}
+
 export default function HomePage() {
   return (
 <main className="relative bg-black text-white min-h-screen flex items-center justify-center px-4 text-center overflow-hidden">

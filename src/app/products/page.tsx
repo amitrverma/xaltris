@@ -1,8 +1,32 @@
 export const metadata = {
   title: 'Products | Xaltris Technologies',
   description:
-    'Explore our AI-driven tools that help teams work smarter, healthier, and more efficiently.',
+    'Explore our AI-powered tools that help teams work smarter, healthier, and more efficiently — without the fluff.',
+  openGraph: {
+    title: 'Products | Xaltris Technologies',
+    description:
+      'Explore Clarity and Momentum — two powerful, privacy-conscious tools that enhance well-being and performance for modern teams.',
+    url: 'https://xaltris.com/products',
+    siteName: 'Xaltris',
+    images: [
+      {
+        url: '/xaltris-social.png',
+        width: 1200,
+        height: 630,
+        alt: 'Xaltris AI-powered products',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Xaltris Products',
+    description:
+      'Smarter tools, built with care. Discover Clarity and Momentum — designed for how real teams work.',
+    images: ['/xaltris-social.png'],
+  },
 }
+
 
 export default function ProductsPage() {
   return (

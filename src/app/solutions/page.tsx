@@ -1,7 +1,32 @@
 export const metadata = {
   title: 'Solutions | Xaltris Technologies',
-  description: 'Whether you need strategic guidance, custom tools, or AI-driven workflows — Xaltris helps you solve the right problems, faster.',
+  description:
+    'Whether you need strategic guidance, custom tools, or AI-driven workflows — Xaltris helps you solve the right problems, faster.',
+  openGraph: {
+    title: 'Solutions | Xaltris Technologies',
+    description:
+      'Explore how Xaltris delivers strategic tech leadership, custom builds, and practical AI solutions — built with care, not fluff.',
+    url: 'https://xaltris.com/solutions',
+    siteName: 'Xaltris',
+    images: [
+      {
+        url: '/xaltris-social.png',
+        width: 1200,
+        height: 630,
+        alt: 'Solutions by Xaltris',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Solutions by Xaltris',
+    description:
+      'Fractional CTO. Internal platforms. Quietly effective AI. Xaltris builds what your business really needs.',
+    images: ['/xaltris-social.png'],
+  },
 }
+
 
 export default function SolutionsPage() {
   return (
