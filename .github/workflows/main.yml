@@ -30,11 +30,10 @@ jobs:
           mkdir -p output
           cp -r .next/standalone/* output
 
-          if [ -d ".next/static" ]; then
-            mkdir -p output/.next/static
-            cp -r .next/static/* output/.next/static
+          if [ -d ".next/standalone/.next" ]; then
+            cp -r .next/standalone/.next output/
           else
-            echo "⚠️  .next/static not found. Skipping copy."
+            echo "❌ .next/standalone/.next not found! Build may have failed."
           fi
 
           if [ -d "public" ]; then
