@@ -1,6 +1,5 @@
-import { readFileSync, readdirSync } from 'fs'
+import { readdirSync } from 'fs'
 import path from 'path'
-import matter from 'gray-matter'
 
 const BASE_URL = 'https://xaltris.com'
 
@@ -8,12 +7,12 @@ export async function GET() {
   const staticRoutes = [
     '',
     '/about',
+    '/blog',
     '/contact',
     '/products',
     '/products/clarity',
     '/products/momentum',
     '/solutions',
-    '/blog',
   ]
 
   const blogDir = path.join(process.cwd(), 'src/content/blog')
@@ -24,6 +23,8 @@ export async function GET() {
   const blogRoutes = blogSlugs.map((slug) => `/blog/${slug}`)
   const allRoutes = [...staticRoutes, ...blogRoutes]
 
+  const lastMod = new Date().toISOString()
+
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allRoutes
@@ -31,7 +32,7 @@ ${allRoutes
     (route) => `
   <url>
     <loc>${BASE_URL}${route}</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
+    <lastmod>${lastMod}</lastmod>
   </url>`
   )
   .join('\n')}

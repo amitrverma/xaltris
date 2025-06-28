@@ -1,9 +1,11 @@
 export const metadata = {
   title: 'Xaltris Technologies',
-  description: 'Software, done right. Smarter tools, custom platforms, and AI-powered solutions — built with experience, delivered with care.',
+  description:
+    'Software, done right. Smarter tools, custom platforms, and AI-powered solutions — built with experience, delivered with care.',
   openGraph: {
     title: 'Xaltris Technologies',
-    description: 'Smarter tools, custom platforms, and AI-powered solutions — built with experience, delivered with care.',
+    description:
+      'Smarter tools, custom platforms, and AI-powered solutions — built with experience, delivered with care.',
     url: 'https://xaltris.com',
     siteName: 'Xaltris',
     images: [
@@ -26,19 +28,19 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-<main className="relative bg-black text-white min-h-screen flex items-center justify-center px-4 text-center overflow-hidden">
-  <div>
-    <h1 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[160px] xl:text-[200px] leading-[1.05] font-extrabold font-montserrat">
-
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-600">
-        Software,
-      </span>
-      <br/>
-        Done Right!
-    </h1>
-    <p className="mt-6 text-[1.25rem] text-gray-400 max-w-xl mx-auto">
-       Whether you're launching, scaling, or just stuck — <br/>xaltris helps you move forward with confidence.
-    </p>
+    <main className="relative bg-black text-white min-h-screen flex items-center justify-center px-4 text-center overflow-hidden">
+      <div>
+        <h1 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[160px] xl:text-[200px] leading-[1.05] font-extrabold font-montserrat">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-600">
+            Software,
+          </span>
+          <br />
+          Done Right!
+        </h1>
+        <p className="mt-6 text-[1.25rem] text-gray-400 max-w-xl mx-auto">
+          Whether you&apos;re launching, scaling, or just stuck — <br />
+          xaltris helps you move forward with confidence.
+        </p>
         <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
           <a
             href="/products"
@@ -53,10 +55,7 @@ export default function HomePage() {
             Talk to Us
           </a>
         </div>
-
-  </div>
-  
-</main>
-
+      </div>
+    </main>
   )
 }

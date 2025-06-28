@@ -27,23 +27,22 @@ export const metadata = {
   },
 }
 
-
 export default function MomentumPage() {
   return (
     <section className="min-h-screen px-6 py-20 font-montserrat text-white bg-black max-w-4xl mx-auto">
       <h1 className="text-5xl font-extrabold mb-6 text-fuchsia-400">Momentum</h1>
       <p className="text-lg text-gray-300 mb-10">
-        Momentum gives you full visibility into how work happens across your organization — in real time. From performance monitoring to engagement analytics, it’s your single source of truth for operational productivity.
+        Momentum gives you full visibility into how work happens across your organization — in real time. From performance monitoring to engagement analytics, it&apos;s your single source of truth for operational productivity.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-4 text-white">See What’s Really Going On</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-white">See What&apos;s Really Going On</h2>
       <p className="text-gray-300 mb-6">
-        Most performance problems aren’t about effort — they’re about misalignment, inefficiency, or lack of visibility. Momentum helps you surface what’s working, what’s not, and where to focus — without micromanaging.
+        Most performance problems aren&apos;t about effort — they&apos;re about misalignment, inefficiency, or lack of visibility. Momentum helps you surface what&apos;s working, what&apos;s not, and where to focus — without micromanaging.
       </p>
 
       <ul className="list-disc list-inside text-gray-300 space-y-2 mb-10">
         <li>Track productive and non-productive time by task, role, or channel</li>
-        <li>Pinpoint where time is going — and where it’s being lost</li>
+        <li>Pinpoint where time is going — and where it&apos;s being lost</li>
         <li>Identify idle patterns and reduce them by up to 20%</li>
         <li>Improve team productivity by 15% just by managing better</li>
         <li>Spot burnout early with our built-in Mood-o-Meter</li>
@@ -68,9 +67,9 @@ export default function MomentumPage() {
         <li>Integrates easily across multiple channels and tools</li>
       </ul>
 
-      <h2 className="text-2xl font-semibold mb-4 text-white">Don’t Manage in the Dark</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-white">Don&apos;t Manage in the Dark</h2>
       <p className="text-gray-300 mb-8">
-        Whether you're running an operations team, a service desk, or a support org — you can’t afford to guess. Momentum gives you the data you need to lead with clarity, every day.
+        Whether you&apos;re running an operations team, a service desk, or a support org — you can&apos;t afford to guess. Momentum gives you the data you need to lead with clarity, every day.
       </p>
 
       <p className="text-lg text-gray-300 mb-6">

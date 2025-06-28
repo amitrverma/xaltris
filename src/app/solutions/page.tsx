@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export const metadata = {
   title: 'Solutions | Xaltris Technologies',
   description:
@@ -42,9 +44,9 @@ export default function SolutionsPage() {
         <p className="text-gray-300 mb-2">
           Strategic tech leadership without the full-time overhead. We help you architect smartly, ship faster, and avoid overengineering. Ideal for scaling startups or solo founders who need experienced technical judgment.
         </p>
-        <a href="/blog/fractional-cto" className="text-sm text-cyan-400 hover:underline">
-          Read more →
-        </a>
+  <Link href="/blog/fractional-cto" className="text-sm text-cyan-400 hover:underline">
+    Read more →
+  </Link>
       </div>
 
       {/* Custom Build Support */}
