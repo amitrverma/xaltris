@@ -52,8 +52,9 @@ export default function Blog() {
     return { slug, ...data } as BlogPost
   })
 
-  return (
-    <section className="min-h-screen px-6 py-20 text-white font-montserrat max-w-3xl mx-auto">
+return (
+  <main className="min-h-screen bg-black text-white px-4 py-16 font-montserrat">
+    <section className="max-w-3xl mx-auto">
       <h1 className="text-5xl font-extrabold mb-10">Blog</h1>
       <ul className="space-y-8">
         {posts.map((post) => (
@@ -71,5 +72,6 @@ export default function Blog() {
         ))}
       </ul>
     </section>
+  </main>
   )
 }
