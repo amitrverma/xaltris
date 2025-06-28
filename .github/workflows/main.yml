@@ -31,8 +31,8 @@ jobs:
           cp -r .next/standalone/* output
 
           if [ -d ".next/static" ]; then
-            mkdir -p output/.next
-            cp -r .next/static output/.next/static
+            mkdir -p output/.next/static
+            cp -r .next/static/* output/.next/static
           else
             echo "⚠️  .next/static not found. Skipping copy."
           fi
@@ -58,7 +58,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: nextjs-app
-          path: output  # ✅ download into correct folder
+          path: output
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
@@ -66,4 +66,4 @@ jobs:
           app-name: 'xaltrisWA'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ./output  # ✅ deploy from correct folder
+          package: ./output
