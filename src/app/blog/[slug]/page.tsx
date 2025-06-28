@@ -54,19 +54,22 @@ export default async function BlogPost({
   const filePath = path.join(process.cwd(), 'src/content/blog', `${slug}.mdx`)
   const source = fs.readFileSync(filePath, 'utf-8')
   const { content, data } = matter(source)
-  
+
   return (
-    <article className="prose prose-invert prose-xl max-w-2xl mx-auto px-6 py-24 font-montserrat leading-relaxed space-y-6">
-      <h1 className="text-4xl font-extrabold text-white mb-2">{data.title}</h1>
-      {data.date && (
-        <p className="text-sm text-gray-400 mb-6">
-          {new Date(data.date).toDateString()}
-        </p>
-      )}
-      <MDXRemote source={content} />
-    </article>
+    <div className="bg-[#0f0f0f] text-white min-h-screen">
+      <article className="prose prose-invert prose-xl max-w-2xl mx-auto px-6 py-24 font-montserrat leading-relaxed space-y-6">
+        <h1 className="text-4xl font-extrabold text-white mb-2">{data.title}</h1>
+        {data.date && (
+          <p className="text-sm text-gray-400 mb-6">
+            {new Date(data.date).toDateString()}
+          </p>
+        )}
+        <MDXRemote source={content} />
+      </article>
+    </div>
   )
 }
+
 
 export async function generateStaticParams() {
   const blogDir = path.join(process.cwd(), 'src/content/blog')
