@@ -29,8 +29,19 @@ jobs:
         run: |
           mkdir -p output
           cp -r .next/standalone/* output
-          cp -r .next/static output/.next/static
-          cp -r public output/public
+
+          if [ -d ".next/static" ]; then
+            mkdir -p output/.next
+            cp -r .next/static output/.next/static
+          else
+            echo "⚠️  .next/static not found. Skipping copy."
+          fi
+
+          if [ -d "public" ]; then
+            cp -r public output/public
+          else
+            echo "⚠️  public/ folder not found. Skipping copy."
+          fi
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
