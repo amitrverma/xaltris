@@ -47,27 +47,59 @@ jobs:
           echo "Creating deployment package..."
           mkdir -p deployment
           
-          # Copy standalone application
-          cp -r .next/standalone/* deployment/
-          
-          # Copy static files to deployment/.next/static
-          if [ -d ".next/static" ]; then
-            mkdir -p deployment/.next/static
-            cp -r .next/static/* deployment/.next/static/
+          # Verify standalone build exists
+          if [ ! -d ".next/standalone" ]; then
+            echo "❌ Standalone build not found!"
+            echo "Contents of .next directory:"
+            ls -la .next/
+            exit 1
           fi
           
-          # Copy public directory
+          echo "✅ Standalone build found"
+          
+          # Copy ALL files from standalone (including the generated server.js)
+          cp -r .next/standalone/* deployment/
+          cp -r .next/standalone/.* deployment/ 2>/dev/null || true
+          
+          # Ensure .next directory exists in deployment
+          if [ ! -d "deployment/.next" ]; then
+            echo "⚠️  Creating .next directory and copying build artifacts..."
+            mkdir -p deployment/.next
+            
+            # Copy essential build files
+            if [ -d ".next/static" ]; then
+              cp -r .next/static deployment/.next/
+            fi
+            
+            # Copy build manifests and other essential files
+            cp .next/*.json deployment/.next/ 2>/dev/null || true
+            cp -r .next/server deployment/.next/ 2>/dev/null || true
+            cp -r .next/cache deployment/.next/ 2>/dev/null || true
+          fi
+          
+          # Copy public directory to deployment root
           if [ -d "public" ]; then
             cp -r public deployment/
           fi
           
-          echo "=== Deployment package contents ==="
+          # Copy static assets to public/_next/static for proper serving
+          if [ -d ".next/static" ]; then
+            mkdir -p deployment/public/_next
+            cp -r .next/static deployment/public/_next/
+          fi
+          
+          echo "=== Final deployment structure ==="
+          echo "Root files:"
           ls -la deployment/
           echo ""
-          echo "=== Checking for required files ==="
-          ls -la deployment/server.js && echo "✅ server.js found" || echo "❌ server.js missing"
-          ls -la deployment/package.json && echo "✅ package.json found" || echo "❌ package.json missing"
-          ls -la deployment/.next/ && echo "✅ .next directory found" || echo "❌ .next directory missing"
+          echo "Generated server.js content preview:"
+          head -10 deployment/server.js 2>/dev/null || echo "❌ No server.js found"
+          echo ""
+          echo ".next directory:"
+          ls -la deployment/.next/ 2>/dev/null || echo "❌ No .next directory"
+          echo ""
+          echo "Package.json start script:"
+          grep -A 3 -B 1 '"start"' deployment/package.json 2>/dev/null || echo "❌ No package.json or start script found"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
