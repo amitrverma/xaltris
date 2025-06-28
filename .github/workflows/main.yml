@@ -25,74 +25,55 @@ jobs:
       - name: Build the Next.js app
         run: npm run build
 
-      - name: Debug - Check build output
+      - name: Verify standalone build
         run: |
-          echo "=== Checking .next directory ==="
-          ls -la .next/ || echo "❌ .next directory not found"
-          
+          echo "=== Checking build output ==="
+          ls -la .next/
+          echo ""
           echo "=== Checking standalone directory ==="
-          ls -la .next/standalone/ || echo "❌ .next/standalone directory not found"
-          
-          echo "=== Checking standalone contents ==="
           if [ -d ".next/standalone" ]; then
-            find .next/standalone -type f -name "*.js" | head -10
-            echo "Standalone directory size:"
-            du -sh .next/standalone/
-          fi
-          
-          echo "=== Checking for server.js in standalone ==="
-          ls -la .next/standalone/server.js || echo "❌ server.js not found in standalone"
-          
-          echo "=== Checking static files ==="
-          ls -la .next/static/ || echo "❌ .next/static directory not found"
-
-      - name: Prepare deployment files
-        run: |
-          mkdir -p output
-          
-          # Copy standalone files
-          if [ -d ".next/standalone" ]; then
-            echo "✅ Copying standalone files..."
-            cp -r .next/standalone/* output/
-            
-            # Copy .next directory from standalone
-            if [ -d ".next/standalone/.next" ]; then
-              echo "✅ Copying .next from standalone..."
-              cp -r .next/standalone/.next output/
-            else
-              echo "⚠️  .next not found in standalone, copying from build..."
-              mkdir -p output/.next
-              cp -r .next/static output/.next/ || echo "No static files found"
-              cp -r .next/*.json output/.next/ || echo "No JSON files found"
-            fi
+            echo "✅ Standalone build created successfully"
+            ls -la .next/standalone/
+            echo ""
+            echo "Standalone structure:"
+            find .next/standalone -name "*.js" -o -name "*.json" | head -10
           else
-            echo "❌ Standalone directory not found!"
+            echo "❌ Standalone build not found!"
             exit 1
           fi
+
+      - name: Prepare deployment package
+        run: |
+          echo "Creating deployment package..."
+          mkdir -p deployment
           
-          # Copy public directory to output root (not inside .next)
+          # Copy standalone application
+          cp -r .next/standalone/* deployment/
+          
+          # Copy static files to deployment/.next/static
+          if [ -d ".next/static" ]; then
+            mkdir -p deployment/.next/static
+            cp -r .next/static/* deployment/.next/static/
+          fi
+          
+          # Copy public directory
           if [ -d "public" ]; then
-            echo "✅ Copying public directory..."
-            cp -r public output/
-          else
-            echo "⚠️  Public directory not found"
+            cp -r public deployment/
           fi
           
-          # Copy static files to public/_next/static for proper serving
-          if [ -d ".next/static" ] && [ -d "output/public" ]; then
-            echo "✅ Copying static files to public/_next/static..."
-            mkdir -p output/public/_next
-            cp -r .next/static output/public/_next/
-          fi
-          
-          echo "=== Final output structure ==="
-          find output -type f | head -20
+          echo "=== Deployment package contents ==="
+          ls -la deployment/
+          echo ""
+          echo "=== Checking for required files ==="
+          ls -la deployment/server.js && echo "✅ server.js found" || echo "❌ server.js missing"
+          ls -la deployment/package.json && echo "✅ package.json found" || echo "❌ package.json missing"
+          ls -la deployment/.next/ && echo "✅ .next directory found" || echo "❌ .next directory missing"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: nextjs-app
-          path: output
+          path: deployment
 
   deploy:
     runs-on: ubuntu-latest
@@ -103,16 +84,15 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: nextjs-app
-          path: output
+          path: .
 
-      - name: Debug deployment package
+      - name: Verify deployment package
         run: |
-          echo "=== Deployment package contents ==="
-          ls -la output/
-          echo "=== Looking for server.js ==="
-          ls -la output/server.js || echo "❌ server.js not found in deployment package"
-          echo "=== Looking for package.json ==="
-          ls -la output/package.json || echo "❌ package.json not found in deployment package"
+          echo "=== Deployment package verification ==="
+          ls -la
+          echo ""
+          echo "Package.json contents:"
+          cat package.json | grep -A 5 -B 5 "scripts" || echo "No scripts section found"
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
@@ -120,4 +100,4 @@ jobs:
           app-name: 'xaltrisWA'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ./output
+          package: .
