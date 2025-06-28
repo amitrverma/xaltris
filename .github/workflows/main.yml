@@ -58,7 +58,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: nextjs-app
-          path: .
+          path: output  # ✅ download into correct folder
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
@@ -66,4 +66,4 @@ jobs:
           app-name: 'xaltrisWA'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ./output
+          package: ./output  # ✅ deploy from correct folder
