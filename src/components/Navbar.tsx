@@ -8,8 +8,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const navItems = [
-   { name: 'About', href: '/about' },
-   { name: 'Products', href: '/products' },
+  { name: 'About', href: '/about' },
+  { name: 'Portfolio', href: '/portfolio' },
   { name: 'Solutions', href: '/solutions' },
   { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/contact' },
