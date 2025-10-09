@@ -27,48 +27,62 @@ export const metadata = {
       'Fractional CTO. Internal platforms. Quietly effective AI. Xaltris builds what your business really needs.',
     images: ['/xaltris-social.png'],
   },
-}
+};
 
 export default function SolutionsPage() {
   return (
-    <section className="min-h-screen w-full bg-black text-white font-montserrat px-6 py-20">
+    <section className="min-h-screen w-full bg-[var(--background)] text-[var(--foreground)] font-montserrat px-6 py-20 transition-colors duration-300">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-5xl font-extrabold mb-6">Solutions</h1>
-        <p className="text-gray-400 mb-12">
-          Not every challenge needs a product. Some need judgment, speed, and someone who’s been there before. 
-          These are the kinds of problems we help solve at Xaltris.
+        {/* Header */}
+        <h1 className="text-5xl font-extrabold mb-6 text-[var(--heading)]">
+          Solutions
+        </h1>
+        <p className="text-gray-700 dark:text-gray-300 mb-12 leading-relaxed max-w-3xl">
+          Not every challenge needs a product. Some need judgment, speed, and someone who’s been there
+          before. These are the kinds of problems we help solve at Xaltris.
         </p>
 
         {/* Fractional CTO */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-semibold text-cyan-400 mb-2">Fractional CTO</h2>
-          <p className="text-gray-300 mb-2">
-            Strategic tech leadership without the full-time overhead. We help you architect smartly, ship faster, 
-            and avoid overengineering. Ideal for scaling startups or solo founders who need experienced technical judgment.
+        <div className="mb-12 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+          <h2 className="text-2xl font-semibold text-cyan-600 dark:text-cyan-400 mb-2">
+            Fractional CTO
+          </h2>
+          <p className="text-gray-700 dark:text-gray-300 mb-3 leading-relaxed">
+            Strategic tech leadership without the full-time overhead. We help you architect smartly,
+            ship faster, and avoid overengineering. Ideal for scaling startups or solo founders who
+            need experienced technical judgment.
           </p>
-          <Link href="/blog/fractional-cto" className="text-sm text-cyan-400 hover:underline">
+          <Link
+            href="/blog/fractional-cto"
+            className="text-sm text-cyan-600 dark:text-cyan-400 hover:underline font-semibold"
+          >
             Read more →
           </Link>
         </div>
 
-        {/* Custom Build Support */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-semibold text-fuchsia-400 mb-2">Custom-Built Solutions</h2>
-          <p className="text-gray-300">
-            Need something that doesn’t exist yet? We design and deliver internal platforms, microtools, and workflow 
-            fixes — built from scratch. Clean. Scoped. Shippable.
+        {/* Custom Builds */}
+        <div className="mb-12 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+          <h2 className="text-2xl font-semibold text-fuchsia-600 dark:text-fuchsia-400 mb-2">
+            Custom-Built Solutions
+          </h2>
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Need something that doesn’t exist yet? We design and deliver internal platforms,
+            microtools, and workflow fixes — built from scratch. Clean. Scoped. Shippable.
           </p>
         </div>
 
         {/* AI-Powered Solutions */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-semibold text-white mb-2">AI-Powered Solutions</h2>
-          <p className="text-gray-300">
-            We design and deliver AI-driven solutions that solve real operational problems — not just experiment with prompts. 
-            We help you use AI where it works best: quietly, efficiently, and without drama.
+        <div className="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+          <h2 className="text-2xl font-semibold text-[var(--heading)] mb-2">
+            AI-Powered Solutions
+          </h2>
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            We design and deliver AI-driven solutions that solve real operational problems — not just
+            experiment with prompts. We help you use AI where it works best: quietly, efficiently, and
+            without drama.
           </p>
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -99,7 +99,7 @@ const PeriodBadge = ({ period }: { period: "Now" | "Past" }) => (
     className={
       period === "Now"
         ? "px-2 py-0.5 text-[10px] rounded-full bg-gradient-to-r from-cyan-500 to-fuchsia-600 text-white"
-        : "px-2 py-0.5 text-[10px] rounded-full bg-gradient-to-r from-zinc-700 to-zinc-900 text-zinc-200"
+        : "px-2 py-0.5 text-[10px] rounded-full bg-gradient-to-r from-gray-300 to-gray-400 text-gray-800 dark:from-zinc-700 dark:to-zinc-900 dark:text-zinc-200"
     }
   >
     {period === "Now" ? "Now" : "Past"}
@@ -109,29 +109,33 @@ const PeriodBadge = ({ period }: { period: "Now" | "Past" }) => (
 const Card = ({ item }: { item: Item }) => {
   const period: "Now" | "Past" = item.period ?? "Past";
   return (
-    <div className="relative bg-zinc-900 rounded-2xl p-7 shadow-md border border-zinc-800 w-full max-w-[420px] mx-auto">
+    <div className="relative bg-white dark:bg-zinc-900 rounded-2xl p-7 shadow-sm border border-gray-200 dark:border-zinc-800 w-full max-w-[420px] mx-auto transition-colors duration-300">
       {/* Top row: category + period */}
       <div className="mb-2 flex items-center gap-2">
-        <span className="px-3 py-1 rounded-full border text-[11px] tracking-wide uppercase border-zinc-700 text-zinc-300 bg-zinc-800/60">
+        <span className="px-3 py-1 rounded-full border text-[11px] tracking-wide uppercase border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-zinc-300 bg-gray-100/80 dark:bg-zinc-800/60">
           {item.category}
         </span>
         <PeriodBadge period={period} />
       </div>
 
-      <p className="text-[15px] leading-7 text-zinc-200">
+      <p className="text-[15px] leading-7 text-gray-800 dark:text-zinc-200">
         {item.description}
       </p>
 
       <div className="mt-5">
-        <p className="text-sm font-extrabold text-fuchsia-400 mb-2">Challenges Addressed</p>
-        <ul className="list-disc pl-5 text-[15px] leading-7 text-zinc-200 space-y-1">
+        <p className="text-sm font-extrabold text-fuchsia-600 dark:text-fuchsia-400 mb-2">
+          Challenges Addressed
+        </p>
+        <ul className="list-disc pl-5 text-[15px] leading-7 text-gray-700 dark:text-zinc-200 space-y-1">
           {item.challenges.map((c, i) => <li key={i}>{c}</li>)}
         </ul>
       </div>
 
       <div className="mt-5">
-        <p className="text-sm font-extrabold text-cyan-400 mb-2">Outcomes</p>
-        <ul className="list-disc pl-5 text-[15px] leading-7 text-zinc-100 space-y-1">
+        <p className="text-sm font-extrabold text-cyan-600 dark:text-cyan-400 mb-2">
+          Outcomes
+        </p>
+        <ul className="list-disc pl-5 text-[15px] leading-7 text-gray-800 dark:text-zinc-100 space-y-1">
           {item.outcomes.map((o, i) => <li key={i}>{o}</li>)}
         </ul>
       </div>
@@ -140,7 +144,6 @@ const Card = ({ item }: { item: Item }) => {
 };
 
 export default function PortfolioPage() {
-  // ⬇️ NEW: period filter
   const [periodFilter, setPeriodFilter] = useState<Period>("All");
 
   const visible = useMemo(() => {
@@ -152,12 +155,10 @@ export default function PortfolioPage() {
           : periodFilter === "Now Building"
           ? period === "Now"
           : period === "Past";
-
       return passPeriod;
     });
   }, [periodFilter]);
 
-  // ⬇️ NEW: dynamic intro copy by periodFilter
   const intro = useMemo(() => {
     if (periodFilter === "Now Building") {
       return "Active builds and engagements under Xaltris — applying deep engineering leadership for measurable outcomes.";
@@ -169,35 +170,35 @@ export default function PortfolioPage() {
   }, [periodFilter]);
 
   return (
-    <section className="min-h-screen px-6 py-20 font-montserrat text-white bg-black">
+    <section className="min-h-screen px-6 py-20 font-montserrat bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
-        {/* Headline + subhead (more impactful) */}
-        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-white text-center">
+        {/* Headline + subhead */}
+        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-[var(--heading)] text-center">
           What I’ve Built
         </h1>
-        <h2 className="text-xl md:text-2xl font-extrabold text-cyan-400 text-center mb-2">
+        <h2 className="text-xl md:text-2xl font-extrabold text-cyan-600 dark:text-cyan-400 text-center mb-2">
           A Proven Track Record at Scale
         </h2>
-        <p className="text-zinc-200 text-center max-w-3xl mx-auto mb-12 leading-8">
+        <p className="text-gray-700 dark:text-zinc-200 text-center max-w-3xl mx-auto mb-12 leading-8">
           {intro}
         </p>
 
-{/* Primary Tabs Only */}
-<div className="flex justify-center border-b border-zinc-700 mb-10">
-  {PERIODS.map((p) => (
-    <button
-      key={p}
-      onClick={() => setPeriodFilter(p)}
-      className={`px-6 py-3 text-lg font-semibold transition relative ${
-        periodFilter === p
-          ? 'text-white after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-cyan-500 after:to-fuchsia-500'
-          : 'text-zinc-400 hover:text-white'
-      }`}
-    >
-      {p}
-    </button>
-  ))}
-</div>
+        {/* Tabs */}
+        <div className="flex justify-center border-b border-gray-300 dark:border-zinc-700 mb-10">
+          {PERIODS.map((p) => (
+            <button
+              key={p}
+              onClick={() => setPeriodFilter(p)}
+              className={`px-6 py-3 text-lg font-semibold transition relative ${
+                periodFilter === p
+                  ? 'text-[var(--heading)] dark:text-white after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-cyan-500 after:to-fuchsia-500'
+                  : 'text-gray-500 dark:text-zinc-400 hover:text-[var(--heading)] dark:hover:text-white'
+              }`}
+            >
+              {p}
+            </button>
+          ))}
+        </div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">

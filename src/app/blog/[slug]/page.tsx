@@ -56,18 +56,20 @@ export default async function BlogPost({
   const { content, data } = matter(source)
 
   return (
-    <div className="bg-[#0f0f0f] text-white min-h-screen">
-<article className="prose prose-invert prose-xl max-w-3xl mx-auto px-6 py-24 font-montserrat leading-relaxed space-y-6">
-  <h1 className="text-4xl font-extrabold text-white mb-2">{data.title}</h1>
-  {data.date && (
-    <p className="text-sm text-gray-400 mb-6">
-      {new Date(data.date).toDateString()}
-    </p>
-  )}
-  <MDXRemote source={content} />
-</article>
+<div className="bg-[var(--background)] text-[var(--foreground)] min-h-screen transition-colors duration-300">
+  <article className="prose dark:prose-invert max-w-3xl mx-auto px-6 py-24 font-montserrat leading-relaxed space-y-6">
+    <h1 className="text-4xl font-extrabold mb-2 text-[var(--foreground)]">
+      {data.title}
+    </h1>
+    {data.date && (
+      <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+        {new Date(data.date).toDateString()}
+      </p>
+    )}
+    <MDXRemote source={content} />
+  </article>
+</div>
 
-    </div>
   )
 }
 

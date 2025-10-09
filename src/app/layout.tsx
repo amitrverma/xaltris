@@ -47,11 +47,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className="bg-black text-white font-montserrat">
-        <Navbar />
-        <main className="pt-[80px]">{children}</main>
-        <Footer />
-      </body>
+<body className="font-montserrat">
+  <Navbar />
+  <main className="pt-[80px]">{children}</main>
+  <Footer />
+</body>
+
     </html>
   )
 }

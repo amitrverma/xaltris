@@ -63,30 +63,31 @@ export default function Blog() {
   })
 
   return (
-    <main className="min-h-screen bg-black text-white px-4 py-16 font-montserrat">
-      <section className="max-w-3xl mx-auto">
-        <h1 className="text-5xl font-extrabold mb-10">Blog</h1>
-        <ul className="space-y-8">
-          {posts.map((post) => (
-            <li key={post.slug} className="border-b border-gray-800 pb-6">
-              <Link
-                href={`/blog/${post.slug}`}
-                className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-600 hover:underline"
-              >
-                {post.title ?? post.slug}
-              </Link>
-              <p className="mt-2 text-white text-sm">
-                {post.description ?? 'No description provided.'}
+  <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] px-4 py-16 font-montserrat transition-colors duration-300">
+    <section className="max-w-3xl mx-auto">
+      <h1 className="text-5xl font-extrabold mb-10 text-[var(--heading)]">Blog</h1>
+      <ul className="space-y-8">
+        {posts.map((post) => (
+          <li key={post.slug} className="border-b border-gray-300 pb-6 dark:border-gray-800">
+            <Link
+              href={`/blog/${post.slug}`}
+              className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-fuchsia-600 hover:underline"
+            >
+              {post.title ?? post.slug}
+            </Link>
+            <p className="mt-2 text-sm text-[var(--muted)]">
+              {post.description ?? 'No description provided.'}
+            </p>
+            {post.date && (
+              <p className="text-xs text-gray-500 mt-1">
+                {new Date(post.date).toLocaleDateString()}
               </p>
-              {post.date && (
-                <p className="text-gray-500 text-xs mt-1">
-                  {new Date(post.date).toLocaleDateString()}
-                </p>
-              )}
-            </li>
-          ))}
-        </ul>
-      </section>
-    </main>
-  )
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+)
+
 }
