@@ -10,7 +10,7 @@ export const metadata = {
     siteName: 'Xaltris',
     images: [
       {
-        url: '/xaltris-social.png',
+        url: '/logo.png',
         width: 1200,
         height: 630,
         alt: 'Xaltris AI-powered products',
@@ -23,7 +23,7 @@ export const metadata = {
     title: 'Xaltris Products',
     description:
       'Smarter tools, built with care. Discover Clarity and Momentum — designed for how real teams work.',
-    images: ['/xaltris-social.png'],
+    images: ['/logo.png'],
   },
 };
 

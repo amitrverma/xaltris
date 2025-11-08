@@ -10,7 +10,7 @@ export const metadata = {
     siteName: 'Xaltris',
     images: [
       {
-        url: '/xaltris-social.png',
+        url: '/logo.png',
         width: 1200,
         height: 630,
         alt: 'Momentum by Xaltris',
@@ -23,7 +23,7 @@ export const metadata = {
     title: 'Momentum by Xaltris',
     description:
       'Real-time insights. Smart tracking. Burnout prevention. Try it free for 30 days.',
-    images: ['/xaltris-social.png'],
+    images: ['/logo.png'],
   },
 };
 

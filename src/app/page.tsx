@@ -12,7 +12,7 @@ export const metadata = {
     siteName: 'Xaltris',
     images: [
       {
-        url: '/xaltris-social.png',
+        url: '/logo.png',
         width: 1200,
         height: 630,
         alt: 'Xaltris Technologies Banner',
@@ -24,7 +24,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Xaltris Technologies',
     description: 'Software, done right. Smarter tools, built with care.',
-    images: ['/xaltris-social.png'],
+    images: ['/logo.png'],
   },
 };
 

@@ -10,7 +10,7 @@ export const metadata = {
     siteName: 'Xaltris',
     images: [
       {
-        url: '/xaltris-social.png',
+        url: '/logo.png',
         width: 1200,
         height: 630,
         alt: 'Clarity by Xaltris',
@@ -23,7 +23,7 @@ export const metadata = {
     title: 'Clarity by Xaltris',
     description:
       'Workforce visibility without the creep factor. Smarter work, less burnout. Free for 30 days.',
-    images: ['/xaltris-social.png'],
+    images: ['/logo.png'],
   },
 };
 

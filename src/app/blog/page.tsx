@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: 'Xaltris',
     images: [
       {
-        url: 'https://xaltris.com/xaltris-social.png',
+        url: 'https://xaltris.com/logo.png',
         width: 1200,
         height: 630,
         alt: 'Xaltris Blog Banner',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Xaltris Blog',
     description: 'Ideas, insights, and updates from the builders at Xaltris.',
-    images: ['https://xaltris.com/xaltris-social.png'],
+    images: ['https://xaltris.com/logo.png'],
   },
 }
 
