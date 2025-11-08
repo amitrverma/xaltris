@@ -44,7 +44,7 @@ export default function SolutionsPage() {
 
         {/* Fractional CTO */}
         <div className="mb-12 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
-          <h2 className="text-2xl font-semibold text-cyan-600 dark:text-cyan-400 mb-2">
+          <h2 className="text-2xl font-semibold text-[#cc595a] mb-2">
             Fractional CTO
           </h2>
           <p className="text-gray-700 dark:text-gray-300 mb-3 leading-relaxed">
@@ -54,7 +54,7 @@ export default function SolutionsPage() {
           </p>
           <Link
             href="/blog/fractional-cto"
-            className="text-sm text-cyan-600 dark:text-cyan-400 hover:underline font-semibold"
+            className="text-sm text-[#cc595a] hover:underline font-semibold"
           >
             Read more →
           </Link>
@@ -62,7 +62,7 @@ export default function SolutionsPage() {
 
         {/* Custom Builds */}
         <div className="mb-12 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
-          <h2 className="text-2xl font-semibold text-fuchsia-600 dark:text-fuchsia-400 mb-2">
+          <h2 className="text-2xl font-semibold text-[#cc595a] mb-2">
             Custom-Built Solutions
           </h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -73,7 +73,7 @@ export default function SolutionsPage() {
 
         {/* AI-Powered Solutions */}
         <div className="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
-          <h2 className="text-2xl font-semibold text-[var(--heading)] mb-2">
+          <h2 className="text-2xl font-semibold text-[#cc595a] mb-2">
             AI-Powered Solutions
           </h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">

@@ -16,65 +16,65 @@ type Item = {
 const ITEMS: Item[] = [
   // Products
   { 
-  category: "Product", 
-  description: "Clarity — workforce well-being and productivity intelligence platform that identifies inefficiencies, overwork patterns, and underused tools without surveillance.", 
-  challenges: [
-    "Balancing productivity with employee well-being", 
-    "Detecting burnout risks without invasive monitoring", 
-    "Providing actionable insights teams actually use"
-  ], 
-  outcomes: [
-    "Improved work-life balance", 
-    "Streamlined workflows", 
-    "Sustainable team performance"
-  ], 
-  period: "Now" 
-},
-{ 
-  category: "Product", 
-  description: "Momentum — real-time performance management platform with dashboards, activity tracking, and sentiment analytics.", 
-  challenges: [
-    "Fragmented visibility across teams", 
-    "Inability to adjust priorities dynamically", 
-    "Need for insights that respect employee context"
-  ], 
-  outcomes: [
-    "Faster, data-driven decision-making", 
-    "Proactive workload balancing", 
-    "Higher throughput without morale loss"
-  ], 
-  period: "Now" 
-},
-{ 
-  category: "Product", 
-  description: "Lexel — AI-assisted product content generation tool that transforms images into SEO-ready descriptions, features, and marketing copy.", 
-  challenges: [
-    "Slow, manual product description workflows", 
-    "Inconsistent tone and quality", 
-    "Scaling content without scaling headcount"
-  ], 
-  outcomes: [
-    "3–5× faster content creation", 
-    "Consistent brand voice", 
-    "Higher engagement and conversion"
-  ], 
-  period: "Now" 
-},
-{
-  category: "Product",
-  description: "An AI-powered introspection platform that helps individuals untangle thoughts, uncover root causes, and turn self-reflection into actionable growth.",
-  challenges: [
-    "People feeling stuck, anxious, or unsure how to move forward in personal or professional situations",
-    "Common advice addressing symptoms rather than underlying causes",
-    "Lack of accessible, private tools for structured self-reflection"
-  ],
-  outcomes: [
-    "Guided introspection that helps users uncover deeper insights and reframe challenges",
-    "Turning self-awareness into practical, real-world actions",
-    "Accessible anytime, anywhere, with privacy and customization built in"
-  ],
-  period: "Now"
-},
+    category: "Product", 
+    description: "Clarity — workforce well-being and productivity intelligence platform that identifies inefficiencies, overwork patterns, and underused tools without surveillance.", 
+    challenges: [
+      "Balancing productivity with employee well-being", 
+      "Detecting burnout risks without invasive monitoring", 
+      "Providing actionable insights teams actually use"
+    ], 
+    outcomes: [
+      "Improved work-life balance", 
+      "Streamlined workflows", 
+      "Sustainable team performance"
+    ], 
+    period: "Now" 
+  },
+  { 
+    category: "Product", 
+    description: "Momentum — real-time performance management platform with dashboards, activity tracking, and sentiment analytics.", 
+    challenges: [
+      "Fragmented visibility across teams", 
+      "Inability to adjust priorities dynamically", 
+      "Need for insights that respect employee context"
+    ], 
+    outcomes: [
+      "Faster, data-driven decision-making", 
+      "Proactive workload balancing", 
+      "Higher throughput without morale loss"
+    ], 
+    period: "Now" 
+  },
+  { 
+    category: "Product", 
+    description: "Lexel — AI-assisted product content generation tool that transforms images into SEO-ready descriptions, features, and marketing copy.", 
+    challenges: [
+      "Slow, manual product description workflows", 
+      "Inconsistent tone and quality", 
+      "Scaling content without scaling headcount"
+    ], 
+    outcomes: [
+      "3–5× faster content creation", 
+      "Consistent brand voice", 
+      "Higher engagement and conversion"
+    ], 
+    period: "Now" 
+  },
+  {
+    category: "Product",
+    description: "An AI-powered introspection platform that helps individuals untangle thoughts, uncover root causes, and turn self-reflection into actionable growth.",
+    challenges: [
+      "People feeling stuck, anxious, or unsure how to move forward in personal or professional situations",
+      "Common advice addressing symptoms rather than underlying causes",
+      "Lack of accessible, private tools for structured self-reflection"
+    ],
+    outcomes: [
+      "Guided introspection that helps users uncover deeper insights and reframe challenges",
+      "Turning self-awareness into practical, real-world actions",
+      "Accessible anytime, anywhere, with privacy and customization built in"
+    ],
+    period: "Now"
+  },
   { category: "Product", description: "Web-based workflow platform enabling end-to-end process management across multiple teams and sites.", challenges: ["Manual spreadsheet tracking created errors and delays", "Limited visibility on utilization and productivity", "Difficult multi-step, multi-location coordination"], outcomes: ["Automated work allocation", "Centralized dashboards for KPIs and SLAs", "Improved cycle time and efficiency"] },
   { category: "Product", description: "Operational performance monitoring tool for tracking productivity and time utilization.", challenges: ["No real-time tracking of productive/offline activities", "Lack of single view for process data", "Manual performance reporting"], outcomes: ["Real-time performance insights", "Customizable reporting", "Better headcount and capacity planning"] },
   { category: "Product", description: "Intelligent quality assessment tool with automated sampling and integration to workflow systems.", challenges: ["Manual quality sampling was time-intensive", "No integration with workflow systems", "High management overhead"], outcomes: ["Automated sampling", "Integration with existing systems", "Real-time and historical reporting"] },
@@ -98,8 +98,8 @@ const PeriodBadge = ({ period }: { period: "Now" | "Past" }) => (
   <span
     className={
       period === "Now"
-        ? "px-2 py-0.5 text-[10px] rounded-full bg-gradient-to-r from-cyan-500 to-fuchsia-600 text-white"
-        : "px-2 py-0.5 text-[10px] rounded-full bg-gradient-to-r from-gray-300 to-gray-400 text-gray-800 dark:from-zinc-700 dark:to-zinc-900 dark:text-zinc-200"
+        ? "px-2 py-0.5 text-[10px] rounded-full bg-[#cc595a] text-white"
+        : "px-2 py-0.5 text-[10px] rounded-full bg-gray-300 text-gray-800 dark:bg-zinc-700 dark:text-zinc-200"
     }
   >
     {period === "Now" ? "Now" : "Past"}
@@ -123,7 +123,7 @@ const Card = ({ item }: { item: Item }) => {
       </p>
 
       <div className="mt-5">
-        <p className="text-sm font-extrabold text-fuchsia-600 dark:text-fuchsia-400 mb-2">
+        <p className="text-sm font-extrabold text-[#cc595a] mb-2">
           Challenges Addressed
         </p>
         <ul className="list-disc pl-5 text-[15px] leading-7 text-gray-700 dark:text-zinc-200 space-y-1">
@@ -132,7 +132,7 @@ const Card = ({ item }: { item: Item }) => {
       </div>
 
       <div className="mt-5">
-        <p className="text-sm font-extrabold text-cyan-600 dark:text-cyan-400 mb-2">
+        <p className="text-sm font-extrabold text-[#cc595a] mb-2">
           Outcomes
         </p>
         <ul className="list-disc pl-5 text-[15px] leading-7 text-gray-800 dark:text-zinc-100 space-y-1">
@@ -176,7 +176,7 @@ export default function PortfolioPage() {
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-[var(--heading)] text-center">
           What I’ve Built
         </h1>
-        <h2 className="text-xl md:text-2xl font-extrabold text-cyan-600 dark:text-cyan-400 text-center mb-2">
+        <h2 className="text-xl md:text-2xl font-extrabold text-[#cc595a] text-center mb-2">
           A Proven Track Record at Scale
         </h2>
         <p className="text-gray-700 dark:text-zinc-200 text-center max-w-3xl mx-auto mb-12 leading-8">
@@ -191,8 +191,8 @@ export default function PortfolioPage() {
               onClick={() => setPeriodFilter(p)}
               className={`px-6 py-3 text-lg font-semibold transition relative ${
                 periodFilter === p
-                  ? 'text-[var(--heading)] dark:text-white after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-cyan-500 after:to-fuchsia-500'
-                  : 'text-gray-500 dark:text-zinc-400 hover:text-[var(--heading)] dark:hover:text-white'
+                  ? 'text-[var(--heading)] dark:text-white after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#cc595a]'
+                  : 'text-gray-500 dark:text-zinc-400 hover:text-[#cc595a]'
               }`}
             >
               {p}
@@ -211,7 +211,7 @@ export default function PortfolioPage() {
         <div className="mt-14 flex justify-center">
           <a
             href="/contact"
-            className="bg-gradient-to-r from-cyan-500 to-fuchsia-600 text-white font-semibold px-6 py-2 rounded-md hover:brightness-110 transition"
+            className="bg-[#cc595a] text-white font-semibold px-6 py-2 rounded-md hover:brightness-110 transition"
           >
             Discuss your build
           </a>

@@ -37,16 +37,16 @@ export default function AboutPage() {
         </h1>
 
         {/* Origin Story */}
-        <h2 className="text-2xl font-bold text-cyan-600 dark:text-cyan-400 mb-4">
+        <h2 className="text-2xl font-bold text-[#cc595a] mb-4">
           Why I Started Xaltris
         </h2>
-        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+        <p className="leading-relaxed mb-6">
           After spending over two decades building software — across banks, startups, internal
           platforms, and public products — I saw a pattern. The most impactful solutions weren’t
           just about tech. They were about <strong>clarity</strong>, <strong>empathy</strong>, and{' '}
           <strong>execution</strong>.
         </p>
-        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-10">
+        <p className="leading-relaxed mb-10">
           I’ve always loved building. It’s what I do best. And I’ve been fortunate to do it across
           domains, stacks, and roles. But after my corporate run, I wanted to create something with
           more range and fewer constraints. That’s how Xaltris was born.
@@ -54,7 +54,7 @@ export default function AboutPage() {
 
         {/* What We Do */}
         <div className="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl p-8 shadow-sm mb-12 transition-all duration-300 hover:shadow-md">
-          <h2 className="text-2xl font-bold text-fuchsia-600 dark:text-fuchsia-400 mb-4">
+          <h2 className="text-2xl font-bold text-[#cc595a] mb-4">
             What We Do
           </h2>
           <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
@@ -74,7 +74,7 @@ export default function AboutPage() {
           </ul>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
             We believe great software should be clear, purposeful, and built for the way people
-            actually work. Whether we’re writing code, crafting prompts, or solving scale issues —
+            actually work. Whether we’re writing code, crafting prompts, or solving scale issues — 
             we bring clarity and care to everything we ship.
           </p>
         </div>
@@ -83,7 +83,7 @@ export default function AboutPage() {
         <h2 className="text-2xl font-bold text-[var(--heading)] mb-4">
           What You Get
         </h2>
-        <ul className="list-disc list-inside space-y-2 mb-10 text-gray-700 dark:text-gray-300">
+        <ul className="list-disc list-inside space-y-2 mb-10 ">
           <li>
             <strong>Builder’s mindset</strong> with enterprise polish
           </li>
@@ -95,13 +95,13 @@ export default function AboutPage() {
           </li>
         </ul>
 
-        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-12">
+        <p className="leading-relaxed mb-12">
           Whether you’re an early-stage founder or a scaling team, we meet you where you are — and
           build from there.
         </p>
 
         {/* Signature */}
-        <p className="text-right text-sm italic text-gray-600 dark:text-gray-400">
+        <p className="text-right text-sm italic ">
           – Amit Verma
           <br />
           Founder, Xaltris Technologies

@@ -4,11 +4,11 @@
 /* ↓ Custom Variables and Styles ↓ */
 
 :root {
-  --background: #fafafa;
-  --foreground: #171717;
-  --heading: #111111;
+  --background: #638475;
+  --foreground: #ffffff;
+  --secondary: #042a2b;
   --muted: #4b5563; /* Tailwind gray-600 */
-  --accent: #5eb1bf; /* brand secondary */
+  --primary: #cc595a; /* brand secondary */
 }
 
 @theme inline {
@@ -24,7 +24,7 @@
     --foreground: #e5e7eb; /* Tailwind gray-200 */
     --heading: #f9fafb; /* near-white, easier on eyes */
     --muted: #9ca3af; /* Tailwind gray-400 */
-    --accent: #5eb1bf;
+    --secondary: #cc595a;
   }
 }
 
@@ -67,8 +67,8 @@ body {
 }
 
 .prose blockquote {
-  border-left: 4px solid var(--accent);
-  background-color: rgba(255, 255, 255, 0.02);
+  border-left: 4px solid var(--primary);
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 1rem 1.5rem;
   font-style: italic;
   color: var(--muted);
@@ -77,7 +77,7 @@ body {
 }
 
 .prose a {
-  color: var(--accent);
+  color: var(--secondary);
   text-decoration: underline;
   text-underline-offset: 2px;
 }

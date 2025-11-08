@@ -27,32 +27,32 @@ export default function Navbar() {
           className="flex flex-col items-center justify-center space-y-0 leading-tight group"
         >
           <Image
-            src="/logo-black.png"
+            src="/logo.png"
             alt="Xaltris logo"
-            width={56}
-            height={56}
+            width={150}
+            height={150}
             className="transition-transform group-hover:scale-105"
           />
-          <span className="text-lg font-semibold tracking-wide transition-colors">
-            xaltris
-          </span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-8 text-[15px] font-medium">
-          {navItems.map(({ name, href }) => (
-            <Link
-              key={name}
-              href={href}
-              className={`relative pb-1 transition-colors duration-200 hover:text-cyan-500 ${
-                pathname === href
-                  ? 'text-cyan-500 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-gradient-to-r after:from-cyan-500 after:to-fuchsia-500'
-                  : 'text-[var(--foreground)]'
-              }`}
-            >
-              {name}
-            </Link>
-          ))}
+        <nav className="hidden md:flex space-x-6 text-[15px] font-medium">
+          {navItems.map(({ name, href }) => {
+            const isActive = pathname === href
+            return (
+              <Link
+                key={name}
+                href={href}
+                className={`px-3 py-1.5 rounded-md transition-all duration-200 ${
+                  isActive
+                    ? 'bg-[#cc595a] text-white'
+                    : 'text-[var(--foreground)] hover:bg-[#cc595a]/15 hover:text-[#cc595a]'
+                }`}
+              >
+                {name}
+              </Link>
+            )
+          })}
         </nav>
 
         {/* Mobile Menu Button */}
@@ -72,18 +72,23 @@ export default function Navbar() {
       {/* Mobile Dropdown */}
       {isOpen && (
         <div className="md:hidden mt-4 space-y-3 text-sm font-medium border-t border-gray-200 dark:border-zinc-800 pt-3">
-          {navItems.map(({ name, href }) => (
-            <Link
-              key={name}
-              href={href}
-              onClick={() => setIsOpen(false)}
-              className={`block transition-colors hover:text-cyan-500 ${
-                pathname === href ? 'text-cyan-500' : 'text-[var(--foreground)]'
-              }`}
-            >
-              {name}
-            </Link>
-          ))}
+          {navItems.map(({ name, href }) => {
+            const isActive = pathname === href
+            return (
+              <Link
+                key={name}
+                href={href}
+                onClick={() => setIsOpen(false)}
+                className={`block px-3 py-2 rounded-md transition-all duration-200 ${
+                  isActive
+                    ? 'bg-[#cc595a] text-white'
+                    : 'text-[var(--foreground)] hover:bg-[#cc595a]/15 hover:text-[#cc595a]'
+                }`}
+              >
+                {name}
+              </Link>
+            )
+          })}
         </div>
       )}
     </header>

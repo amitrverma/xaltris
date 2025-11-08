@@ -7,41 +7,39 @@ import type { Metadata } from 'next'
 type PostMeta = {
   title?: string
   description?: string
-  date?: string // 🟢 add date
+  date?: string
 }
 
 type BlogPost = {
   slug: string
 } & PostMeta
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: 'Blog | Xaltris Technologies',
+export const metadata: Metadata = {
+  title: 'Blog | Xaltris Technologies',
+  description:
+    'Ideas, insights, and updates from the builders at Xaltris. Read about software, scale, and smarter execution.',
+  openGraph: {
+    title: 'Xaltris Blog',
     description:
       'Ideas, insights, and updates from the builders at Xaltris. Read about software, scale, and smarter execution.',
-    openGraph: {
-      title: 'Xaltris Blog',
-      description:
-        'Ideas, insights, and updates from the builders at Xaltris. Read about software, scale, and smarter execution.',
-      url: 'https://xaltris.com/blog',
-      siteName: 'Xaltris',
-      images: [
-        {
-          url: 'https://xaltris.com/xaltris-social.png',
-          width: 1200,
-          height: 630,
-          alt: 'Xaltris Blog Banner',
-        },
-      ],
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: 'Xaltris Blog',
-      description: 'Ideas, insights, and updates from the builders at Xaltris.',
-      images: ['https://xaltris.com/xaltris-social.png'],
-    },
-  }
+    url: 'https://xaltris.com/blog',
+    siteName: 'Xaltris',
+    images: [
+      {
+        url: 'https://xaltris.com/xaltris-social.png',
+        width: 1200,
+        height: 630,
+        alt: 'Xaltris Blog Banner',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Xaltris Blog',
+    description: 'Ideas, insights, and updates from the builders at Xaltris.',
+    images: ['https://xaltris.com/xaltris-social.png'],
+  },
 }
 
 export default function Blog() {
@@ -55,7 +53,7 @@ export default function Blog() {
     return { slug, ...data } as BlogPost
   })
 
-  // 🟢 Sort posts by date descending
+  // Sort by date descending
   posts.sort((a, b) => {
     const dateA = a.date ? new Date(a.date).getTime() : 0
     const dateB = b.date ? new Date(b.date).getTime() : 0
@@ -63,31 +61,45 @@ export default function Blog() {
   })
 
   return (
-  <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] px-4 py-16 font-montserrat transition-colors duration-300">
-    <section className="max-w-3xl mx-auto">
-      <h1 className="text-5xl font-extrabold mb-10 text-[var(--heading)]">Blog</h1>
-      <ul className="space-y-8">
-        {posts.map((post) => (
-          <li key={post.slug} className="border-b border-gray-300 pb-6 dark:border-gray-800">
-            <Link
-              href={`/blog/${post.slug}`}
-              className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-fuchsia-600 hover:underline"
-            >
-              {post.title ?? post.slug}
-            </Link>
-            <p className="mt-2 text-sm text-[var(--muted)]">
-              {post.description ?? 'No description provided.'}
-            </p>
-            {post.date && (
-              <p className="text-xs text-gray-500 mt-1">
-                {new Date(post.date).toLocaleDateString()}
-              </p>
-            )}
-          </li>
-        ))}
-      </ul>
-    </section>
-  </main>
-)
+    <main className="min-h-screen bg-[#638475] text-white px-6 py-16 font-montserrat transition-colors duration-300">
+      <section className="max-w-3xl mx-auto">
+        {/* Title */}
+        <h1 className="text-5xl font-extrabold mb-12 text-white">Blog</h1>
 
+        <ul className="space-y-10">
+          {posts.map((post) => (
+            <li
+              key={post.slug}
+              className="border-b border-gray-600 pb-8 last:border-none"
+            >
+              {/* Post Title */}
+              <Link
+                href={`/blog/${post.slug}`}
+                className="text-2xl font-semibold text-white hover:text-[#cc595a] transition-colors duration-200"
+              >
+                {post.title ?? post.slug}
+              </Link>
+
+              {/* Description */}
+              <p className="mt-3 text-base text-gray-300 leading-relaxed">
+                {post.description ??
+                  'No description provided for this post yet.'}
+              </p>
+
+              {/* Date */}
+              {post.date && (
+                <p className="text-xs text-gray mt-2">
+                  {new Date(post.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  })}
+                </p>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
+  )
 }

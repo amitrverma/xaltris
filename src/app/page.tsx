@@ -1,3 +1,6 @@
+import Link from 'next/link'
+import Image from 'next/image'
+
 export const metadata = {
   title: 'Xaltris Technologies',
   description:
@@ -34,16 +37,16 @@ export default function HomePage() {
 
       <div className="relative z-10">
         {/* Headline */}
-        <h1 className="text-[14vw] sm:text-[10vw] md:text-[8vw] lg:text-[160px] xl:text-[200px] leading-[1.1] font-extrabold">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-fuchsia-600">
-            Software,
-          </span>
-          <br />
-          Done Right!
-        </h1>
+        <Image
+          src="/software.png"
+          alt="Xaltris logo"
+          width={1200}
+          height={1200}
+          className="transition-transform group-hover:scale-105"
+        />
 
         {/* Subheading */}
-        <p className="mt-6 text-lg sm:text-xl text-gray-700 dark:text-gray-300 max-w-xl mx-auto leading-relaxed">
+        <p className="mt-6 text-lg sm:text-xl max-w-xl mx-auto leading-relaxed">
           Whether you&apos;re launching, scaling, or just stuck —
           <br className="hidden sm:block" />
           Xaltris helps you move forward with confidence.
@@ -53,15 +56,15 @@ export default function HomePage() {
         <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
           <a
             href="/products"
-            className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-fuchsia-600 rounded-md font-semibold text-white hover:brightness-110 transition"
+            className="px-6 py-3 border border-gray-400 dark:border-gray-600 rounded-md font-semibold text-[var(--foreground)] hover:border-[#cc595a] transition"
           >
             See Our Tools
           </a>
           <a
             href="/contact"
-            className="px-6 py-3 border border-gray-400 dark:border-gray-600 rounded-md font-semibold text-[var(--foreground)] hover:border-[var(--foreground)] transition"
+            className="px-6 py-3 border border-gray-400 dark:border-gray-600 rounded-md font-semibold text-[var(--foreground)] hover:border-[#cc595a] transition"
           >
-            Talk to Us
+            Talk to Me
           </a>
         </div>
       </div>

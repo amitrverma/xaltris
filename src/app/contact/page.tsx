@@ -49,7 +49,7 @@ export default function ContactPage() {
               placeholder="Your name"
               className="w-full bg-white border border-gray-300 px-4 py-2 rounded-md text-gray-900 
                          dark:bg-zinc-900 dark:border-zinc-700 dark:text-white 
-                         focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                         focus:outline-none focus:ring-2 focus:ring-[#cc595a]"
             />
           </div>
 
@@ -64,7 +64,7 @@ export default function ContactPage() {
               placeholder="you@example.com"
               className="w-full bg-white border border-gray-300 px-4 py-2 rounded-md text-gray-900 
                          dark:bg-zinc-900 dark:border-zinc-700 dark:text-white 
-                         focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                         focus:outline-none focus:ring-2 focus:ring-[#cc595a]"
             />
           </div>
 
@@ -79,13 +79,13 @@ export default function ContactPage() {
               placeholder="Tell us what’s on your mind…"
               className="w-full bg-white border border-gray-300 px-4 py-2 rounded-md text-gray-900 
                          dark:bg-zinc-900 dark:border-zinc-700 dark:text-white 
-                         focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                         focus:outline-none focus:ring-2 focus:ring-[#cc595a]"
             />
           </div>
 
           <button
             type="submit"
-            className="bg-gradient-to-r from-cyan-500 to-fuchsia-600 px-6 py-2 rounded-md text-white font-semibold 
+            className="bg-[#cc595a] px-6 py-2 rounded-md text-white font-semibold 
                        hover:brightness-110 transition disabled:opacity-70 disabled:cursor-not-allowed"
             disabled={status === 'loading'}
           >
@@ -98,7 +98,7 @@ export default function ContactPage() {
 
         <div className="mt-12 text-center text-sm text-[var(--foreground)]">
           Or reach us at{' '}
-          <a href="mailto:hello@xaltris.com" className="text-cyan-600 dark:text-cyan-400 hover:underline">
+          <a href="mailto:hello@xaltris.com" className="text-[#cc595a] hover:underline">
             hello@xaltris.com
           </a>
         </div>
