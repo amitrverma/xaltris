@@ -33,13 +33,13 @@ export default function ContactPage() {
         <h1 className="text-5xl font-extrabold mb-6 text-center text-[var(--heading)]">
           Contact Us
         </h1>
-        <p className="text-[var(--muted)] text-center mb-12">
+        <p className=" text-center mb-12">
           Whether you’re curious about a demo, partnership, or just want to say hi — we’re listening.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-sm font-semibold text-[var(--muted)] mb-1">Name</label>
+            <label className="block text-sm font-semibold  mb-1">Name</label>
             <input
               type="text"
               name="name"
@@ -54,7 +54,7 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-[var(--muted)] mb-1">Email</label>
+            <label className="block text-sm font-semibold  mb-1">Email</label>
             <input
               type="email"
               name="email"
@@ -69,7 +69,7 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-[var(--muted)] mb-1">Message</label>
+            <label className="block text-sm font-semibold  mb-1">Message</label>
             <textarea
               name="message"
               value={form.message}
@@ -98,7 +98,7 @@ export default function ContactPage() {
 
         <div className="mt-12 text-center text-sm text-[var(--foreground)]">
           Or reach us at{' '}
-          <a href="mailto:hello@xaltris.com" className="text-[#cc595a] hover:underline">
+          <a href="mailto:hello@xaltris.com" className="text-[var(--secondary)] hover:underline">
             hello@xaltris.com
           </a>
         </div>

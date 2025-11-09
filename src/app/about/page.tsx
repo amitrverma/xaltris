@@ -37,7 +37,7 @@ export default function AboutPage() {
         </h1>
 
         {/* Origin Story */}
-        <h2 className="text-2xl font-bold text-[#cc595a] mb-4">
+        <h2 className="text-2xl font-bold mb-4">
           Why I Started Xaltris
         </h2>
         <p className="leading-relaxed mb-6">

@@ -176,10 +176,10 @@ export default function PortfolioPage() {
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-[var(--heading)] text-center">
           What I’ve Built
         </h1>
-        <h2 className="text-xl md:text-2xl font-extrabold text-[#cc595a] text-center mb-2">
+        <h2 className="text-xl md:text-2xl font-extrabold text-center mb-2">
           A Proven Track Record at Scale
         </h2>
-        <p className="text-gray-700 dark:text-zinc-200 text-center max-w-3xl mx-auto mb-12 leading-8">
+        <p className=" dark:text-zinc-200 text-center max-w-3xl mx-auto mb-12 leading-8">
           {intro}
         </p>
 
@@ -192,7 +192,7 @@ export default function PortfolioPage() {
               className={`px-6 py-3 text-lg font-semibold transition relative ${
                 periodFilter === p
                   ? 'text-[var(--heading)] dark:text-white after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#cc595a]'
-                  : 'text-gray-500 dark:text-zinc-400 hover:text-[#cc595a]'
+                  : 'text-[var(--secondary)] dark:text-zinc-400 hover:text-[#cc595a]'
               }`}
             >
               {p}
@@ -211,7 +211,7 @@ export default function PortfolioPage() {
         <div className="mt-14 flex justify-center">
           <a
             href="/contact"
-            className="bg-[#cc595a] text-white font-semibold px-6 py-2 rounded-md hover:brightness-110 transition"
+            className="bg-[var(--primary)] text-white font-semibold px-6 py-2 rounded-md hover:brightness-110 transition"
           >
             Discuss your build
           </a>

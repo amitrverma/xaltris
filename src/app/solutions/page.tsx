@@ -37,7 +37,7 @@ export default function SolutionsPage() {
         <h1 className="text-5xl font-extrabold mb-6 text-[var(--heading)]">
           Solutions
         </h1>
-        <p className="text-gray-700 dark:text-gray-300 mb-12 leading-relaxed max-w-3xl">
+        <p className=" dark:text-gray-300 mb-12 leading-relaxed max-w-3xl">
           Not every challenge needs a product. Some need judgment, speed, and someone who’s been there
           before. These are the kinds of problems we help solve at Xaltris.
         </p>
