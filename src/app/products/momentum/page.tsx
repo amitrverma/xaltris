@@ -32,10 +32,10 @@ export default function MomentumPage() {
     <section className="min-h-screen px-6 py-20 font-montserrat bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
       <div className="max-w-4xl mx-auto">
         {/* Hero */}
-        <h1 className="text-5xl font-extrabold mb-6 text-fuchsia-600 dark:text-fuchsia-400">
+        <h1 className="text-5xl font-extrabold mb-6">
           Momentum
         </h1>
-        <p className="text-lg text-gray-700 dark:text-gray-300 mb-10 leading-relaxed">
+        <p className="text-lg text-[var(--foreground)]/90 mb-10 leading-relaxed">
           Momentum gives you full visibility into how work happens across your organization — in real
           time. From performance monitoring to engagement analytics, it&apos;s your single source of truth
           for operational productivity.
@@ -45,13 +45,13 @@ export default function MomentumPage() {
         <h2 className="text-2xl font-semibold mb-4 text-[var(--heading)]">
           See What&apos;s Really Going On
         </h2>
-        <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+        <p className="text-[var(--foreground)]/90 mb-6 leading-relaxed">
           Most performance problems aren&apos;t about effort — they&apos;re about misalignment, inefficiency,
           or lack of visibility. Momentum helps you surface what&apos;s working, what&apos;s not, and where
           to focus — without micromanaging.
         </p>
 
-        <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 mb-10">
+        <ul className="list-disc list-inside text-[var(--foreground)]/90 space-y-2 mb-10">
           <li>Track productive and non-productive time by task, role, or channel</li>
           <li>Pinpoint where time is going — and where it&apos;s being lost</li>
           <li>Identify idle patterns and reduce them by up to 20%</li>
@@ -63,7 +63,7 @@ export default function MomentumPage() {
         <h2 className="text-2xl font-semibold mb-4 text-[var(--heading)]">
           Built for Operational Teams
         </h2>
-        <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 mb-10">
+        <ul className="list-disc list-inside text-[var(--foreground)]/90 space-y-2 mb-10">
           <li>Live dashboards with intraday performance tracking</li>
           <li>Role-based insights across voice, chat, and back-office workflows</li>
           <li>Unified reporting across teams, locations, and channels</li>
@@ -74,12 +74,12 @@ export default function MomentumPage() {
         <h2 className="text-2xl font-semibold mb-4 text-[var(--heading)]">
           Custom-Fit for How You Work
         </h2>
-        <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+        <p className="text-[var(--foreground)]/90 mb-6 leading-relaxed">
           Momentum adapts to your environment — not the other way around. Configure workflows, metrics,
           and user roles without wasting days in setup.
         </p>
 
-        <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 mb-10">
+        <ul className="list-disc list-inside text-[var(--foreground)]/90 space-y-2 mb-10">
           <li>Fast setup — 40% quicker than traditional performance tools</li>
           <li>Define your own roles, activities, and metrics</li>
           <li>Integrates seamlessly across multiple channels and tools</li>
@@ -89,12 +89,12 @@ export default function MomentumPage() {
         <h2 className="text-2xl font-semibold mb-4 text-[var(--heading)]">
           Don&apos;t Manage in the Dark
         </h2>
-        <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+        <p className="text-[var(--foreground)]/90 mb-8 leading-relaxed">
           Whether you&apos;re running an operations team, a service desk, or a support org — you can&apos;t
           afford to guess. Momentum gives you the data you need to lead with clarity, every day.
         </p>
 
-        <p className="text-lg text-gray-700 dark:text-gray-300 mb-10 leading-relaxed">
+        <p className="text-lg text-[var(--foreground)]/90 mb-10 leading-relaxed">
           Try Momentum free for 30 days — no sales calls, no setup fee, no commitment.
         </p>
 
@@ -102,11 +102,11 @@ export default function MomentumPage() {
         <div className="mt-8 text-center">
           <a
             href="https://momentum.xaltris.com"
-            className="inline-block px-8 py-3 bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white font-semibold rounded-md hover:brightness-110 transition"
+            className="inline-block px-8 py-3 bg-[var(--primary)] text-white font-semibold rounded-md hover:bg-[var(--secondary)] transition"
           >
             Start Free Trial
           </a>
-          <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
+          <p className="mt-3 text-sm text-[var(--secondary)]">
             All signal. No noise.
           </p>
         </div>

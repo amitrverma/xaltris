@@ -37,11 +37,11 @@ export default function ProductsPage() {
         </h1>
 
         {/* Clarity Card */}
-        <div className="bg-white dark:bg-zinc-900 rounded-2xl p-8 shadow-sm border border-gray-200 dark:border-zinc-800 mb-12 transition-all duration-300 hover:shadow-lg">
-          <h2 className="text-3xl font-bold text-cyan-600 dark:text-cyan-400 mb-4">
+        <div className="bg-[var(--foreground)] dark:bg-zinc-900 rounded-2xl p-8 shadow-sm border border-gray-200 dark:border-zinc-800 mb-12 transition-all duration-300 hover:shadow-lg">
+          <h2 className="text-3xl font-bold text-[var(--primary)] mb-4">
             Clarity
           </h2>
-          <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+          <p className="text-[var(--secondary)] dark:text-gray-300 mb-6 leading-relaxed">
             <strong>Work Smarter. Live Healthier.</strong>
             <br />
             Clarity is a workforce well-being tool that helps businesses balance productivity and
@@ -51,7 +51,7 @@ export default function ProductsPage() {
           <div className="flex justify-end">
             <a
               href="/products/clarity"
-              className="bg-gradient-to-r from-cyan-500 to-fuchsia-600 text-white font-semibold px-6 py-2 rounded-md hover:brightness-110 transition"
+              className="bg-[var(--primary)] text-white font-semibold px-6 py-2 rounded-md hover:bg-[var(--secondary)] transition"
             >
               Learn More
             </a>
@@ -59,11 +59,11 @@ export default function ProductsPage() {
         </div>
 
         {/* Momentum Card */}
-        <div className="bg-white dark:bg-zinc-900 rounded-2xl p-8 shadow-sm border border-gray-200 dark:border-zinc-800 transition-all duration-300 hover:shadow-lg">
-          <h2 className="text-3xl font-bold text-fuchsia-600 dark:text-fuchsia-400 mb-4">
+        <div className="bg-[var(--foreground)] dark:bg-zinc-900 rounded-2xl p-8 shadow-sm border border-gray-200 dark:border-zinc-800 transition-all duration-300 hover:shadow-lg">
+          <h2 className="text-3xl font-bold text-[var(--primary)] mb-4">
             Momentum
           </h2>
-          <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+          <p className="text-[var(--secondary)] dark:text-gray-300 mb-6 leading-relaxed">
             <strong>Precision Meets Performance.</strong>
             <br />
             Momentum is a real-time performance management platform built for modern teams. With
@@ -73,7 +73,7 @@ export default function ProductsPage() {
           <div className="flex justify-end">
             <a
               href="/products/momentum"
-              className="bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white font-semibold px-6 py-2 rounded-md hover:brightness-110 transition"
+              className="bg-[var(--primary)] text-white font-semibold px-6 py-2 rounded-md hover:bg-[var(--secondary)] transition"
             >
               Learn More
             </a>

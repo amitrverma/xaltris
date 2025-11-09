@@ -45,23 +45,27 @@ export default function HomePage() {
         />
 
         {/* Subheading */}
-        <p className="mt-6 text-lg sm:text-xl max-w-xl mx-auto leading-relaxed">
-          Whether you&apos;re launching, scaling, or just stuck —
+        <p className="mt-8 text-base sm:text-xl max-w-xl mx-auto leading-relaxed">
+          Whether you&apos;re launching, scaling, or just stuck —{' '}
           <br className="hidden sm:block" />
           Xaltris helps you move forward with confidence.
         </p>
 
-        {/* CTAs */}
-        <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
+        {/* CTA Buttons */}
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-lg">
           <a
             href="/products"
-            className="px-6 py-3 border border-gray-400 dark:border-gray-600 rounded-md font-semibold text-[var(--foreground)] hover:border-[#cc595a] transition"
+            className="w-full sm:w-auto text-center px-8 py-3 border border-[#cc595a] text-white rounded-md font-semibold 
+                       bg-[#cc595a]/10 hover:bg-[#cc595a] hover:text-white 
+                       transition-all duration-300 text-base sm:text-lg"
           >
             See Our Tools
           </a>
           <a
             href="/contact"
-            className="px-6 py-3 border border-gray-400 dark:border-gray-600 rounded-md font-semibold text-[var(--foreground)] hover:border-[#cc595a] transition"
+            className="w-full sm:w-auto text-center px-8 py-3 border border-[#cc595a] text-white rounded-md font-semibold 
+                       bg-[#cc595a]/10 hover:bg-[#cc595a] hover:text-white 
+                       transition-all duration-300 text-base sm:text-lg"
           >
             Talk to Me
           </a>
