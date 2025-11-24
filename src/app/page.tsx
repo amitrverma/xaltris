@@ -59,7 +59,7 @@ export default function HomePage() {
                        bg-[#cc595a]/10 hover:bg-[#cc595a] hover:text-white 
                        transition-all duration-300 text-base sm:text-lg"
           >
-            See Our Tools
+            The Xaltris Tools
           </a>
           <a
             href="/contact"

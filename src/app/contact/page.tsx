@@ -31,10 +31,10 @@ export default function ContactPage() {
     <section className="min-h-screen w-full bg-[var(--background)] text-[var(--foreground)] font-montserrat px-6 py-20 transition-colors duration-300">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-5xl font-extrabold mb-6 text-center text-[var(--heading)]">
-          Contact Us
+          Contact Me
         </h1>
         <p className=" text-center mb-12">
-          Whether you’re curious about a demo, partnership, or just want to say hi — we’re listening.
+          Whether you&apos;re curious about a demo, partnership, or just want to say hi — I&apos;m listening.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -97,7 +97,7 @@ export default function ContactPage() {
         </form>
 
         <div className="mt-12 text-center text-sm text-[var(--foreground)]">
-          Or reach us at{' '}
+          Or reach me at{' '}
           <a href="mailto:hello@xaltris.com" className="text-[var(--secondary)] hover:underline">
             hello@xaltris.com
           </a>

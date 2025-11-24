@@ -12,18 +12,22 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://xaltris.com"),
+
   title: {
-    default: 'Xaltris Technologies',
-    template: '%s | Xaltris',
+    default: "Xaltris Technologies",
+    template: "%s | Xaltris",
   },
+
   description:
-    'Software, done right. Smarter tools, custom platforms, and AI-powered solutions — built with experience, delivered with care.',
+    "Software, done right. Smarter tools, custom platforms, and AI-powered solutions — built with experience, delivered with care.",
+
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
-}
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
