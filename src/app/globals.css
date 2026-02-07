@@ -18,16 +18,6 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #111213; /* softer charcoal instead of pure black */
-    --foreground: #e5e7eb; /* Tailwind gray-200 */
-    --heading: #f9fafb; /* near-white, easier on eyes */
-    --muted: #9ca3af; /* Tailwind gray-400 */
-    --secondary: #cc595a;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
