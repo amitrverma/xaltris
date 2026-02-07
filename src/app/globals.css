@@ -11,6 +11,10 @@
   --primary: #cc595a; /* brand secondary */
 }
 
+html {
+  color-scheme: light;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
