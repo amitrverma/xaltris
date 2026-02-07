@@ -48,7 +48,8 @@ export default function ContactPage() {
               required
               placeholder="Your name"
               className="w-full bg-white border border-gray-300 px-4 py-2 rounded-md text-gray-900 
-                         dark:bg-zinc-900 dark:border-zinc-700 dark:text-white 
+                         dark:bg-white dark:border-gray-300 dark:text-gray-900 
+                         md:dark:bg-zinc-900 md:dark:border-zinc-700 md:dark:text-white
                          focus:outline-none focus:ring-2 focus:ring-[#cc595a]"
             />
           </div>
@@ -63,7 +64,8 @@ export default function ContactPage() {
               required
               placeholder="you@example.com"
               className="w-full bg-white border border-gray-300 px-4 py-2 rounded-md text-gray-900 
-                         dark:bg-zinc-900 dark:border-zinc-700 dark:text-white 
+                         dark:bg-white dark:border-gray-300 dark:text-gray-900 
+                         md:dark:bg-zinc-900 md:dark:border-zinc-700 md:dark:text-white
                          focus:outline-none focus:ring-2 focus:ring-[#cc595a]"
             />
           </div>
@@ -78,7 +80,8 @@ export default function ContactPage() {
               rows={5}
               placeholder="Tell us what’s on your mind…"
               className="w-full bg-white border border-gray-300 px-4 py-2 rounded-md text-gray-900 
-                         dark:bg-zinc-900 dark:border-zinc-700 dark:text-white 
+                         dark:bg-white dark:border-gray-300 dark:text-gray-900 
+                         md:dark:bg-zinc-900 md:dark:border-zinc-700 md:dark:text-white
                          focus:outline-none focus:ring-2 focus:ring-[#cc595a]"
             />
           </div>
