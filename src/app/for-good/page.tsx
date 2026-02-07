@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function ForGoodPage() {
   return (
-    <div className="w-full bg-background text-foreground">
+    <div className="w-full bg-[#638475] text-white">
       {/* ================= HERO ================= */}
       <section className="py-14">
         <div className="max-w-4xl mx-auto px-6">

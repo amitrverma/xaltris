@@ -29,7 +29,7 @@ export const metadata = {
 
 export default function ProductsPage() {
   return (
-    <section className="min-h-screen px-6 py-20 font-montserrat bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
+    <section className="min-h-screen px-6 py-20 font-montserrat bg-[#638475] text-white transition-colors duration-300">
       <div className="max-w-4xl mx-auto">
         {/* Page Title */}
         <h1 className="text-5xl font-extrabold mb-16 text-center text-[var(--heading)]">

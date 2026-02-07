@@ -170,7 +170,7 @@ export default function PortfolioPage() {
   }, [periodFilter]);
 
   return (
-    <section className="min-h-screen px-6 py-20 font-montserrat bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
+    <section className="min-h-screen px-6 py-20 font-montserrat bg-[#638475] text-white transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         {/* Headline + subhead */}
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-[var(--heading)] text-center">
@@ -184,15 +184,15 @@ export default function PortfolioPage() {
         </p>
 
         {/* Tabs */}
-        <div className="flex justify-center border-b border-gray-300 dark:border-zinc-700 mb-10">
+        <div className="flex justify-center gap-2 border-b border-white/30 mb-10 pb-2">
           {PERIODS.map((p) => (
             <button
               key={p}
               onClick={() => setPeriodFilter(p)}
-              className={`px-6 py-3 text-lg font-semibold transition relative ${
+              className={`px-5 py-2.5 text-lg font-semibold rounded-lg border transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 ${
                 periodFilter === p
-                  ? 'text-[var(--heading)] dark:text-white after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#cc595a]'
-                  : 'text-[var(--secondary)] dark:text-zinc-400 hover:text-[#cc595a]'
+                  ? 'bg-[#cc595a] border-[#e08a8b] text-white shadow-[0_8px_20px_-12px_rgba(204,89,90,0.9)]'
+                  : 'text-white/95 border-transparent hover:text-white hover:bg-white/12 hover:border-white/35 hover:-translate-y-0.5'
               }`}
             >
               {p}

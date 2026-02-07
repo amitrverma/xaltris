@@ -28,7 +28,7 @@ export default function ContactPage() {
   }
 
   return (
-    <section className="min-h-screen w-full bg-[var(--background)] text-[var(--foreground)] font-montserrat px-6 py-20 transition-colors duration-300">
+    <section className="min-h-screen w-full bg-[#638475] text-white font-montserrat px-6 py-20 transition-colors duration-300">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-5xl font-extrabold mb-6 text-center text-[var(--heading)]">
           Contact Me
@@ -96,9 +96,12 @@ export default function ContactPage() {
           {status === 'error' && <p className="text-red-600 dark:text-red-400">Something went wrong. Try again.</p>}
         </form>
 
-        <div className="mt-12 text-center text-sm text-[var(--foreground)]">
+        <div className="mt-12 text-center text-sm text-white/90">
           Or reach me at{' '}
-          <a href="mailto:hello@xaltris.com" className="text-[var(--secondary)] hover:underline">
+          <a
+            href="mailto:hello@xaltris.com"
+            className="inline-flex items-center rounded-md px-2 py-0.5 font-semibold text-white bg-white/12 border border-white/30 hover:bg-white/20 transition-colors"
+          >
             hello@xaltris.com
           </a>
         </div>

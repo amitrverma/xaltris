@@ -56,7 +56,7 @@ export default async function BlogPost({
   const { content, data } = matter(source)
 
   return (
-<div className="bg-[var(--background)] text-[var(--foreground)] min-h-screen transition-colors duration-300">
+<div className="bg-[#638475] text-white min-h-screen transition-colors duration-300">
   <article className="prose dark:prose-invert max-w-3xl mx-auto px-6 py-24 font-montserrat leading-relaxed space-y-6">
     <h1 className="text-4xl font-extrabold mb-2 text-[var(--foreground)]">
       {data.title}

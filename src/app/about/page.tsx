@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <section className="min-h-screen w-full bg-[var(--background)] text-[var(--foreground)] font-montserrat px-6 py-20 transition-colors duration-300">
+    <section className="min-h-screen w-full bg-[#638475] text-white font-montserrat px-6 py-20 transition-colors duration-300">
       <div className="max-w-3xl mx-auto">
 
         {/* PAGE TITLE */}

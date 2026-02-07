@@ -36,17 +36,17 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-6 text-[15px] font-medium">
+        <nav className="hidden md:flex space-x-3 text-base font-medium">
           {navItems.map(({ name, href }) => {
             const isActive = pathname === href;
             return (
               <Link
                 key={name}
                 href={href}
-                className={`px-3 py-1.5 rounded-md transition-all duration-200 ${
+                className={`px-3 py-1.5 rounded-lg border transition-all duration-200 ${
                   isActive
-                    ? "bg-[#cc595a] text-white" // active = bg + text change
-                    : "text-white hover:text-[#cc595a]" // hover = ONLY text color
+                    ? "bg-[#cc595a] border-[#e08a8b] text-white shadow-[0_8px_20px_-12px_rgba(204,89,90,0.9)]"
+                    : "text-white/95 border-transparent hover:text-white hover:bg-white/12 hover:border-white/35 hover:-translate-y-0.5"
                 }`}
               >
                 {name}
@@ -59,7 +59,7 @@ export default function Navbar() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
-          className="md:hidden p-1 rounded-md hover:bg-white/10 transition"
+          className="md:hidden p-1 rounded-md hover:bg-white/10 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
         >
           {isOpen ? (
             <X size={26} className="text-white" />
@@ -79,10 +79,10 @@ export default function Navbar() {
                 key={name}
                 href={href}
                 onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 rounded-md transition-all duration-200 ${
+                className={`block px-3 py-2 rounded-lg border transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 ${
                   isActive
-                    ? "bg-[#cc595a] text-white"
-                    : "text-white hover:text-[#cc595a]"
+                    ? "bg-[#cc595a] border-[#e08a8b] text-white"
+                    : "text-white/95 border-transparent hover:text-white hover:bg-white/12 hover:border-white/35"
                 }`}
               >
                 {name}
