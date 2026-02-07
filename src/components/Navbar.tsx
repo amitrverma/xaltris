@@ -19,7 +19,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 z-50 w-full backdrop-blur-md bg-[var(--background)]/80 border-b border-gray-200 dark:border-zinc-800 text-[var(--foreground)] px-4 sm:px-8 py-3 font-montserrat transition-colors duration-300">
+    <header className="fixed top-0 z-50 w-full backdrop-blur-md bg-[#638475]/80 border-b border-white/30 text-white px-4 sm:px-8 py-3 font-montserrat transition-colors duration-300">
       <div className="flex items-center justify-between">
         {/* Logo + Brand */}
         <Link
@@ -46,7 +46,7 @@ export default function Navbar() {
                 className={`px-3 py-1.5 rounded-md transition-all duration-200 ${
                   isActive
                     ? "bg-[#cc595a] text-white" // active = bg + text change
-                    : "text-[var(--foreground)] hover:text-[#cc595a]" // hover = ONLY text color
+                    : "text-white hover:text-[#cc595a]" // hover = ONLY text color
                 }`}
               >
                 {name}
@@ -59,19 +59,19 @@ export default function Navbar() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
-          className="md:hidden p-1 rounded-md hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
+          className="md:hidden p-1 rounded-md hover:bg-white/10 transition"
         >
           {isOpen ? (
-            <X size={26} className="text-[var(--foreground)]" />
+            <X size={26} className="text-white" />
           ) : (
-            <Menu size={26} className="text-[var(--foreground)]" />
+            <Menu size={26} className="text-white" />
           )}
         </button>
       </div>
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden mt-4 space-y-3 text-sm font-medium border-t border-gray-200 dark:border-zinc-800 pt-3">
+        <div className="md:hidden mt-4 space-y-3 text-sm font-medium border-t border-white/30 pt-3">
           {navItems.map(({ name, href }) => {
             const isActive = pathname === href;
             return (
@@ -82,7 +82,7 @@ export default function Navbar() {
                 className={`block px-3 py-2 rounded-md transition-all duration-200 ${
                   isActive
                     ? "bg-[#cc595a] text-white"
-                    : "text-[var(--foreground)] hover:text-[#cc595a]"
+                    : "text-white hover:text-[#cc595a]"
                 }`}
               >
                 {name}

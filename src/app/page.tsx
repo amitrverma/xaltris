@@ -30,9 +30,9 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen flex items-center justify-center px-4 text-center overflow-hidden bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300 font-montserrat">
+    <main className="relative min-h-screen flex items-center justify-center px-4 text-center overflow-hidden bg-[#638475] text-white transition-colors duration-300 font-montserrat">
       {/* Optional soft background gradient for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 dark:via-zinc-900/40 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent pointer-events-none" />
 
       <div className="relative z-10">
         {/* Headline */}
