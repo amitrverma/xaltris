@@ -62,17 +62,17 @@ export default function AboutPage() {
         </p>
 
         {/* SERVICE CARD 1 — FRACTIONAL CTO */}
-        <div className="bg-white dark:bg-white md:dark:bg-zinc-900 border border-gray-200 dark:border-gray-200 md:dark:border-zinc-800 rounded-2xl p-8 shadow-sm mb-12 transition-all duration-300 hover:shadow-md">
+        <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm mb-12 transition-all duration-300 hover:shadow-md">
           <h3 className="text-2xl font-semibold text-[#cc595a] mb-4">
             Fractional CTO & Technical Leadership
           </h3>
 
-          <p className="text-gray-700 dark:text-gray-700 md:dark:text-gray-300 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-4">
             For teams that need senior engineering judgment without the overhead of a
             full-time executive. I help you:
           </p>
 
-          <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-700 md:dark:text-gray-300 mb-6">
+          <ul className="list-disc list-inside space-y-2 text-gray-700 mb-6">
             <li>Design architecture and system foundations</li>
             <li>Align product direction with the right technical choices</li>
             <li>Turn ideas into clear roadmaps and realistic scopes</li>
@@ -82,35 +82,35 @@ export default function AboutPage() {
             <li>Navigate technical risks with clarity and confidence</li>
           </ul>
 
-          <p className="text-gray-700 dark:text-gray-700 md:dark:text-gray-300">
+          <p className="text-gray-700">
             You get CTO-level clarity, grounded in real-world engineering experience.
           </p>
         </div>
 
         {/* SERVICE CARD 2 — END-TO-END BUILDS */}
-        <div className="bg-white dark:bg-white md:dark:bg-zinc-900 border border-gray-200 dark:border-gray-200 md:dark:border-zinc-800 rounded-2xl p-8 shadow-sm mb-12 transition-all duration-300 hover:shadow-md">
+        <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm mb-12 transition-all duration-300 hover:shadow-md">
           <h3 className="text-2xl font-semibold text-[#cc595a] mb-4">
             End-to-End Builds
           </h3>
 
-          <p className="text-gray-700 dark:text-gray-700 md:dark:text-gray-300 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-4">
             For teams that need something built cleanly, quickly, and with full
             accountability — from architecture to deployment.
           </p>
 
-          <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-700 md:dark:text-gray-300 mb-6">
+          <ul className="list-disc list-inside space-y-2 text-gray-700 mb-6">
             <li>Custom internal tools, platforms, and workflow systems</li>
             <li>Dashboards, micro-systems, and integrations</li>
             <li>AI-enabled workflows, agents, and automation</li>
             <li>Full-stack builds, prototypes, and MVPs</li>
           </ul>
 
-          <p className="text-gray-700 dark:text-gray-700 md:dark:text-gray-300 mb-4">
+          <p className="text-gray-700 mb-4">
             You get architecture and implementation from a single senior engineer —
             clean, scoped, and shippable.
           </p>
 
-          <p className="text-gray-700 dark:text-gray-700 md:dark:text-gray-300">
+          <p className="text-gray-700">
             This is end-to-end ownership: idea → architecture → code → deployment →
             scale, with enterprise-grade standards and pragmatic AI where it helps.
           </p>
@@ -143,3 +143,6 @@ export default function AboutPage() {
     </section>
   );
 }
+
+
+

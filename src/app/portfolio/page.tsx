@@ -99,7 +99,7 @@ const PeriodBadge = ({ period }: { period: "Now" | "Past" }) => (
     className={
       period === "Now"
         ? "px-2 py-0.5 text-[10px] rounded-full bg-[#cc595a] text-white"
-        : "px-2 py-0.5 text-[10px] rounded-full bg-gray-300 text-gray-800 dark:bg-zinc-700 dark:text-zinc-200"
+        : "px-2 py-0.5 text-[10px] rounded-full bg-gray-300 text-gray-800"
     }
   >
     {period === "Now" ? "Now" : "Past"}
@@ -109,16 +109,16 @@ const PeriodBadge = ({ period }: { period: "Now" | "Past" }) => (
 const Card = ({ item }: { item: Item }) => {
   const period: "Now" | "Past" = item.period ?? "Past";
   return (
-    <div className="relative bg-white dark:bg-zinc-900 rounded-2xl p-7 shadow-sm border border-gray-200 dark:border-zinc-800 w-full max-w-[420px] mx-auto transition-colors duration-300">
+    <div className="relative bg-white rounded-2xl p-7 shadow-sm border border-gray-200 w-full max-w-[420px] mx-auto transition-colors duration-300">
       {/* Top row: category + period */}
       <div className="mb-2 flex items-center gap-2">
-        <span className="px-3 py-1 rounded-full border text-[11px] tracking-wide uppercase border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-zinc-300 bg-gray-100/80 dark:bg-zinc-800/60">
+        <span className="px-3 py-1 rounded-full border text-[11px] tracking-wide uppercase border-gray-300 text-gray-700 bg-gray-100/80">
           {item.category}
         </span>
         <PeriodBadge period={period} />
       </div>
 
-      <p className="text-[15px] leading-7 text-gray-800 dark:text-zinc-200">
+      <p className="text-[15px] leading-7 text-gray-800">
         {item.description}
       </p>
 
@@ -126,7 +126,7 @@ const Card = ({ item }: { item: Item }) => {
         <p className="text-sm font-extrabold text-[#cc595a] mb-2">
           Challenges Addressed
         </p>
-        <ul className="list-disc pl-5 text-[15px] leading-7 text-gray-700 dark:text-zinc-200 space-y-1">
+        <ul className="list-disc pl-5 text-[15px] leading-7 text-gray-700 space-y-1">
           {item.challenges.map((c, i) => <li key={i}>{c}</li>)}
         </ul>
       </div>
@@ -135,7 +135,7 @@ const Card = ({ item }: { item: Item }) => {
         <p className="text-sm font-extrabold text-[#cc595a] mb-2">
           Outcomes
         </p>
-        <ul className="list-disc pl-5 text-[15px] leading-7 text-gray-800 dark:text-zinc-100 space-y-1">
+        <ul className="list-disc pl-5 text-[15px] leading-7 text-gray-800 space-y-1">
           {item.outcomes.map((o, i) => <li key={i}>{o}</li>)}
         </ul>
       </div>
@@ -179,7 +179,7 @@ export default function PortfolioPage() {
         <h2 className="text-xl md:text-2xl font-extrabold text-center mb-2">
           A Proven Track Record at Scale
         </h2>
-        <p className=" dark:text-zinc-200 text-center max-w-3xl mx-auto mb-12 leading-8">
+        <p className=" text-center max-w-3xl mx-auto mb-12 leading-8">
           {intro}
         </p>
 
@@ -220,3 +220,6 @@ export default function PortfolioPage() {
     </section>
   );
 }
+
+
+

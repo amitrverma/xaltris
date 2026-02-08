@@ -83,7 +83,7 @@ export default function ClarityPage() {
         <h2 className="text-2xl font-semibold mb-4 text-[var(--heading)]">
           The Cost of Doing Nothing
         </h2>
-        <ul className="list-disc list-inside text-[var(--secondary)] dark:text-[#cc595a] space-y-1 mb-10 font-medium">
+        <ul className="list-disc list-inside text-[var(--secondary)] space-y-1 mb-10 font-medium">
           <li>Wasted time</li>
           <li>Burned-out employees</li>
           <li>Tools you’re still paying for but nobody uses</li>
@@ -111,3 +111,6 @@ export default function ClarityPage() {
     </section>
   );
 }
+
+
+

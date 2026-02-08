@@ -37,11 +37,11 @@ export default function ProductsPage() {
         </h1>
 
         {/* Clarity Card */}
-        <div className="bg-[var(--foreground)] dark:bg-zinc-900 rounded-2xl p-8 shadow-sm border border-gray-200 dark:border-zinc-800 mb-12 transition-all duration-300 hover:shadow-lg">
+        <div className="bg-[var(--foreground)] rounded-2xl p-8 shadow-sm border border-gray-200 mb-12 transition-all duration-300 hover:shadow-lg">
           <h2 className="text-3xl font-bold text-[var(--primary)] mb-4">
             Clarity
           </h2>
-          <p className="text-[var(--secondary)] dark:text-gray-300 mb-6 leading-relaxed">
+          <p className="text-[var(--secondary)] mb-6 leading-relaxed">
             <strong>Work Smarter. Live Healthier.</strong>
             <br />
             Clarity is a workforce well-being tool that helps businesses balance productivity and
@@ -59,11 +59,11 @@ export default function ProductsPage() {
         </div>
 
         {/* Momentum Card */}
-        <div className="bg-[var(--foreground)] dark:bg-zinc-900 rounded-2xl p-8 shadow-sm border border-gray-200 dark:border-zinc-800 transition-all duration-300 hover:shadow-lg">
+        <div className="bg-[var(--foreground)] rounded-2xl p-8 shadow-sm border border-gray-200 transition-all duration-300 hover:shadow-lg">
           <h2 className="text-3xl font-bold text-[var(--primary)] mb-4">
             Momentum
           </h2>
-          <p className="text-[var(--secondary)] dark:text-gray-300 mb-6 leading-relaxed">
+          <p className="text-[var(--secondary)] mb-6 leading-relaxed">
             <strong>Precision Meets Performance.</strong>
             <br />
             Momentum is a real-time performance management platform built for modern teams. With
@@ -83,3 +83,6 @@ export default function ProductsPage() {
     </section>
   );
 }
+
+
+

@@ -57,12 +57,12 @@ export default async function BlogPost({
 
   return (
 <div className="bg-[#638475] text-white min-h-screen transition-colors duration-300">
-  <article className="prose dark:prose-invert max-w-3xl mx-auto px-6 py-24 font-montserrat leading-relaxed space-y-6">
+  <article className="prose max-w-3xl mx-auto px-6 py-24 font-montserrat leading-relaxed space-y-6">
     <h1 className="text-4xl font-extrabold mb-2 text-[var(--foreground)]">
       {data.title}
     </h1>
     {data.date && (
-      <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+      <p className="text-sm text-gray-500 mb-6">
         {new Date(data.date).toDateString()}
       </p>
     )}
@@ -84,3 +84,4 @@ export async function generateStaticParams() {
       slug: file.replace(/\.mdx$/, ''),
     }))
 }
+

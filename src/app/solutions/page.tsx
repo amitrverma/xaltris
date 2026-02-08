@@ -37,18 +37,18 @@ export default function SolutionsPage() {
         <h1 className="text-5xl font-extrabold mb-6 text-[var(--heading)]">
           Solutions
         </h1>
-        <p className="dark:text-gray-700 md:dark:text-gray-300 mb-12 leading-relaxed max-w-3xl">
+        <p className=" mb-12 leading-relaxed max-w-3xl">
           Not every challenge needs a product. Some need judgment, speed, and
           someone who’s been there before. These are the kinds of problems we
           help solve at Xaltris.
         </p>
 
         {/* Fractional CTO */}
-        <div className="mb-12 bg-white dark:bg-white md:dark:bg-zinc-900 border border-gray-200 dark:border-gray-200 md:dark:border-zinc-800 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+        <div className="mb-12 bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
           <h2 className="text-2xl font-semibold text-[#cc595a] mb-2">
             Fractional CTO
           </h2>
-          <p className="text-gray-700 dark:text-gray-700 md:dark:text-gray-300 mb-3 leading-relaxed">
+          <p className="text-gray-700 mb-3 leading-relaxed">
             Strategic tech leadership without the full-time overhead. I help
             you architect smartly, ship faster, and avoid overengineering. Ideal
             for scaling startups or solo founders who need experienced technical
@@ -63,19 +63,19 @@ export default function SolutionsPage() {
         </div>
 
         {/* Custom Builds (Merged with AI-Powered Solutions) */}
-        <div className="mb-12 bg-white dark:bg-white md:dark:bg-zinc-900 border border-gray-200 dark:border-gray-200 md:dark:border-zinc-800 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+        <div className="mb-12 bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
           <h2 className="text-2xl font-semibold text-[#cc595a] mb-2">
             Custom-Built Solutions
           </h2>
 
-          <p className="text-gray-700 dark:text-gray-700 md:dark:text-gray-300 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-4">
             Need something that doesn’t exist yet? I design and deliver
             internal platforms, microtools, workflow fixes, and quietly
             effective AI-powered automations — all built from scratch. Clean.
             Scoped. Shippable.
           </p>
 
-          <p className="text-gray-700 dark:text-gray-700 md:dark:text-gray-300 leading-relaxed mb-3">
+          <p className="text-gray-700 leading-relaxed mb-3">
             I use AI only where it solves a real operational problem — not to
             experiment, not to add complexity, and never as a gimmick. Just
             pragmatic, efficient, low-drama AI woven into custom solutions when
@@ -94,3 +94,6 @@ export default function SolutionsPage() {
     </section>
   );
 }
+
+
+
