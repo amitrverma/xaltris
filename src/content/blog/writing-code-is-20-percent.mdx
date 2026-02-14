@@ -1,0 +1,314 @@
+---
+title: "Writing Code Is the Smallest Part of Shipping Software"
+description: "Coding is only a fraction of enterprise delivery; the real constraints are coordination, decisions, and release gates."
+author: "Amit Verma"
+date: "2026-02-14"
+---
+
+<div className="not-prose text-sm uppercase tracking-[0.2em] text-white/60">
+  The local-maxima problem in enterprise software
+</div>
+
+<div className="not-prose mt-4 text-lg text-white/90">
+  There's a particular breed of hype cycle that tech loves: the "X will replace Y" narrative.
+  Right now, that narrative is <strong>"AI agents will replace software engineers."</strong>
+</div>
+
+<div className="not-prose text-white/85">
+  It sounds dramatic. It attracts funding. It triggers anxiety.
+  But it misses a fundamental truth.
+</div>
+
+<blockquote>
+Coding is only about 20% of enterprise software development.
+</blockquote>
+
+<div className="not-prose my-8 grid gap-4 sm:grid-cols-2">
+  <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+    <div className="text-xs uppercase tracking-widest text-white/60">What AI optimizes</div>
+    <div className="mt-2 text-base font-semibold text-white">Local code production</div>
+    <div className="mt-2 text-sm text-white/75">Boilerplate, tests, refactors, and syntax.</div>
+  </div>
+  <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+    <div className="text-xs uppercase tracking-widest text-white/60">What slows delivery</div>
+    <div className="mt-2 text-base font-semibold text-white">Coordination and decisions</div>
+    <div className="mt-2 text-sm text-white/75">Approvals, ambiguity, and cross-team gates.</div>
+  </div>
+</div>
+
+<div className="not-prose">
+  If you automate 20% of a process, you don't revolutionize it.
+  You make it incrementally better.
+</div>
+
+<div className="not-prose my-10 rounded-2xl border border-white/10 bg-[#0f2f2f]/40 p-6">
+  <div className="text-xs uppercase tracking-[0.25em] text-white/60">TL;DR</div>
+  <ul className="mt-3 space-y-2 text-sm text-white/85">
+    <li><span className="font-semibold text-[var(--muted)]">Local wins:</span> AI compresses coding time.</li>
+    <li><span className="font-semibold text-[var(--muted)]">Global reality:</span> delivery is bottlenecked by people, process, and gates.</li>
+    <li><span className="font-semibold text-[var(--muted)]">Implication:</span> engineers shift up the stack to judgment, design, and alignment.</li>
+  </ul>
+</div>
+
+---
+
+## How Enterprise Software Actually Happens
+
+Before we talk about what AI can and can't do, we need to understand what building enterprise software actually involves.
+Not the startup blog version -- the **messy, political, bureaucratic reality** of large organizations.
+
+Picture this: a business leader wants a feature.  
+A dashboard. An integration. A workflow automation.  
+Something "simple."
+
+Here's what happens next -- not in theory, but in practice:
+
+<div className="not-prose my-8 grid gap-4">
+  <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+    <div className="text-sm font-semibold text-white">Requirements and Planning <span className="text-white/60">(20-30%)</span></div>
+    <div className="mt-2 text-sm text-white/75">Business cases, stakeholder alignment, conflicting needs, review cycles, scope negotiations, budget approvals.</div>
+  </div>
+  <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+    <div className="text-sm font-semibold text-white">Design and Architecture <span className="text-white/60">(10-15%)</span></div>
+    <div className="mt-2 text-sm text-white/75">Architecture review boards, design docs, schema debates, integration patterns, "make it pop" rounds.</div>
+  </div>
+  <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+    <div className="text-sm font-semibold text-white">Actual Coding <span className="text-white/60">(15-25%)</span></div>
+    <div className="mt-2 text-sm text-white/75">Logic, tests, reviews, bug fixes -- often the shortest phase.</div>
+  </div>
+  <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+    <div className="text-sm font-semibold text-white">Testing and QA <span className="text-white/60">(15-20%)</span></div>
+    <div className="mt-2 text-sm text-white/75">Test plans, integration cycles, UAT delays, performance issues, security findings.</div>
+  </div>
+  <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+    <div className="text-sm font-semibold text-white">Deployment and Release <span className="text-white/60">(10-15%)</span></div>
+    <div className="mt-2 text-sm text-white/75">Environment setup, CAB approvals, Sunday-night release windows, rollback planning.</div>
+  </div>
+  <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+    <div className="text-sm font-semibold text-white">Overhead and Coordination <span className="text-white/60">(15-25%)</span></div>
+    <div className="mt-2 text-sm text-white/75">Status meetings, approvals, dependencies, documentation, training, handoffs.</div>
+  </div>
+</div>
+
+Do the math.  
+A developer might spend **2-3 hours per day actually writing code.**  
+The rest is meetings, coordination, and context switching.
+
+---
+
+## What AI Agents Are Actually Good At
+
+AI coding agents are genuinely impressive at specific tasks:
+
+<div className="not-prose my-6 grid gap-2 sm:grid-cols-2">
+  <div className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/85">Generate boilerplate faster than humans</div>
+  <div className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/85">Autocomplete functions based on context</div>
+  <div className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/85">Convert natural language into working code</div>
+  <div className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/85">Write unit tests</div>
+  <div className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/85">Refactor existing code</div>
+  <div className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/85">Generate documentation</div>
+  <div className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/85">Debug syntax errors</div>
+</div>
+
+These are real productivity gains.  
+A developer might be **2-5x faster** at routine coding.
+
+But here's what that means for the overall timeline:  
+If coding was 20% of the project, maybe it becomes 5-10%.  
+You've shaved **10-15% off total duration.**
+
+<blockquote>
+Local optimization is not the same as global acceleration.
+</blockquote>
+
+---
+
+## The 80% That AI Can't Touch
+
+Let's be blunt about what AI agents can't do -- which happens to be most of the work:
+
+<div className="not-prose my-6 space-y-3">
+  <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+    <div className="font-semibold text-white">They can't navigate organizational politics.</div>
+    <div className="mt-1 text-sm text-white/75">When Sales wants speed, Security wants compliance, and Infrastructure wants stability, no AI agent is in the steering committee.</div>
+  </div>
+  <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+    <div className="font-semibold text-white">They can't extract tacit knowledge.</div>
+    <div className="mt-1 text-sm text-white/75">"We need better reporting" often means "I need proof my team isn't causing delays." AI doesn't catch that subtext.</div>
+  </div>
+  <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+    <div className="font-semibold text-white">They can't build trust and consensus.</div>
+    <div className="mt-1 text-sm text-white/75">Enterprise decisions are social as much as technical. Progress depends on relationships, not just logic.</div>
+  </div>
+  <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+    <div className="font-semibold text-white">They can't resolve ambiguity.</div>
+    <div className="mt-1 text-sm text-white/75">Contradictions get resolved through judgment and trade-offs, not code generation.</div>
+  </div>
+  <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+    <div className="font-semibold text-white">They can't shepherd releases across teams.</div>
+    <div className="mt-1 text-sm text-white/75">Compliance gates and global deployment windows are not problems you solve with a faster generator.</div>
+  </div>
+  <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+    <div className="font-semibold text-white">They can't decide what to build.</div>
+    <div className="mt-1 text-sm text-white/75">The hardest question isn't "how do we implement this?" It's "should we build it at all?"</div>
+  </div>
+</div>
+
+---
+
+## The Real Bottlenecks
+
+What actually delays enterprise projects?
+
+<ul className="not-prose my-6 list-disc pl-5 text-sm text-white/85">
+  <li>Two-week waits for architecture review boards</li>
+  <li>Months of requirements churn</li>
+  <li>UAT schedules pushed to "next quarter"</li>
+  <li>Quarterly release windows you just missed</li>
+  <li>Security reviews handled by one person for 40 teams</li>
+  <li>Procurement negotiations that outlast development</li>
+</ul>
+
+Notice what's not on this list?  
+**"Developers typing too slowly."**
+
+The bottleneck isn't code production.  
+It's coordination, communication, consensus, and organizational structure.
+
+---
+
+## AI as Local Maxima, Not a Global Solution
+
+AI agents are exceptionally good at local optimization.  
+They excel inside the bounded context of **"turn this requirement into working code."**
+
+But enterprise software development is a **global optimization problem.**
+
+<div className="not-prose my-6 overflow-hidden rounded-xl border border-white/10">
+  <table className="w-full text-left text-sm">
+    <thead className="bg-white/5">
+      <tr>
+        <th className="px-4 py-3 font-semibold text-white">Local Optimization</th>
+        <th className="px-4 py-3 font-semibold text-white">Global Reality</th>
+      </tr>
+    </thead>
+    <tbody className="text-white/80">
+      <tr className="border-t border-white/10">
+        <td className="px-4 py-3">Faster code generation</td>
+        <td className="px-4 py-3">Requirements still take months to align</td>
+      </tr>
+      <tr className="border-t border-white/10">
+        <td className="px-4 py-3">More tests per sprint</td>
+        <td className="px-4 py-3">Security reviews are backlogged</td>
+      </tr>
+      <tr className="border-t border-white/10">
+        <td className="px-4 py-3">Cleaner refactors</td>
+        <td className="px-4 py-3">Release windows are quarterly</td>
+      </tr>
+      <tr className="border-t border-white/10">
+        <td className="px-4 py-3">Faster bug fixes</td>
+        <td className="px-4 py-3">UAT and approvals wait for availability</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+> Technology solves technology problems. It doesn't solve people problems.
+
+We've seen this pattern before:
+
+- Git didn't fix poor release planning  
+- Kubernetes didn't fix unclear deployment requirements  
+- Agile tools didn't fix dysfunctional teams  
+- DevOps automation didn't fix organizational silos  
+- AI won't fix misaligned incentives or ambiguous scope  
+
+---
+
+## What Actually Changes
+
+So if AI agents won't replace software engineers, what will they do?
+
+**They'll shift where engineers spend time.**  
+Less on boilerplate. More on:
+
+<ul className="not-prose my-4 grid gap-2 text-sm text-white/85 sm:grid-cols-2">
+  <li className="rounded-lg border border-white/10 bg-white/5 px-4 py-3">Requirements archaeology</li>
+  <li className="rounded-lg border border-white/10 bg-white/5 px-4 py-3">System design and trade-offs</li>
+  <li className="rounded-lg border border-white/10 bg-white/5 px-4 py-3">Integration across messy systems</li>
+  <li className="rounded-lg border border-white/10 bg-white/5 px-4 py-3">Sociotechnical problem-solving</li>
+  <li className="rounded-lg border border-white/10 bg-white/5 px-4 py-3">Quality judgment</li>
+  <li className="rounded-lg border border-white/10 bg-white/5 px-4 py-3">Organizational navigation</li>
+</ul>
+
+The job becomes less about syntax and more about context.  
+Less "how do I implement this?"  
+More "should we build this, and how does it fit?"
+
+**AI will make good teams great.**  
+Organizations with clear requirements, empowered teams, and fast feedback loops  
+will see meaningful acceleration.
+
+**AI will not make dysfunctional teams functional.**  
+If your delays come from approvals, politics, and unclear ownership,  
+AI just makes engineers idle faster.
+
+---
+
+## The Uncomfortable Truth
+
+Most enterprise software problems are **human problems, not code problems.**
+
+Projects slip because:
+
+- Requirements changed midstream  
+- Teams don't communicate  
+- Security and compliance gates are overloaded  
+- Business users skip UAT until the last week  
+- The "critical integration" never showed up  
+- Nobody validated the problem before building  
+
+AI can write the code.  
+It can't fix your organization.
+
+---
+
+## What This Means for Developers
+
+If you're worried about AI taking your job, here's the real advice:
+
+<div className="not-prose my-6 rounded-2xl border border-white/10 bg-white/5 p-6">
+  <div className="text-lg font-semibold text-white">
+    Stop worrying about AI taking your job. Start worrying about being the kind of engineer who only writes code.
+  </div>
+  <div className="mt-3 text-sm text-white/75">
+    The engineers who thrive are the ones who can translate context into action and align teams around real constraints.
+  </div>
+</div>
+
+The engineers who will thrive are those who:
+
+- Understand the business domain well enough to challenge assumptions  
+- Communicate technical trade-offs to non-technical stakeholders  
+- Navigate organizational complexity to get things done  
+- Make sound architectural decisions under uncertainty  
+- Build relationships across team boundaries  
+- Know when not to build something  
+
+These skills have always mattered.  
+AI just makes them non-optional.
+
+---
+
+## The Bottom Line
+
+AI coding agents are real productivity tools.  
+They'll change how software gets written.  
+They'll compress the coding phase.
+
+But they won't revolutionize enterprise software development,  
+because enterprise software development is only **20% about code.**
+
+The other 80%?  
+That's still on us humans.  
+And honestly, that's the hard part anyway.
