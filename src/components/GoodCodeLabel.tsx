@@ -1,6 +1,6 @@
 export default function GoodCodeLabel({ className = "" }) {
   return (
-    <span className={`tracking-tight ${className}`}>
+    <span className={className}>
       The Good{" "}
       <span className="whitespace-nowrap">
         <span className="text-white">&lsaquo;</span>

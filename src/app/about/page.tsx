@@ -8,12 +8,6 @@ import {
   Target,
 } from "lucide-react";
 import Image from "next/image";
-import { Playfair_Display } from "next/font/google";
-
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["700", "800"],
-});
 
 export const metadata = {
   title: "About | Xaltris Technologies",
@@ -88,7 +82,7 @@ const careerArc = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#638475] px-6 py-24 text-white font-montserrat transition-colors duration-300 sm:py-28">
+    <main className="min-h-screen bg-[#4f7466] px-6 py-24 text-white transition-colors duration-300 sm:py-28">
       <div className="mx-auto max-w-7xl">
         <section className="grid gap-12 border-b border-white/12 pb-14 lg:min-h-[34rem] lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-16">
           <aside className="lg:flex lg:h-full lg:items-center lg:justify-center">
@@ -105,13 +99,13 @@ export default function AboutPage() {
               </div>
 
               <div className="border-t border-white/12 pt-5 lg:mt-7">
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#e7d281]">
+                <p className="type-kicker text-[#d9bf69]">
                   Amit Verma
                 </p>
-                <p className="mt-3 max-w-md text-2xl font-bold leading-tight tracking-[-0.02em] text-[#f8f4ee] sm:text-3xl">
+                <p className="type-card-title mt-3 max-w-md text-white">
                   Builder. Technologist. Problem solver.
                 </p>
-                <p className="mt-4 max-w-md text-base leading-7 text-white/74">
+                <p className="type-body mt-4 max-w-md text-white">
                   22 years building and scaling technology systems across
                   products, teams, and business contexts.
                 </p>
@@ -131,16 +125,16 @@ export default function AboutPage() {
 
           <div>
             <h1
-              className={`${playfairDisplay.className} max-w-4xl text-[4.35rem] font-extrabold leading-[0.92] tracking-[-0.035em] text-white sm:text-[5.3rem] md:text-[6.5rem] lg:text-[7.2rem]`}
+              className="type-hero max-w-4xl text-white"
             >
               Fractional CTO.
             </h1>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl sm:leading-9">
+            <p className="type-lead mt-8 max-w-2xl text-white">
               Hi, I am Amit Verma. I started Xaltris in June 2025 to work with
               early-stage startups as a fractional CTO, helping them turn product
               ideas into working software.
             </p>
-            <div className="mt-6 max-w-2xl space-y-5 text-base leading-7 text-white/74 sm:text-lg sm:leading-8">
+            <div className="type-body-lg mt-6 max-w-2xl space-y-5 text-white">
               <p>
                 I do this by combining CTO-level judgment with hands-on product
                 engineering. Supported by AI, I personally handle the full
@@ -158,26 +152,26 @@ export default function AboutPage() {
 
         <section className="grid gap-14 py-16 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#e7d281]">
+            <p className="type-kicker text-[#d9bf69]">
               About me
             </p>
             <h2
-              className={`${playfairDisplay.className} mt-5 max-w-xl text-4xl font-extrabold leading-[0.98] tracking-[-0.03em] text-[#f8f4ee] sm:text-5xl lg:text-[3.7rem]`}
+              className="type-section-title mt-5 max-w-xl text-white"
             >
               I hold the thread from product thinking to technical delivery.
             </h2>
           </div>
 
-          <div className="space-y-6 text-lg leading-8 text-white/84 sm:text-xl sm:leading-9">
+          <div className="type-lead space-y-6 text-white">
             <p>
               I am a technology leader with{" "}
-              <span className="font-bold text-[#e7d281]">22 years</span> of
+              <span className="font-bold text-[#d9bf69]">22 years</span> of
               experience building and scaling robust software systems across
               domains.
             </p>
             <p>
               As a{" "}
-              <span className="font-bold text-[#e7d281]">
+              <span className="font-bold text-[#d9bf69]">
                 fractional CTO and hands-on builder,
               </span>{" "}
               I help founders turn ambiguous ideas into usable, scalable products
@@ -185,7 +179,7 @@ export default function AboutPage() {
             </p>
             <p>
               I combine{" "}
-              <span className="font-bold text-[#e7d281]">
+              <span className="font-bold text-[#d9bf69]">
                 AI-accelerated development
               </span>{" "}
               with senior engineering judgment, so speed improves without losing
@@ -197,13 +191,13 @@ export default function AboutPage() {
         <section className="border-t border-white/12 py-14">
           <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#e7d281]">
+              <p className="type-kicker text-[#d9bf69]">
                 Corporate foundation
               </p>
-              <h2 className="mt-4 max-w-md text-3xl font-bold leading-tight tracking-[-0.03em] text-[#f8f4ee] sm:text-4xl">
+              <h2 className="type-subsection-title mt-4 max-w-md text-white">
                 Enterprise depth without enterprise drag.
               </h2>
-              <p className="mt-5 max-w-lg text-base leading-7 text-white/72">
+              <p className="type-body mt-5 max-w-lg text-white">
                 Before Xaltris, I spent two decades inside product and engineering
                 organizations where software had to survive real scale, governance,
                 security, delivery pressure, and changing business needs.
@@ -212,7 +206,7 @@ export default function AboutPage() {
                 {careerArc.map((role) => (
                   <p
                     key={role}
-                    className="border-l-2 border-[#e7d281] pl-4 text-base font-semibold leading-7 text-white/88"
+                    className="type-body border-l-2 border-[#d9bf69] pl-4 font-semibold text-white"
                   >
                     {role}
                   </p>
@@ -227,20 +221,20 @@ export default function AboutPage() {
                     key={label}
                     className={`${index > 1 ? "sm:border-t sm:border-white/10 sm:pt-7" : "sm:border-t-0 sm:pt-0"} border-t border-white/10 pt-7 first:border-t-0 first:pt-0`}
                   >
-                    <p className="text-[0.78rem] font-semibold uppercase tracking-[0.2em] text-[#e7d281]">
+                    <p className="type-meta text-[#d9bf69]">
                       {String(index + 1).padStart(2, "0")}
                     </p>
-                    <h3 className="mt-3 text-xl font-bold leading-tight tracking-[-0.02em] text-[#f8f4ee]">
+                    <h3 className="type-card-title mt-3 text-white">
                       {label}
                     </h3>
-                    <p className="mt-3 text-base leading-7 text-white/74">
+                    <p className="type-body mt-3 text-white">
                       {detail}
                     </p>
                   </article>
                 ))}
               </div>
 
-              <p className="mt-9 border-l border-white/16 pl-5 text-base leading-7 text-white/66 sm:text-lg">
+              <p className="type-body-lg mt-9 border-l border-white/16 pl-5 text-white">
                 That background is why Xaltris is not just about moving fast. It
                 is about building with the discipline learned from SaaS products,
                 BPM platforms, cloud migration, observability, automation, and
@@ -253,13 +247,13 @@ export default function AboutPage() {
         <section className="border-t border-white/12 py-14">
           <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#e7d281]">
+              <p className="type-kicker text-[#d9bf69]">
                 How I work
               </p>
-              <h2 className="mt-4 max-w-md text-3xl font-bold leading-tight tracking-[-0.03em] text-[#f8f4ee] sm:text-4xl">
+              <h2 className="type-subsection-title mt-4 max-w-md text-white">
                 One clear operating model.
               </h2>
-              <p className="mt-5 max-w-lg text-base leading-7 text-white/72">
+              <p className="type-body mt-5 max-w-lg text-white">
                 The same person shaping the product also guides the technical
                 decisions, the build, and the path to a working system.
               </p>
@@ -272,14 +266,14 @@ export default function AboutPage() {
                   className={`${index > 1 ? "sm:border-t sm:border-white/10 sm:pt-7" : "sm:border-t-0 sm:pt-0"} border-t border-white/10 pt-7 first:border-t-0 first:pt-0`}
                 >
                   <div className="flex items-start gap-4">
-                    <span className="mt-1 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 text-[#e7d281]">
+                    <span className="mt-1 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 text-[#d9bf69]">
                       <Icon className="h-6 w-6" strokeWidth={1.9} />
                     </span>
                     <div>
-                      <h3 className="text-xl font-bold leading-tight tracking-[-0.02em] text-[#f8f4ee]">
+                      <h3 className="type-card-title text-white">
                         {title}
                       </h3>
-                      <p className="mt-3 text-base leading-7 text-white/74">
+                      <p className="type-body mt-3 text-white">
                         {description}
                       </p>
                     </div>
@@ -292,10 +286,10 @@ export default function AboutPage() {
 
         <section className="grid gap-10 border-t border-white/12 py-14 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#e7d281]">
+            <p className="type-kicker text-[#d9bf69]">
               Credentials
             </p>
-            <h2 className="mt-4 text-3xl font-bold tracking-[-0.03em] text-[#f8f4ee] sm:text-4xl">
+            <h2 className="type-subsection-title mt-4 text-white">
               Technical depth and business context.
             </h2>
           </div>
@@ -303,11 +297,11 @@ export default function AboutPage() {
           <div className="grid gap-6 sm:grid-cols-2">
             {credentials.map(({ title, institution, Icon }) => (
               <article key={title} className="border-t border-white/10 pt-6">
-                <Icon className="h-8 w-8 text-[#e7d281]" strokeWidth={1.8} />
-                <p className="mt-4 text-3xl font-bold tracking-[-0.03em] text-[#f8f4ee]">
+                <Icon className="h-8 w-8 text-[#d9bf69]" strokeWidth={1.8} />
+                <p className="mt-4 text-3xl font-bold text-white">
                   {title}
                 </p>
-                <p className="mt-2 text-base leading-7 text-white/74">
+                <p className="type-body mt-2 text-white">
                   {institution}
                 </p>
               </article>
@@ -316,20 +310,20 @@ export default function AboutPage() {
         </section>
 
         <section className="border-t border-white/12 pt-12 text-center">
-          <p className="mx-auto max-w-4xl text-xl font-semibold leading-9 tracking-[-0.02em] text-[#f8f4ee] sm:text-2xl sm:leading-10">
+          <p className="mx-auto max-w-4xl text-xl font-semibold leading-9 text-white sm:text-2xl sm:leading-10">
             The value is not just speed. It is continuity of thought: product,
             architecture, delivery, and outcome shaped by the same judgment.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-start justify-center gap-x-6 gap-y-2 text-[1.25rem] font-bold tracking-[-0.02em] text-[#f8f4ee] sm:gap-x-8 sm:text-[1.55rem]">
-            <span className="hidden h-px w-16 bg-[#e7d281] sm:block" />
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[1.25rem] font-bold leading-none text-white sm:gap-x-8 sm:text-[1.55rem]">
+            <span className="hidden h-px w-16 bg-[#d9bf69] sm:block" />
             <p>
-              Powered by <span className="text-[#e7d281]">AI.</span>
+              Powered by <span className="text-[#d9bf69]">AI.</span>
             </p>
             <p className="text-right">
-              Shaped by <span className="text-[#e7d281]">OI.</span>
+              Shaped by <span className="text-[#d9bf69]">OI.</span>
             </p>
-            <span className="hidden h-px w-16 bg-[#e7d281] sm:block" />
+            <span className="hidden h-px w-16 bg-[#d9bf69] sm:block" />
           </div>
         </section>
       </div>

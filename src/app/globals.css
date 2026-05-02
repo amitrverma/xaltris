@@ -1,14 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 @import "tailwindcss";
 
 /* ↓ Custom Variables and Styles ↓ */
 
 :root {
-  --background: #638475;
+  --background: #4f7466;
   --foreground: #ffffff;
-  --secondary: #042a2b;
-  --muted: #e7d281; /* Tailwind gray-600 */
-  --primary: #cc595a; /* brand secondary */
+  --secondary: #183a34;
+  --brand-deep: #183a34;
+  --brand-green: #4f7466;
+  --brand-sage: #d7ddd6;
+  --brand-cream: #f7f2ea;
+  --brand-ink: #162f2a;
+  --brand-muted: #53675f;
+  --brand-gold: #d9bf69;
+  --primary: #cc595a;
 }
 
 html {
@@ -19,61 +24,140 @@ html {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-montserrat);
+  --font-display: var(--font-playfair);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-family: var(--font-montserrat), Helvetica, sans-serif;
+  font-size: 1rem;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
 }
 
+.type-kicker {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.type-hero {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(3.45rem, 12vw, 7rem);
+  font-weight: 800;
+  line-height: 0.94;
+}
+
+.type-home-hero {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(3.45rem, 13vw, 8.4rem);
+  font-weight: 800;
+  line-height: 0.9;
+}
+
+.type-hero-metric {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(3.3rem, 8vw, 5.75rem);
+  font-weight: 800;
+  line-height: 0.88;
+}
+
+.type-section-title {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(2.5rem, 6vw, 3.8rem);
+  font-weight: 800;
+  line-height: 0.98;
+}
+
+.type-subsection-title {
+  font-size: clamp(1.875rem, 4vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.type-card-title {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.type-lead {
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  line-height: 1.8;
+}
+
+.type-body {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.type-body-lg {
+  font-size: clamp(1rem, 1.7vw, 1.125rem);
+  line-height: 1.78;
+}
+
+.type-small {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.type-meta {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 /* --- Tailwind Typography Tweaks --- */
 .prose {
-  max-width: 70ch;
   margin: 0 auto;
   padding: 2rem 1rem;
+  color: var(--brand-ink);
 }
 
 .prose h1, .prose h2, .prose h3 {
+  font-family: var(--font-playfair), Georgia, serif;
   font-weight: 700;
-  color: var(--foreground);
-  line-height: 1.3;
+  color: var(--brand-ink);
+  line-height: 1.18;
   margin-top: 3rem;
   margin-bottom: 1rem;
 }
 
 .prose p {
-  color: var(--foreground);
+  color: #334c45;
   font-weight: 400;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
 .prose strong {
-  color: var(--foreground);
+  color: var(--brand-ink);
 }
 
 .prose em {
-  color: var(--foreground);
+  color: #334c45;
 }
 
 .prose blockquote {
   border-left: 4px solid var(--primary);
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: #fffaf2;
   padding: 1rem 1.5rem;
   font-style: italic;
-  color: var(--muted);
+  color: #334c45;
   border-radius: 6px;
   margin: 1.5rem 0;
 }
 
 .prose a {
-  color: var(--secondary);
+  color: var(--primary);
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
 }
 
 .prose-invert h1,
@@ -95,31 +179,6 @@ body {
   background-size: 64px 64px;
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent 78%);
   opacity: 0.18;
-}
-
-.hero-orb {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(70px);
-  opacity: 0.42;
-  animation: heroFloat 14s ease-in-out infinite;
-}
-
-.hero-orb-left {
-  top: 8%;
-  left: -8%;
-  height: 18rem;
-  width: 18rem;
-  background: rgba(231, 210, 129, 0.22);
-}
-
-.hero-orb-right {
-  right: -6%;
-  bottom: 18%;
-  height: 20rem;
-  width: 20rem;
-  background: rgba(204, 89, 90, 0.22);
-  animation-delay: -6s;
 }
 
 .hero-reveal {
@@ -205,21 +264,17 @@ body {
   transform-origin: center;
 }
 
+.hero-software-word {
+  font-family: Cubao, Impact, Haettenschweiler, "Arial Black", sans-serif;
+  font-stretch: expanded;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
 @keyframes heroReveal {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes heroFloat {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-
-  50% {
-    transform: translate3d(0, -18px, 0) scale(1.05);
   }
 }
 

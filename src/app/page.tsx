@@ -1,13 +1,6 @@
-import { Playfair_Display } from 'next/font/google'
-import Image from 'next/image'
 import Link from 'next/link'
 
 import FaqSection from '../components/FaqSection'
-
-const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['700', '800'],
-})
 
 const secondFoldOutcomes = [
   {
@@ -70,10 +63,8 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
-      <main className="relative overflow-hidden bg-[#638475] px-6 py-6 text-white font-montserrat transition-colors duration-300 sm:py-8">
+      <main className="relative overflow-hidden bg-[#4f7466] px-6 py-6 text-white transition-colors duration-300 sm:py-8">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="hero-orb hero-orb-left" />
-          <div className="hero-orb hero-orb-right" />
           <div className="hero-grid" />
         </div>
 
@@ -82,11 +73,11 @@ export default function HomePage() {
             <div className="mx-auto w-full max-w-6xl">
               <div className="grid gap-12 lg:grid-cols-[1.28fr_0.72fr] lg:items-end">
                 <h1
-                  className={`${playfairDisplay.className} max-w-none text-[3.55rem] font-extrabold leading-[0.9] tracking-[-0.035em] text-white sm:text-[5.5rem] md:text-[7rem] lg:text-[7.8rem] xl:text-[8.4rem]`}
+                  className="type-home-hero max-w-none text-white"
                 >
                   <span className="hero-reveal block whitespace-nowrap">From idea</span>
                   <span className="hero-reveal block whitespace-nowrap hero-delay-1">to working</span>
-                  <span className="hero-reveal block whitespace-nowrap hero-delay-2 text-[#f8f4ee]">
+                  <span className="hero-reveal block whitespace-nowrap hero-delay-2 text-white">
                     software
                   </span>
                 </h1>
@@ -94,7 +85,7 @@ export default function HomePage() {
                 <div className="hero-proof-wrap hero-reveal hero-delay-3 lg:pb-4">
                   <div className="hero-proof-rail" />
                   <div
-                    className={`${playfairDisplay.className} hero-proof-stack text-left text-[3.3rem] font-extrabold leading-[0.88] tracking-[-0.045em] text-[#f0d57c] sm:text-[4.25rem] md:text-[5.1rem] lg:text-right lg:text-[5.75rem]`}
+                    className="type-hero-metric hero-proof-stack text-left text-[#d9bf69] lg:text-right"
                   >
                     <p className="hero-metric-reveal hero-metric-delay-1">
                       <span className="hero-proof-line whitespace-nowrap">8X Faster</span>
@@ -112,15 +103,16 @@ export default function HomePage() {
               <div className="mx-auto mt-12 h-px w-36 bg-gradient-to-r from-transparent via-white/28 to-transparent sm:mt-14 sm:w-48 lg:mt-16" />
 
               <div className="hero-image-pop mx-auto mt-12 flex w-full justify-center sm:mt-14 lg:mt-16">
-                  <Image
-                    src="/software.png"
-                    alt="Software done right"
-                    width={5000}
-                    height={1812}
-                    priority
-                    className="h-auto w-full max-w-[18rem] sm:max-w-[26rem] md:max-w-[34rem] lg:max-w-[40rem]"
-                    sizes="(max-width: 640px) 288px, (max-width: 768px) 416px, (max-width: 1024px) 544px, 640px"
-                  />
+                <div className="text-center">
+                  <p className="hero-software-word text-[3.4rem] font-extrabold leading-none text-white sm:text-[5.4rem] md:text-[7rem] lg:text-[8rem]">
+                    SOFTW<span className="text-[#d67f67]">A</span>RE
+                  </p>
+                  <p
+                    className="font-display mt-4 text-[2.8rem] font-extrabold leading-none text-white sm:text-[4rem] md:text-[5rem]"
+                  >
+                    Done right!
+                  </p>
+                </div>
               </div>
             </div>
           </section>
@@ -130,15 +122,15 @@ export default function HomePage() {
               <div className="grid gap-14 lg:grid-cols-[0.98fr_1.02fr] lg:gap-16">
                 <div>
                   <h2
-                    className={`${playfairDisplay.className} max-w-2xl text-4xl font-extrabold leading-[0.98] tracking-[-0.03em] text-[#f8f4ee] sm:text-5xl lg:text-[3.7rem]`}
+                    className="type-section-title max-w-2xl text-white"
                   >
                     Fractional CTO, who builds!
                   </h2>
-                  <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl sm:leading-9">
+                  <p className="type-lead mt-6 max-w-2xl text-white">
                     Xaltris is{" "}
                     <Link
                       href="/about"
-                      className="font-semibold text-[#f8f4ee] underline decoration-white/35 underline-offset-4 transition-colors hover:text-[#e7d281] hover:decoration-[#e7d281]"
+                      className="font-semibold text-white underline decoration-white/45 underline-offset-4 transition-colors hover:text-[#d9bf69] hover:decoration-[#d9bf69]"
                     >
                       my
                     </Link>{" "}
@@ -146,18 +138,18 @@ export default function HomePage() {
                     Original Intelligence, to provide strategic technology
                     solutions (Fractional CTO and software development).
                   </p>
-                  <p className="mt-5 max-w-2xl text-lg font-semibold leading-8 text-[#f8f4ee] sm:text-xl sm:leading-9">
-                    Powered by <span className="text-[#e7d281]">AI.</span> Shaped
-                    by <span className="text-[#e7d281]">OI.</span>
+                  <p className="type-lead mt-5 max-w-2xl font-semibold text-white">
+                    Powered by <span className="text-[#d9bf69]">AI.</span> Shaped
+                    by <span className="text-[#d9bf69]">OI.</span>
                   </p>
 
                   <div className="mt-9 grid gap-5 border-t border-white/12 pt-6 sm:grid-cols-3">
                     {secondFoldProof.map(([value, label]) => (
                       <div key={value}>
-                        <p className="text-2xl font-extrabold tracking-[-0.03em] text-[#f8f4ee]">
+                        <p className="text-2xl font-extrabold text-white">
                           {value}
                         </p>
-                        <p className="mt-2 text-sm leading-6 text-white/66">
+                        <p className="type-small mt-2 text-white">
                           {label}
                         </p>
                       </div>
@@ -167,40 +159,40 @@ export default function HomePage() {
                   <div className="mt-9 flex flex-col gap-4 sm:flex-row">
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-center rounded-2xl border border-[#e08a8b] bg-[#cc595a] px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:brightness-105"
+                      className="inline-flex items-center justify-center rounded-md border border-[#e08a8b] bg-[#cc595a] px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:brightness-105"
                     >
                       Start a conversation
                     </Link>
                     <Link
                       href="/about"
-                      className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-white/8 px-7 py-3.5 text-base font-semibold text-white/95 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/35 hover:bg-white/12"
+                      className="inline-flex items-center justify-center rounded-md border border-white/28 bg-white/10 px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/45 hover:bg-white/14"
                     >
                       More About Me
                     </Link>
                   </div>
 
-                  <p className="mt-8 max-w-xl border-l border-white/16 pl-5 text-base leading-7 text-white/66 sm:text-lg">
+                  <p className="type-body-lg mt-8 max-w-xl border-l border-white/16 pl-5 text-white">
                     Built for the phase where you need senior judgment before you
                     are ready for a full senior team.
                   </p>
                 </div>
 
                 <div className="lg:pt-2">
-                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#e7d281]">
+                  <p className="type-kicker text-[#d9bf69]">
                     What you get
                   </p>
                   <div className="mt-6 grid gap-7">
                     {secondFoldOutcomes.map(({ label, copy }, index) => (
                       <article key={label} className="border-t border-white/10 pt-6">
                         <div className="grid gap-4 sm:grid-cols-[4rem_1fr]">
-                          <p className="text-[0.78rem] font-semibold uppercase tracking-[0.2em] text-[#e7d281]">
+                            <p className="type-meta text-[#d9bf69]">
                             {String(index + 1).padStart(2, '0')}
                           </p>
                           <div>
-                            <h3 className="text-2xl font-bold leading-tight tracking-[-0.025em] text-[#f8f4ee]">
+                            <h3 className="type-card-title text-white">
                               {label}
                             </h3>
-                            <p className="mt-3 max-w-xl text-base leading-7 text-white/74 sm:text-lg sm:leading-8">
+                            <p className="type-body-lg mt-3 max-w-xl text-white">
                               {copy}
                             </p>
                           </div>

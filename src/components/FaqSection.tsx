@@ -244,15 +244,15 @@ function FaqLinkedInModal({
     <button
       type="button"
       onClick={onOpen}
-      className="group flex w-full cursor-pointer items-start justify-between gap-6 rounded-[1.75rem] border border-[#cbd4cb] bg-[#f7f3ec]/92 px-6 py-5 text-left transition-colors hover:border-[#cc595a]/35 hover:bg-[#fbf7f0]"
+      className="group flex w-full cursor-pointer items-start justify-between gap-6 rounded-lg border border-[#cbd4cb] bg-[#f7f3ec]/92 px-6 py-5 text-left transition-colors hover:border-[#cc595a]/35 hover:bg-[#fbf7f0]"
       aria-haspopup="dialog"
     >
       <div className="flex items-start gap-4">
-        <span className="mt-0.5 inline-flex h-8 min-w-8 items-center justify-center rounded-full bg-[#638475] text-sm font-bold text-white">
+        <span className="mt-0.5 inline-flex h-8 min-w-8 items-center justify-center rounded-full bg-[#4f7466] text-sm font-bold text-white">
           {String(index + 1).padStart(2, "0")}
         </span>
         <div>
-          <h3 className="text-lg font-normal leading-7 text-[#203530] sm:text-xl">
+          <h3 className="text-xl font-normal leading-7 text-[#203530]">
             {faq.question}
           </h3>
         </div>
@@ -347,19 +347,19 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#728d7f_0%,#d7ddd6_16%,#f2eee6_30%,#f4efe7_100%)] px-6 py-24 text-[#203530]">
+    <section className="relative overflow-hidden border-t border-[#d7ddd6] bg-[#f7f2ea] px-6 py-24 text-[#203530]">
       <div className="relative mx-auto max-w-6xl">
         <div className="mb-14 flex max-w-3xl flex-col gap-6">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#6f7f74]">
+            <p className="type-kicker text-[#6f7f74]">
               Frequently Asked Questions
             </p>
-            <p className="mt-4 text-4xl font-extrabold leading-tight sm:text-5xl">
+            <p className="type-section-title mt-4">
               Questions worth asking before you choose how to build.
             </p>
           </div>
 
-          <p className="text-base leading-8 text-[#3e564d] sm:text-lg">
+          <p className="type-body-lg text-[#3e564d]">
             Hiring a one-person studio should come with questions about risk,
             capacity, price, and how the work will actually get done. This
             section answers those questions before a call ever starts.
@@ -378,14 +378,14 @@ export default function FaqSection() {
             ) : (
               <details
                 key={faq.question}
-                className="group rounded-[1.75rem] border border-[#cbd4cb] bg-[#f7f3ec]/92 px-6 py-5 transition-colors open:border-[#cc595a]/35 open:bg-[#fbf7f0]"
+                className="group rounded-lg border border-[#cbd4cb] bg-[#f7f3ec]/92 px-6 py-5 transition-colors open:border-[#cc595a]/35 open:bg-[#fbf7f0]"
               >
                 <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-left">
                   <div className="flex items-start gap-4">
-                    <span className="mt-0.5 inline-flex h-8 min-w-8 items-center justify-center rounded-full bg-[#638475] text-sm font-bold text-white">
+                    <span className="mt-0.5 inline-flex h-8 min-w-8 items-center justify-center rounded-full bg-[#4f7466] text-sm font-bold text-white">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="text-lg font-normal leading-7 text-[#203530] sm:text-xl">
+                    <h3 className="text-xl font-normal leading-7 text-[#203530]">
                       {faq.question}
                     </h3>
                   </div>
@@ -395,7 +395,7 @@ export default function FaqSection() {
                   </span>
                 </summary>
 
-                <div className="space-y-4 pl-12 pr-8 pt-4 text-base font-normal leading-8 text-[#4b5f58]">
+                <div className="type-body space-y-4 pl-12 pr-8 pt-4 font-normal text-[#4b5f58]">
                   {faq.answer.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
@@ -407,14 +407,14 @@ export default function FaqSection() {
 
         {activeLinkedInFaq ? (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-[#203530]/70 px-4 py-6 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[#203530]/70 px-2 py-3 backdrop-blur-sm sm:px-4 sm:py-6"
             role="dialog"
             aria-modal="true"
             aria-labelledby="linkedin-faq-modal-title"
             onClick={closeModal}
           >
             <div
-              className="relative w-full max-w-5xl rounded-[2rem] bg-[#f8f3eb] p-4 shadow-[0_30px_100px_-40px_rgba(0,0,0,0.65)] sm:p-6"
+              className="relative max-h-[calc(100dvh-1.5rem)] w-full max-w-5xl overflow-hidden rounded-lg bg-[#f8f3eb] p-3 shadow-[0_30px_100px_-40px_rgba(0,0,0,0.65)] sm:max-h-[calc(100vh-3rem)] sm:p-6"
               onClick={(event) => event.stopPropagation()}
             >
               <h3 id="linkedin-faq-modal-title" className="sr-only">
@@ -424,15 +424,15 @@ export default function FaqSection() {
               <button
                 type="button"
                 onClick={closeModal}
-                className="absolute right-4 top-3 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#b8c6bd] bg-white text-2xl leading-none text-[#203530] transition-colors hover:border-[#cc595a] hover:text-[#cc595a] sm:right-6 sm:top-2"
+                className="absolute right-3 top-3 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#b8c6bd] bg-white text-2xl leading-none text-[#203530] transition-colors hover:border-[#cc595a] hover:text-[#cc595a] sm:right-6 sm:top-2 sm:h-11 sm:w-11"
                 aria-label="Close dialog"
               >
                 X
               </button>
 
-              <div className="rounded-[1.5rem] border border-[#d7ddd7] bg-white p-3 sm:p-4">
-                <div className="relative overflow-hidden rounded-[1.25rem] bg-[#efe7db]">
-                  <div className="relative h-[70vh] min-h-[540px] w-full">
+              <div className="rounded-lg border border-[#d7ddd7] bg-white p-2 sm:p-4">
+                <div className="relative overflow-hidden rounded-md bg-[#efe7db]">
+                  <div className="relative h-[58dvh] max-h-[28rem] w-full sm:h-[70vh] sm:max-h-none sm:min-h-[540px]">
                     <Image
                       src={activeLinkedInFaq.carouselImages?.[activeSlideIndex] ?? ""}
                       alt={`${activeLinkedInFaq.question} page ${
@@ -445,7 +445,7 @@ export default function FaqSection() {
                     <button
                       type="button"
                       onClick={goToPreviousSlide}
-                      className="absolute left-3 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/92 text-2xl font-semibold text-[#203530] shadow-[0_12px_30px_-16px_rgba(32,53,48,0.7)] transition-all hover:scale-105 hover:bg-white"
+                      className="absolute left-3 top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/92 text-2xl font-semibold text-[#203530] shadow-[0_12px_30px_-16px_rgba(32,53,48,0.7)] transition-all hover:scale-105 hover:bg-white sm:inline-flex"
                       aria-label="Previous page"
                     >
                       {"<"}
@@ -453,7 +453,7 @@ export default function FaqSection() {
                     <button
                       type="button"
                       onClick={goToNextSlide}
-                      className="absolute right-3 top-1/2 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/92 text-2xl font-semibold text-[#203530] shadow-[0_12px_30px_-16px_rgba(32,53,48,0.7)] transition-all hover:scale-105 hover:bg-white"
+                      className="absolute right-3 top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/92 text-2xl font-semibold text-[#203530] shadow-[0_12px_30px_-16px_rgba(32,53,48,0.7)] transition-all hover:scale-105 hover:bg-white sm:inline-flex"
                       aria-label="Next page"
                     >
                       {">"}
@@ -461,33 +461,51 @@ export default function FaqSection() {
                   </div>
                 </div>
 
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {activeLinkedInFaq.carouselImages?.map((image, index) => (
-                    <button
-                      key={image}
-                      type="button"
-                      onClick={() => setActiveSlideIndex(index)}
-                      className={`h-2.5 rounded-full transition-all ${
-                        index === activeSlideIndex
-                          ? "w-10 bg-[#cc595a]"
-                          : "w-2.5 bg-[#b8c6bd] hover:bg-[#638475]"
-                      }`}
-                      aria-label={`Go to page ${index + 1}`}
-                    />
-                  ))}
+                <div className="mt-3 flex items-center gap-3 sm:mt-4">
+                  <button
+                    type="button"
+                    onClick={goToPreviousSlide}
+                    className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#b8c6bd] bg-[#f8f3eb] text-base font-bold text-[#203530] transition-colors hover:border-[#cc595a] hover:text-[#cc595a] sm:hidden"
+                    aria-label="Previous page"
+                  >
+                    {"<"}
+                  </button>
+                  <div className="flex flex-1 flex-wrap justify-center gap-2 sm:justify-start">
+                    {activeLinkedInFaq.carouselImages?.map((image, index) => (
+                      <button
+                        key={image}
+                        type="button"
+                        onClick={() => setActiveSlideIndex(index)}
+                        className={`h-2.5 rounded-full transition-all ${
+                          index === activeSlideIndex
+                            ? "w-10 bg-[#cc595a]"
+                            : "w-2.5 bg-[#b8c6bd] hover:bg-[#4f7466]"
+                        }`}
+                        aria-label={`Go to page ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+                  <button
+                    type="button"
+                    onClick={goToNextSlide}
+                    className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#b8c6bd] bg-[#f8f3eb] text-base font-bold text-[#203530] transition-colors hover:border-[#cc595a] hover:text-[#cc595a] sm:hidden"
+                    aria-label="Next page"
+                  >
+                    {">"}
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         ) : null}
 
-        <div className="mt-12 rounded-[2rem] bg-[#203530] px-8 py-8 text-white shadow-[0_22px_70px_-32px_rgba(32,53,48,0.85)]">
+        <div className="mt-12 rounded-lg bg-[#203530] px-8 py-8 text-white shadow-[0_22px_70px_-32px_rgba(32,53,48,0.85)]">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.24em] text-[#e7d281]">
+              <p className="type-kicker mb-2 text-[#d9bf69]">
                 Still Evaluating Fit?
               </p>
-              <p className="text-lg leading-8 text-white/90">
+              <p className="type-body-lg text-white">
                 The fastest way to remove uncertainty is to talk through the
                 actual problem, constraints, and business stakes.
               </p>
@@ -495,7 +513,7 @@ export default function FaqSection() {
 
             <a
               href="/contact"
-              className="inline-flex items-center justify-center rounded-2xl border border-[#e08a8b] bg-[#cc595a] px-6 py-3 text-base font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105"
+              className="inline-flex items-center justify-center rounded-md border border-[#e08a8b] bg-[#cc595a] px-6 py-3 text-base font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105"
             >
               Start the conversation
             </a>

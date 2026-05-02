@@ -19,34 +19,34 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 z-50 w-full backdrop-blur-md bg-[#638475]/80 border-b border-white/30 text-white px-4 sm:px-8 py-3 font-montserrat transition-colors duration-300">
-      <div className="flex items-center justify-between">
+    <header className="fixed top-0 z-50 w-full border-b border-white/12 bg-[#638475]/92 px-4 text-white shadow-[0_14px_40px_-28px_rgba(0,0,0,0.8)] backdrop-blur-md transition-colors duration-300 sm:px-8">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between">
         {/* Logo + Brand */}
         <Link
           href="/"
-          className="flex flex-col items-center justify-center space-y-0 leading-tight group"
+          className="group -ml-[20px] flex flex-col items-center justify-center space-y-0 leading-tight"
         >
           <Image
             src="/logo.png"
             alt="Xaltris logo"
-            width={150}
-            height={150}
-            className="transition-transform group-hover:scale-105"
+            width={176}
+            height={80}
+            className="h-20 w-auto transition-transform group-hover:scale-[1.03]"
           />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-3 text-base font-medium">
+        <nav className="-mr-[20px] hidden items-center gap-1 rounded-full border border-white/10 bg-white/8 px-2 py-1 text-sm font-semibold md:flex">
           {navItems.map(({ name, href }) => {
             const isActive = pathname === href;
             return (
               <Link
                 key={name}
                 href={href}
-                className={`px-3 py-1.5 rounded-lg border transition-all duration-200 ${
+                className={`rounded-full px-3.5 py-2 transition-all duration-200 ${
                   isActive
-                    ? "bg-[#cc595a] border-[#e08a8b] text-white shadow-[0_8px_20px_-12px_rgba(204,89,90,0.9)]"
-                    : "text-white/95 border-transparent hover:text-white hover:bg-white/12 hover:border-white/35 hover:-translate-y-0.5"
+                    ? "bg-white text-[#183a34] shadow-[0_10px_26px_-18px_rgba(0,0,0,0.55)]"
+                    : "text-white hover:bg-white/12"
                 }`}
               >
                 {name}
@@ -59,7 +59,7 @@ export default function Navbar() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
-          className="md:hidden p-1 rounded-md hover:bg-white/10 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
+          className="rounded-full p-2 transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 md:hidden"
         >
           {isOpen ? (
             <X size={26} className="text-white" />
@@ -71,7 +71,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden mt-4 space-y-3 text-sm font-medium border-t border-white/30 pt-3">
+        <div className="mx-auto mt-3 max-w-7xl space-y-2 border-t border-white/12 pt-3 text-sm font-semibold md:hidden">
           {navItems.map(({ name, href }) => {
             const isActive = pathname === href;
             return (
@@ -79,10 +79,10 @@ export default function Navbar() {
                 key={name}
                 href={href}
                 onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 rounded-lg border transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 ${
+                className={`block rounded-md px-3 py-2 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 ${
                   isActive
-                    ? "bg-[#cc595a] border-[#e08a8b] text-white"
-                    : "text-white/95 border-transparent hover:text-white hover:bg-white/12 hover:border-white/35"
+                    ? "bg-white text-[#183a34]"
+                    : "text-white hover:bg-white/12"
                 }`}
               >
                 {name}

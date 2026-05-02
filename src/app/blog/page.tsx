@@ -61,34 +61,43 @@ export default function Blog() {
   })
 
   return (
-    <main className="min-h-screen bg-[#638475] text-white px-6 py-16 font-montserrat transition-colors duration-300">
-      <section className="max-w-3xl mx-auto">
-        {/* Title */}
-        <h1 className="text-5xl font-extrabold mb-12 text-white">Blog</h1>
+    <main className="min-h-screen bg-[#f7f2ea] px-6 pb-20 pt-12 text-[#162f2a] transition-colors duration-300 sm:pb-24 sm:pt-14">
+      <section className="mx-auto max-w-5xl">
+        <div className="mb-12 border-b border-[#d7ddd6] pb-10">
+          <p className="type-kicker text-[#cc595a]">
+            Blog
+          </p>
+          <h1
+            className="type-hero mt-4 max-w-4xl"
+          >
+            My Notes.
+          </h1>
+          <p className="type-lead mt-5 max-w-2xl text-[#53675f]">
+            Practical writing on product thinking, software delivery, AI leverage,
+            and the engineering choices that matter after launch.
+          </p>
+        </div>
 
-        <ul className="space-y-10">
+        <ul className="grid gap-5">
           {posts.map((post) => (
             <li
               key={post.slug}
-              className="border-b border-gray-600 pb-8 last:border-none"
+              className="rounded-lg border border-[#d7ddd6] bg-white p-6 shadow-[0_18px_45px_-36px_rgba(22,47,42,0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#cc595a]/35 sm:p-7"
             >
-              {/* Post Title */}
               <Link
                 href={`/blog/${post.slug}`}
-                className="text-2xl font-semibold text-white hover:text-[#cc595a] transition-colors duration-200"
+                className="type-card-title text-[#162f2a] transition-colors duration-200 hover:text-[#cc595a]"
               >
                 {post.title ?? post.slug}
               </Link>
 
-              {/* Description */}
-              <p className="mt-3 text-base text-gray-300 leading-relaxed">
+              <p className="type-body mt-3 max-w-3xl text-[#53675f]">
                 {post.description ??
                   'No description provided for this post yet.'}
               </p>
 
-              {/* Date */}
               {post.date && (
-                <p className="text-xs text-gray mt-2">
+                <p className="type-meta mt-5 text-[#7c8b85]">
                   {new Date(post.date).toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'short',

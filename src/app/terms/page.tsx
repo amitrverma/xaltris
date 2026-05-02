@@ -7,16 +7,16 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen bg-[#638475] text-white font-montserrat px-4 sm:px-8 py-28">
-      <section className="max-w-3xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">
+    <main className="min-h-screen bg-[#f7f2ea] px-4 py-20 text-[#162f2a] sm:px-8 sm:py-24">
+      <section className="mx-auto max-w-3xl rounded-lg border border-[#d7ddd6] bg-white p-8 shadow-[0_18px_45px_-36px_rgba(22,47,42,0.55)] sm:p-10">
+        <h1 className="type-section-title">
           Terms of Use
         </h1>
-        <p className="mt-3 text-white/90 text-sm">
+        <p className="type-meta mt-3 text-[#7c8b85]">
           Effective date: February 7, 2026
         </p>
 
-        <div className="mt-8 space-y-6 text-white/95 leading-relaxed">
+        <div className="type-body mt-8 space-y-6 text-[#53675f]">
           <p>
             By using this site, you agree to use it lawfully and not interfere
             with service availability, security, or integrity.
@@ -30,7 +30,7 @@ export default function TermsPage() {
             Questions about these terms can be sent to{" "}
             <a
               href="mailto:hello@xaltris.com"
-              className="underline underline-offset-2 hover:text-[#f2c1c2] transition-colors"
+              className="font-semibold text-[#cc595a] underline underline-offset-2 transition-colors hover:text-[#a74648]"
             >
               hello@xaltris.com
             </a>

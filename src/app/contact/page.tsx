@@ -2,12 +2,6 @@
 
 import { useState } from 'react'
 import { CalendarClock, Mail, MessageCircle, Phone, Send } from 'lucide-react'
-import { Playfair_Display } from 'next/font/google'
-
-const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['700', '800'],
-})
 
 const contactEmail = 'hello@xaltris.com'
 const contactPhoneE164 = '+918551915656'
@@ -70,27 +64,27 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#638475] px-6 pt-28 pb-16 text-white font-montserrat transition-colors duration-300 sm:pt-32 sm:pb-20">
+    <main className="min-h-screen bg-[#4f7466] px-6 pt-28 pb-16 text-white transition-colors duration-300 sm:pt-32 sm:pb-20">
       <div className="mx-auto max-w-7xl">
         <section className="grid gap-8 border-b border-white/12 pb-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-end lg:gap-16">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#e7d281]">
+            <p className="type-kicker text-[#d9bf69]">
               Contact
             </p>
             <h1
-              className={`${playfairDisplay.className} mt-4 max-w-4xl text-[3.5rem] font-extrabold leading-[0.92] tracking-[-0.035em] text-white sm:text-[4.6rem] md:text-[5.6rem] lg:text-[6.2rem]`}
+              className="type-hero mt-4 max-w-4xl text-white"
             >
               Start with a conversation.
             </h1>
           </div>
 
           <div className="max-w-2xl lg:pb-2">
-            <p className="text-lg leading-8 text-white/82 sm:text-xl sm:leading-9">
+            <p className="type-lead text-white">
               Pick the channel that matches the urgency and context. If it looks
               like I can help, we can move from there to a focused working
               session.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3 text-sm font-semibold text-[#f8f4ee]">
+            <div className="mt-8 flex flex-wrap gap-3 text-sm font-semibold text-white">
               <span className="rounded-md border border-white/18 bg-white/8 px-3 py-1.5">
                 Fractional CTO
               </span>
@@ -106,13 +100,13 @@ export default function ContactPage() {
 
         <section className="grid gap-10 py-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#e7d281]">
+            <p className="type-kicker text-[#d9bf69]">
               Choose a channel
             </p>
-            <h2 className="mt-4 max-w-md text-3xl font-bold leading-tight tracking-[-0.03em] text-[#f8f4ee] sm:text-4xl">
+            <h2 className="type-subsection-title mt-4 max-w-md text-white">
               Whatever gets us to clarity fastest.
             </h2>
-            <p className="mt-5 max-w-lg text-base leading-7 text-white/72">
+            <p className="type-body mt-5 max-w-lg text-white">
               For early-stage work, the first useful outcome is usually not a
               proposal. It is understanding the problem, the stage, and what
               needs to become real.
@@ -132,14 +126,14 @@ export default function ContactPage() {
                     : 'border-white/16 bg-white/8 hover:border-white/32 hover:bg-white/12'
                 }`}
               >
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/12 text-[#f8f4ee]">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/12 text-white">
                   <Icon className="h-6 w-6" strokeWidth={1.9} />
                 </span>
                 <span>
-                  <span className="block text-2xl font-bold tracking-[-0.03em] text-[#f8f4ee]">
+                  <span className="type-card-title block text-white">
                     {label}
                   </span>
-                  <span className="mt-3 block text-base leading-7 text-white/76">
+                  <span className="type-body mt-3 block text-white">
                     {detail}
                   </span>
                 </span>
@@ -157,19 +151,19 @@ export default function ContactPage() {
 
         <section className="grid gap-10 border-t border-white/12 py-14 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#e7d281]">
+            <p className="type-kicker text-[#d9bf69]">
               Prefer writing?
             </p>
-            <h2 className="mt-4 max-w-md text-3xl font-bold leading-tight tracking-[-0.03em] text-[#f8f4ee] sm:text-4xl">
+            <h2 className="type-subsection-title mt-4 max-w-md text-white">
               Send the short version.
             </h2>
-            <p className="mt-5 max-w-lg text-base leading-7 text-white/72">
+            <p className="type-body mt-5 max-w-lg text-white">
               A few lines are enough. What are you building, where are you
               stuck, and what would make the next thirty days useful?
             </p>
             <div className="mt-7 flex items-start gap-4 border-t border-white/10 pt-6">
-              <CalendarClock className="mt-1 h-6 w-6 shrink-0 text-[#e7d281]" strokeWidth={1.8} />
-              <p className="text-base leading-7 text-white/72">
+              <CalendarClock className="mt-1 h-6 w-6 shrink-0 text-[#d9bf69]" strokeWidth={1.8} />
+              <p className="type-body text-white">
                 If there is a fit, the next step is a focused call to map the
                 problem and decide what should happen first.
               </p>
@@ -179,7 +173,7 @@ export default function ContactPage() {
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="block">
-                <span className="block text-sm font-semibold text-[#f8f4ee]">Name</span>
+                <span className="block text-sm font-semibold text-white">Name</span>
                 <input
                   type="text"
                   name="name"
@@ -187,12 +181,12 @@ export default function ContactPage() {
                   onChange={handleChange}
                   required
                   placeholder="Your name"
-                  className="mt-2 w-full rounded-md border border-white/18 bg-white px-4 py-3 text-gray-950 outline-none transition focus:border-[#e7d281] focus:ring-2 focus:ring-[#e7d281]/45"
+                  className="mt-2 w-full rounded-md border border-white/18 bg-white px-4 py-3 text-gray-950 outline-none transition focus:border-[#d9bf69] focus:ring-2 focus:ring-[#d9bf69]/45"
                 />
               </label>
 
               <label className="block">
-                <span className="block text-sm font-semibold text-[#f8f4ee]">Email</span>
+                <span className="block text-sm font-semibold text-white">Email</span>
                 <input
                   type="email"
                   name="email"
@@ -200,13 +194,13 @@ export default function ContactPage() {
                   onChange={handleChange}
                   required
                   placeholder="you@example.com"
-                  className="mt-2 w-full rounded-md border border-white/18 bg-white px-4 py-3 text-gray-950 outline-none transition focus:border-[#e7d281] focus:ring-2 focus:ring-[#e7d281]/45"
+                  className="mt-2 w-full rounded-md border border-white/18 bg-white px-4 py-3 text-gray-950 outline-none transition focus:border-[#d9bf69] focus:ring-2 focus:ring-[#d9bf69]/45"
                 />
               </label>
             </div>
 
             <label className="block">
-              <span className="block text-sm font-semibold text-[#f8f4ee]">Message</span>
+              <span className="block text-sm font-semibold text-white">Message</span>
               <textarea
                 name="message"
                 value={form.message}
@@ -214,7 +208,7 @@ export default function ContactPage() {
                 required
                 rows={6}
                 placeholder="Tell me what you are trying to build or untangle."
-                className="mt-2 w-full rounded-md border border-white/18 bg-white px-4 py-3 text-gray-950 outline-none transition focus:border-[#e7d281] focus:ring-2 focus:ring-[#e7d281]/45"
+                className="mt-2 w-full rounded-md border border-white/18 bg-white px-4 py-3 text-gray-950 outline-none transition focus:border-[#d9bf69] focus:ring-2 focus:ring-[#d9bf69]/45"
               />
             </label>
 
@@ -229,12 +223,12 @@ export default function ContactPage() {
               </button>
 
               {status === 'sent' && (
-                <p className="text-sm font-semibold text-[#f8f4ee]">
+                <p className="text-sm font-semibold text-white">
                   Message sent. I will reply by email.
                 </p>
               )}
               {status === 'error' && (
-                <p className="text-sm font-semibold text-[#f8f4ee]">
+                <p className="text-sm font-semibold text-white">
                   Something went wrong. Email {contactEmail} directly.
                 </p>
               )}
