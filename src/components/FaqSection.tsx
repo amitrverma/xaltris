@@ -349,21 +349,15 @@ export default function FaqSection() {
   return (
     <section className="relative overflow-hidden border-t border-[#d7ddd6] bg-[#f7f2ea] px-6 py-24 text-[#203530]">
       <div className="relative mx-auto max-w-6xl">
-        <div className="mb-14 flex max-w-3xl flex-col gap-6">
+        <div className="mb-14 flex max-w-3xl flex-col">
           <div>
             <p className="type-kicker text-[#6f7f74]">
               Frequently Asked Questions
             </p>
             <p className="type-section-title mt-4">
-              Questions worth asking before you choose how to build.
+              What startup CEOs usually want to know first.
             </p>
           </div>
-
-          <p className="type-body-lg text-[#3e564d]">
-            Hiring a one-person studio should come with questions about risk,
-            capacity, price, and how the work will actually get done. This
-            section answers those questions before a call ever starts.
-          </p>
         </div>
 
         <div className="grid gap-4">

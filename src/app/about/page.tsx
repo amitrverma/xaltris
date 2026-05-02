@@ -41,7 +41,7 @@ const strengths = [
 const credentials = [
   {
     title: "B.Tech",
-    institution: "National Institute of Technology, Warangal",
+    institution: "National Institute of Technology Warangal",
     Icon: GraduationCap,
   },
   {
@@ -130,7 +130,7 @@ export default function AboutPage() {
               Fractional CTO.
             </h1>
             <p className="type-lead mt-8 max-w-2xl text-white">
-              Hi, I am Amit Verma. I started Xaltris in June 2025 to work with
+              Hi, I am Amit Verma. I founded Xaltris in June 2025 to work with
               early-stage startups as a fractional CTO, helping them turn product
               ideas into working software.
             </p>
@@ -174,8 +174,8 @@ export default function AboutPage() {
               <span className="font-bold text-[#d9bf69]">
                 fractional CTO and hands-on builder,
               </span>{" "}
-              I help founders turn ambiguous ideas into usable, scalable products
-              quickly and responsibly.
+              I help early stage start ups turn ambiguous ideas into usable,
+              scalable products quickly and responsibly.
             </p>
             <p>
               I combine{" "}
@@ -185,62 +185,6 @@ export default function AboutPage() {
               with senior engineering judgment, so speed improves without losing
               clarity, architecture, or ownership.
             </p>
-          </div>
-        </section>
-
-        <section className="border-t border-white/12 py-14">
-          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
-            <div>
-              <p className="type-kicker text-[#d9bf69]">
-                Corporate foundation
-              </p>
-              <h2 className="type-subsection-title mt-4 max-w-md text-white">
-                Enterprise depth without enterprise drag.
-              </h2>
-              <p className="type-body mt-5 max-w-lg text-white">
-                Before Xaltris, I spent two decades inside product and engineering
-                organizations where software had to survive real scale, governance,
-                security, delivery pressure, and changing business needs.
-              </p>
-              <div className="mt-7 space-y-3">
-                {careerArc.map((role) => (
-                  <p
-                    key={role}
-                    className="type-body border-l-2 border-[#d9bf69] pl-4 font-semibold text-white"
-                  >
-                    {role}
-                  </p>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2">
-                {corporateHighlights.map(({ label, detail }, index) => (
-                  <article
-                    key={label}
-                    className={`${index > 1 ? "sm:border-t sm:border-white/10 sm:pt-7" : "sm:border-t-0 sm:pt-0"} border-t border-white/10 pt-7 first:border-t-0 first:pt-0`}
-                  >
-                    <p className="type-meta text-[#d9bf69]">
-                      {String(index + 1).padStart(2, "0")}
-                    </p>
-                    <h3 className="type-card-title mt-3 text-white">
-                      {label}
-                    </h3>
-                    <p className="type-body mt-3 text-white">
-                      {detail}
-                    </p>
-                  </article>
-                ))}
-              </div>
-
-              <p className="type-body-lg mt-9 border-l border-white/16 pl-5 text-white">
-                That background is why Xaltris is not just about moving fast. It
-                is about building with the discipline learned from SaaS products,
-                BPM platforms, cloud migration, observability, automation, and
-                long-running enterprise systems.
-              </p>
-            </div>
           </div>
         </section>
 
@@ -284,6 +228,63 @@ export default function AboutPage() {
           </div>
         </section>
 
+        <section className="border-t border-white/12 py-14">
+          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
+            <div>
+              <p className="type-kicker text-[#d9bf69]">
+                Enterprise experience
+              </p>
+              <h2 className="type-subsection-title mt-4 max-w-md text-white">
+                Large-scale discipline, startup-speed execution.
+              </h2>
+              <p className="type-body mt-5 max-w-lg text-white">
+                Before Xaltris, I spent two decades inside product and engineering
+                organizations where software had to work at real scale: across
+                governance, security, delivery pressure, operational complexity,
+                and changing business needs.
+              </p>
+              <div className="mt-7 space-y-3">
+                {careerArc.map((role) => (
+                  <p
+                    key={role}
+                    className="type-body border-l-2 border-[#d9bf69] pl-4 font-semibold text-white"
+                  >
+                    {role}
+                  </p>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2">
+                {corporateHighlights.map(({ label, detail }, index) => (
+                  <article
+                    key={label}
+                    className={`${index > 1 ? "sm:border-t sm:border-white/10 sm:pt-7" : "sm:border-t-0 sm:pt-0"} border-t border-white/10 pt-7 first:border-t-0 first:pt-0`}
+                  >
+                    <p className="type-meta text-[#d9bf69]">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
+                    <h3 className="type-card-title mt-3 text-white">
+                      {label}
+                    </h3>
+                    <p className="type-body mt-3 text-white">
+                      {detail}
+                    </p>
+                  </article>
+                ))}
+              </div>
+
+              <p className="type-body-lg mt-9 border-l border-white/16 pl-5 text-white">
+                That background is why Xaltris is not just about moving fast. It
+                is about bringing enterprise-grade discipline to startup execution:
+                SaaS products, BPM platforms, cloud migration, observability,
+                automation, and long-running operational systems.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className="grid gap-10 border-t border-white/12 py-14 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
           <div>
             <p className="type-kicker text-[#d9bf69]">
@@ -294,9 +295,12 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2">
-            {credentials.map(({ title, institution, Icon }) => (
-              <article key={title} className="border-t border-white/10 pt-6">
+          <div className="grid gap-6 sm:grid-cols-[0.94fr_1.06fr] sm:gap-0">
+            {credentials.map(({ title, institution, Icon }, index) => (
+              <article
+                key={title}
+                className={`${index > 0 ? "border-t border-white/10 pt-6 sm:border-l sm:border-t-0 sm:pl-6 sm:pt-0" : ""} sm:pr-6`}
+              >
                 <Icon className="h-8 w-8 text-[#d9bf69]" strokeWidth={1.8} />
                 <p className="mt-4 text-3xl font-bold text-white">
                   {title}

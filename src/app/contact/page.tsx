@@ -19,7 +19,6 @@ const contactChannels = [
     value: 'Start a chat',
     href: whatsAppHref,
     Icon: MessageCircle,
-    primary: true,
   },
   {
     label: 'Email',
@@ -114,17 +113,13 @@ export default function ContactPage() {
           </div>
 
           <div className="grid gap-5 md:grid-cols-3">
-            {contactChannels.map(({ label, detail, value, href, Icon, primary }) => (
+            {contactChannels.map(({ label, detail, value, href, Icon }) => (
               <a
                 key={label}
                 href={href}
                 target={label === 'WhatsApp' ? '_blank' : undefined}
                 rel={label === 'WhatsApp' ? 'noopener noreferrer' : undefined}
-                className={`group flex min-h-[16rem] flex-col justify-between rounded-lg border p-6 transition-all duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 ${
-                  primary
-                    ? 'border-[#e08a8b] bg-[#cc595a] shadow-[0_18px_50px_rgba(4,42,43,0.16)]'
-                    : 'border-white/16 bg-white/8 hover:border-white/32 hover:bg-white/12'
-                }`}
+                className="group flex min-h-[16rem] flex-col justify-between rounded-lg border border-white/16 bg-white/8 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/32 hover:bg-white/12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
               >
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/12 text-white">
                   <Icon className="h-6 w-6" strokeWidth={1.9} />

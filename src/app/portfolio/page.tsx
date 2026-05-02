@@ -8,7 +8,7 @@ import PortfolioCarousel from "../../components/PortfolioCarousel";
 export const metadata = {
   title: "Portfolio | Xaltris Technologies",
   description:
-    "Case studies, products, and corporate-era platforms built by Amit Verma and Xaltris Technologies.",
+    "Case studies, products, and enterprise platforms built by Amit Verma and Xaltris Technologies.",
   openGraph: {
     title: "Portfolio | Xaltris Technologies",
     description:
@@ -130,14 +130,18 @@ export default function PortfolioPage() {
 
           <div className="border-t border-white/12 pt-6 lg:mb-3">
             <p className="type-lead max-w-xl text-white">
-              A portfolio of AI products, operational platforms, and corporate-era
-              systems. The goal is not to show every project. It is to show the
-              pattern: senior judgment translated into working software.
+              Current Xaltris work and past enterprise systems built over two
+              decades, showing the same pattern throughout: senior judgment
+              translated into working software.
             </p>
-            <p className="type-body-lg mt-5 max-w-xl font-semibold text-white">
-              Powered by <span className="text-[#d9bf69]">AI.</span> Shaped by{" "}
-              <span className="text-[#d9bf69]">OI.</span>
-            </p>
+            <div className="mt-5 flex max-w-xl flex-wrap items-center gap-x-5 gap-y-2 text-[1.25rem] font-bold leading-none text-white">
+              <span className="h-px w-12 bg-[#d9bf69]" />
+              <p>
+                Powered by <span className="text-[#d9bf69]">AI.</span> Shaped by{" "}
+                <span className="text-[#d9bf69]">OI.</span>
+              </p>
+              <span className="h-px w-12 bg-[#d9bf69]" />
+            </div>
           </div>
         </section>
 
@@ -147,15 +151,15 @@ export default function PortfolioPage() {
               <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                   <p className="type-kicker text-[#d9bf69]">
-                    Xaltris era
+                    Current Xaltris work
                   </p>
                   <h2 className="type-subsection-title mt-3 text-white">
-                    Current case studies, two at a time.
+                    Startup and AI case studies.
                   </h2>
                 </div>
                 <p className="type-body max-w-sm text-white">
-                  Fractional CTO thinking, solo-builder execution, and focused AI
-                  productization.
+                  Fractional CTO thinking, hands-on execution, and focused AI
+                  productization for early-stage teams.
                 </p>
               </div>
 
@@ -167,12 +171,12 @@ export default function PortfolioPage() {
                 <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
                   <div>
                     <p className="type-kicker text-[#cc595a]">
-                      Corporate foundation
+                      Enterprise experience
                     </p>
                     <h2
                       className="type-section-title mt-4 max-w-3xl text-[#162f2a]"
                     >
-                      Two decades of operational systems that scaled.
+                      Two decades building operational systems at scale.
                     </h2>
                     <p className="type-body mt-4 font-semibold text-[#53675f]">
                       Cordys, iNautix / BNY Mellon, Capita

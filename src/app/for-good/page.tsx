@@ -146,8 +146,18 @@ export default function ForGoodPage() {
         </div>
       </section>
 
-      <div className="bg-[#183a34] px-6 py-10 text-center text-sm font-semibold text-white">
-        Original Intelligence (OI) x Artificial Intelligence (AI).
+      <div className="bg-[#183a34] px-6 py-12 text-white">
+        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-6 gap-y-3 text-center">
+          <span className="h-px w-16 bg-[#d9bf69] sm:w-24" />
+          <p className="font-display text-2xl font-extrabold leading-tight sm:text-3xl">
+            <span className="text-white">Original Intelligence</span>{" "}
+            <span className="text-[#d9bf69]">(OI)</span>{" "}
+            <span className="text-white/60">x</span>{" "}
+            <span className="text-white">Artificial Intelligence</span>{" "}
+            <span className="text-[#d9bf69]">(AI)</span>
+          </p>
+          <span className="h-px w-16 bg-[#d9bf69] sm:w-24" />
+        </div>
       </div>
     </main>
   );

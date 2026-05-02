@@ -26,9 +26,21 @@ const secondFoldOutcomes = [
 ]
 
 const secondFoldProof = [
-  ['Enterprise depth', '22 years across products, platforms, teams, and scale'],
-  ['One accountable builder', 'CTO-level thinking and hands-on software development'],
-  ['AI with judgment', 'Faster delivery without outsourcing architecture or ownership'],
+  {
+    label: '01',
+    title: 'Enterprise judgment',
+    copy: '22 years across products, platforms, teams, and production scale.',
+  },
+  {
+    label: '02',
+    title: 'Single accountable builder',
+    copy: 'Strategy, architecture, and implementation held by the same person.',
+  },
+  {
+    label: '03',
+    title: 'AI directed by experience',
+    copy: 'Faster execution without outsourcing technical judgment or ownership.',
+  },
 ]
 
 export const metadata = {
@@ -138,19 +150,33 @@ export default function HomePage() {
                     Original Intelligence, to provide strategic technology
                     solutions (Fractional CTO and software development).
                   </p>
-                  <p className="type-lead mt-5 max-w-2xl font-semibold text-white">
-                    Powered by <span className="text-[#d9bf69]">AI.</span> Shaped
-                    by <span className="text-[#d9bf69]">OI.</span>
-                  </p>
+                  <div className="mt-5 flex max-w-2xl flex-wrap items-center gap-x-5 gap-y-2 text-xl font-semibold leading-8 text-white">
+                    <span className="h-px w-12 bg-[#d9bf69]" />
+                    <p>
+                      Powered by <span className="text-[#d9bf69]">AI.</span> Shaped
+                      by <span className="text-[#d9bf69]">OI.</span>
+                    </p>
+                    <span className="h-px w-12 bg-[#d9bf69]" />
+                  </div>
 
-                  <div className="mt-9 grid gap-5 border-t border-white/12 pt-6 sm:grid-cols-3">
-                    {secondFoldProof.map(([value, label]) => (
-                      <div key={value}>
-                        <p className="text-2xl font-extrabold text-white">
-                          {value}
-                        </p>
-                        <p className="type-small mt-2 text-white">
+                  <div className="mt-9 grid gap-0 border-y border-white/12 sm:grid-cols-3">
+                    {secondFoldProof.map(({ label, title, copy }, index) => (
+                      <div
+                        key={title}
+                        className={`py-5 ${
+                          index > 0
+                            ? 'border-t border-white/12 sm:border-l sm:border-t-0 sm:pl-5'
+                            : ''
+                        } ${index < secondFoldProof.length - 1 ? 'sm:pr-5' : ''}`}
+                      >
+                        <p className="type-meta text-[#d9bf69]">
                           {label}
+                        </p>
+                        <p className="mt-3 text-xl font-extrabold leading-tight text-white">
+                          {title}
+                        </p>
+                        <p className="type-small mt-3 max-w-[15rem] text-white">
+                          {copy}
                         </p>
                       </div>
                     ))}
