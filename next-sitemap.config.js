@@ -4,33 +4,17 @@ module.exports = {
   generateRobotsTxt: true,
   changefreq: 'weekly',
   sitemapSize: 7000,
-
-  // Exclude internal or non-public routes
   exclude: ['/api/*', '/admin/*', '/drafts/*'],
-
-  // Control how each route is transformed in the sitemap
-  transform: async (config, path) => {
+  transform: async (_config, path) => {
     let priority = 0.7
 
-    // Home page → highest priority
     if (path === '/') priority = 1.0
 
-    // Main navigation pages
-    if (
-      [
-        '/about',
-        '/portfolio',
-        '/solutions',
-        '/contact',
-        '/products',
-        '/blog',
-      ].includes(path)
-    ) {
+    if (['/about', '/portfolio', '/contact', '/blog'].includes(path)) {
       priority = 0.8
     }
 
-    // Blog posts and product details → slightly lower but still important
-    if (path.startsWith('/blog/') || path.startsWith('/products/')) {
+    if (path.startsWith('/blog/')) {
       priority = 0.64
     }
 

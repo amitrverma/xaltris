@@ -1,225 +1,253 @@
-"use client";
+import {
+  Building2,
+  Download,
+} from "lucide-react";
+import { Playfair_Display } from "next/font/google";
+import Link from "next/link";
+import PortfolioCarousel from "../../components/PortfolioCarousel";
 
-import React, { useMemo, useState } from "react";
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["700", "800"],
+});
 
-const PERIODS = ["All", "Now Building", "Previously Delivered"] as const;
-type Period = (typeof PERIODS)[number];
-
-type Item = {
-  category: "Product" | "Application" | "Case Study";
-  description: string;
-  challenges: string[];
-  outcomes: string[];
-  period?: "Now" | "Past";
+export const metadata = {
+  title: "Portfolio | Xaltris Technologies",
+  description:
+    "Case studies, products, and corporate-era platforms built by Amit Verma and Xaltris Technologies.",
+  openGraph: {
+    title: "Portfolio | Xaltris Technologies",
+    description:
+      "Selected startup, product, and enterprise platform work from Xaltris and Amit Verma's corporate engineering career.",
+    url: "https://xaltris.com/portfolio",
+    siteName: "Xaltris",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Xaltris portfolio",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio | Xaltris Technologies",
+    description:
+      "A portfolio of case studies, products, and enterprise systems built with technical depth and product judgment.",
+    images: ["/logo.png"],
+  },
 };
 
-const ITEMS: Item[] = [
-  // Products
-  { 
-    category: "Product", 
-    description: "Clarity — workforce well-being and productivity intelligence platform that identifies inefficiencies, overwork patterns, and underused tools without surveillance.", 
-    challenges: [
-      "Balancing productivity with employee well-being", 
-      "Detecting burnout risks without invasive monitoring", 
-      "Providing actionable insights teams actually use"
-    ], 
-    outcomes: [
-      "Improved work-life balance", 
-      "Streamlined workflows", 
-      "Sustainable team performance"
-    ], 
-    period: "Now" 
-  },
-  { 
-    category: "Product", 
-    description: "Momentum — real-time performance management platform with dashboards, activity tracking, and sentiment analytics.", 
-    challenges: [
-      "Fragmented visibility across teams", 
-      "Inability to adjust priorities dynamically", 
-      "Need for insights that respect employee context"
-    ], 
-    outcomes: [
-      "Faster, data-driven decision-making", 
-      "Proactive workload balancing", 
-      "Higher throughput without morale loss"
-    ], 
-    period: "Now" 
-  },
-  { 
-    category: "Product", 
-    description: "Lexel — AI-assisted product content generation tool that transforms images into SEO-ready descriptions, features, and marketing copy.", 
-    challenges: [
-      "Slow, manual product description workflows", 
-      "Inconsistent tone and quality", 
-      "Scaling content without scaling headcount"
-    ], 
-    outcomes: [
-      "3–5× faster content creation", 
-      "Consistent brand voice", 
-      "Higher engagement and conversion"
-    ], 
-    period: "Now" 
-  },
-  {
-    category: "Product",
-    description: "An AI-powered introspection platform that helps individuals untangle thoughts, uncover root causes, and turn self-reflection into actionable growth.",
-    challenges: [
-      "People feeling stuck, anxious, or unsure how to move forward in personal or professional situations",
-      "Common advice addressing symptoms rather than underlying causes",
-      "Lack of accessible, private tools for structured self-reflection"
-    ],
-    outcomes: [
-      "Guided introspection that helps users uncover deeper insights and reframe challenges",
-      "Turning self-awareness into practical, real-world actions",
-      "Accessible anytime, anywhere, with privacy and customization built in"
-    ],
-    period: "Now"
-  },
-  { category: "Product", description: "Web-based workflow platform enabling end-to-end process management across multiple teams and sites.", challenges: ["Manual spreadsheet tracking created errors and delays", "Limited visibility on utilization and productivity", "Difficult multi-step, multi-location coordination"], outcomes: ["Automated work allocation", "Centralized dashboards for KPIs and SLAs", "Improved cycle time and efficiency"] },
-  { category: "Product", description: "Operational performance monitoring tool for tracking productivity and time utilization.", challenges: ["No real-time tracking of productive/offline activities", "Lack of single view for process data", "Manual performance reporting"], outcomes: ["Real-time performance insights", "Customizable reporting", "Better headcount and capacity planning"] },
-  { category: "Product", description: "Intelligent quality assessment tool with automated sampling and integration to workflow systems.", challenges: ["Manual quality sampling was time-intensive", "No integration with workflow systems", "High management overhead"], outcomes: ["Automated sampling", "Integration with existing systems", "Real-time and historical reporting"] },
-  { category: "Product", description: "Digital visualization platform for operational and organizational KPIs.", challenges: ["No centralized decision support system", "Data scattered across sources", "Limited trend and pattern visibility"], outcomes: ["Unified KPI dashboards", "Drill-down analytics", "Faster, informed decision-making"] },
-  { category: "Product", description: "Knowledge and assessment platform for creating and managing quizzes, surveys, and exams.", challenges: ["Dependency on development teams for program setup", "Decentralized exam and survey data"], outcomes: ["Self-serve exam creation", "Real-time dashboards", "Lower development overhead"] },
-  { category: "Product", description: "Ideation portal for tracking and managing organizational improvement ideas.", challenges: ["No centralized idea management", "Difficult benefit tracking"], outcomes: ["Defined ideation metrics", "Real-time dashboards", "Quantified benefits"] },
-  { category: "Product", description: "IT inventory management system for complete asset lifecycle.", challenges: ["Fragmented asset records", "Manual effort in lifecycle management"], outcomes: ["Real-time asset visibility", "Reduced management effort"] },
-
-  // Applications
-  { category: "Application", description: "Attendance management system integrated with swipe card data and policy-based leave management.", challenges: ["Manual attendance tracking prone to errors", "Inefficient payroll reconciliation"], outcomes: ["Automated attendance capture", "Better leave policy compliance", "Streamlined payroll"] },
-  { category: "Application", description: "Centralized service desk portal with bot assistance.", challenges: ["Manual ticket creation", "Inconsistent service tracking"], outcomes: ["Automated ticket generation", "Self-service approach", "Reduced manual effort"] },
-  { category: "Application", description: "Visitors management system linked with employee database.", challenges: ["Manual visitor logging", "No centralized travel record"], outcomes: ["Complete digitization", "Email notifications", "Centralized history"] },
-  { category: "Application", description: "Purchase order management system.", challenges: ["Manual PO tracking", "Lack of approval flow visibility"], outcomes: ["Easy PO creation and approvals", "Real-time tracking"] },
-  { category: "Application", description: "Native mobile HR app with attendance, leave, and communication features.", challenges: ["Fragmented HR tools", "Limited mobile accessibility"], outcomes: ["Unified mobile app", "Integration with existing HR systems", "Improved employee accessibility"] },
-
-  // Case Studies
-  { category: "Case Study", description: "Secure, scalable workflow management platform for a large-scale operation (~1000 FTEs).", challenges: ["No system to track end-to-end workflow and resource utilization", "Complex multi-function, multi-location operations", "Need for outcome-based monitoring"], outcomes: ["12% reduction in cycle time", "~10% efficiency gain and added capacity", "Significant annual cost benefit"] }
+const categories = [
+  { label: "Startup / AI work", href: "#startup-ai-work" },
+  { label: "Operational products", href: "#operational-products" },
+  { label: "Featured foundation", href: "#featured-foundation" },
+  { label: "Corporate systems", href: "#corporate-systems" },
 ];
 
-const PeriodBadge = ({ period }: { period: "Now" | "Past" }) => (
-  <span
-    className={
-      period === "Now"
-        ? "px-2 py-0.5 text-[10px] rounded-full bg-[#cc595a] text-white"
-        : "px-2 py-0.5 text-[10px] rounded-full bg-gray-300 text-gray-800"
-    }
-  >
-    {period === "Now" ? "Now" : "Past"}
-  </span>
-);
+const caseStudies = [
+  {
+    category: "Startup / AI work",
+    title: "SarasAI",
+    context: "AI product and platform work",
+    summary:
+      "A supplied case study for SarasAI. The PDF is available for download; the on-page summary can be deepened once a text-extractable version is available.",
+    outcome: "AI-first product work with a practical delivery lens.",
+    tags: ["AI product", "Platform thinking", "PDF available"],
+    pdfHref: "/case-studies/sarasai-case-study.pdf",
+  },
+  {
+    category: "Startup / AI work",
+    title: "Neurocient",
+    context: "AI and product engineering",
+    summary:
+      "A supplied case study for Neurocient. The PDF is available for download; the page can be enriched further when OCR or text extraction is available.",
+    outcome: "Applied AI, product judgment, and engineering execution.",
+    tags: ["AI product", "Product engineering", "PDF available"],
+    pdfHref: "/case-studies/neurocient-case-study.pdf",
+  },
+  {
+    category: "Startup / AI work",
+    title: "StocAI",
+    context: "Fractional CTO for an AI-driven startup",
+    summary:
+      "Technical strategy, product architecture, and team scaling for an AI-first startup moving from early product direction to structured delivery.",
+    outcome:
+      "Senior technical direction where product clarity, architecture, and execution model matter most.",
+    tags: ["Fractional CTO", "AI strategy", "Team scaling"],
+    pdfHref: "/case-studies/stocai-case-study.pdf",
+  },
+  {
+    category: "Operational products",
+    title: "Veltrix Global Connect",
+    context: "Trusted B2B recruitment marketplace",
+    summary:
+      "Built a governed marketplace connecting verified employers with verified recruitment agencies through structured mandates, KYB verification, candidate collaboration, task queues, and finance ledger visibility.",
+    outcome:
+      "Turned fragmented hiring coordination across email, spreadsheets, and informal channels into auditable workflows for trust, mandate execution, collaboration, and commercial closeout.",
+    tags: ["Next.js and FastAPI", "PostgreSQL", "B2B marketplace"],
+    pdfHref: "/case-studies/veltrix-case-study.pdf",
+  },
+  {
+    category: "Operational products",
+    title: "Ferox Tech Services",
+    context: "Visibility, workflow control, and AI-assisted quality",
+    summary:
+      "Built and validated Momentum for real-time performance visibility, Flow for workflow and operations management, Lexel for AI-assisted e-commerce content QA, and LiveContext for call-center agent assistance.",
+    outcome:
+      "Moved fragmented operational tracking toward live visibility, stronger workflow discipline, reduced manual coordination, and controlled AI experimentation.",
+    tags: ["React and .NET", "Azure SQL", "Workflow and AI POCs"],
+    pdfHref: "/case-studies/ferox-case-study.pdf",
+  },
+];
 
-const Card = ({ item }: { item: Item }) => {
-  const period: "Now" | "Past" = item.period ?? "Past";
+const corporateSystems = [
+  "Workflow management systems",
+  "Operational intelligence platforms",
+  "Quality and audit systems",
+  "Performance visibility systems",
+  "Enterprise utilities",
+  "BPM and SOA platforms",
+];
+
+function PdfAction({ href }: { href: string }) {
   return (
-    <div className="relative bg-white rounded-2xl p-7 shadow-sm border border-gray-200 w-full max-w-[420px] mx-auto transition-colors duration-300">
-      {/* Top row: category + period */}
-      <div className="mb-2 flex items-center gap-2">
-        <span className="px-3 py-1 rounded-full border text-[11px] tracking-wide uppercase border-gray-300 text-gray-700 bg-gray-100/80">
-          {item.category}
-        </span>
-        <PeriodBadge period={period} />
-      </div>
-
-      <p className="text-[15px] leading-7 text-gray-800">
-        {item.description}
-      </p>
-
-      <div className="mt-5">
-        <p className="text-sm font-extrabold text-[#cc595a] mb-2">
-          Challenges Addressed
-        </p>
-        <ul className="list-disc pl-5 text-[15px] leading-7 text-gray-700 space-y-1">
-          {item.challenges.map((c, i) => <li key={i}>{c}</li>)}
-        </ul>
-      </div>
-
-      <div className="mt-5">
-        <p className="text-sm font-extrabold text-[#cc595a] mb-2">
-          Outcomes
-        </p>
-        <ul className="list-disc pl-5 text-[15px] leading-7 text-gray-800 space-y-1">
-          {item.outcomes.map((o, i) => <li key={i}>{o}</li>)}
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-export default function PortfolioPage() {
-  const [periodFilter, setPeriodFilter] = useState<Period>("All");
-
-  const visible = useMemo(() => {
-    return ITEMS.filter((i) => {
-      const period: "Now" | "Past" = i.period ?? "Past";
-      const passPeriod =
-        periodFilter === "All"
-          ? true
-          : periodFilter === "Now Building"
-          ? period === "Now"
-          : period === "Past";
-      return passPeriod;
-    });
-  }, [periodFilter]);
-
-  const intro = useMemo(() => {
-    if (periodFilter === "Now Building") {
-      return "Active builds and engagements under Xaltris — applying deep engineering leadership for measurable outcomes.";
-    }
-    if (periodFilter === "Previously Delivered") {
-      return "Highlights from prior leadership roles — enterprise-scale platforms and applications delivered across domains.";
-    }
-    return "A cross-section of solutions delivered at scale — from complex platforms to lean, high-impact tools.";
-  }, [periodFilter]);
-
-  return (
-    <section className="min-h-screen px-6 py-20 font-montserrat bg-[#638475] text-white transition-colors duration-300">
-      <div className="max-w-6xl mx-auto">
-        {/* Headline + subhead */}
-        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-[var(--heading)] text-center">
-          What I’ve Built
-        </h1>
-        <h2 className="text-xl md:text-2xl font-extrabold text-center mb-2">
-          A Proven Track Record at Scale
-        </h2>
-        <p className=" text-center max-w-3xl mx-auto mb-12 leading-8">
-          {intro}
-        </p>
-
-        {/* Tabs */}
-        <div className="flex justify-center gap-2 border-b border-white/30 mb-10 pb-2">
-          {PERIODS.map((p) => (
-            <button
-              key={p}
-              onClick={() => setPeriodFilter(p)}
-              className={`px-5 py-2.5 text-lg font-semibold rounded-lg border transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 ${
-                periodFilter === p
-                  ? 'bg-[#cc595a] border-[#e08a8b] text-white shadow-[0_8px_20px_-12px_rgba(204,89,90,0.9)]'
-                  : 'text-white/95 border-transparent hover:text-white hover:bg-white/12 hover:border-white/35 hover:-translate-y-0.5'
-              }`}
-            >
-              {p}
-            </button>
-          ))}
-        </div>
-
-        {/* Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
-          {visible.map((item, idx) => (
-            <Card key={idx} item={item} />
-          ))}
-        </div>
-
-        {/* CTA */}
-        <div className="mt-14 flex justify-center">
-          <a
-            href="/contact"
-            className="bg-[var(--primary)] text-white font-semibold px-6 py-2 rounded-md hover:brightness-110 transition"
-          >
-            Discuss your build
-          </a>
-        </div>
-      </div>
-    </section>
+    <Link
+      href={href}
+      download
+      className="inline-flex items-center gap-2 rounded-2xl border border-[#e08a8b] bg-[#cc595a] px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:brightness-105"
+    >
+      <Download className="h-4 w-4" strokeWidth={1.8} />
+      Know more
+    </Link>
   );
 }
 
+export default function PortfolioPage() {
+  return (
+    <main className="min-h-screen bg-[#638475] px-6 py-24 text-white font-montserrat transition-colors duration-300 sm:py-28">
+      <div className="mx-auto max-w-7xl">
+        <section className="grid gap-12 border-b border-white/12 pb-14 lg:grid-cols-[1.02fr_0.98fr] lg:items-end lg:gap-16">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#e7d281]">
+              Portfolio
+            </p>
+            <h1
+              className={`${playfairDisplay.className} mt-5 max-w-4xl text-[4.25rem] font-extrabold leading-[0.92] tracking-[-0.035em] text-white sm:text-[5.2rem] md:text-[6.4rem] lg:text-[7rem]`}
+            >
+              Proof of work.
+              <span className="block text-[#f8f4ee]">Curated by signal.</span>
+            </h1>
+          </div>
 
+          <div className="border-t border-white/12 pt-6 lg:mb-3">
+            <p className="max-w-xl text-lg leading-8 text-white/82 sm:text-xl sm:leading-9">
+              A portfolio of AI products, operational platforms, and corporate-era
+              systems. The goal is not to show every project. It is to show the
+              pattern: senior judgment translated into working software.
+            </p>
+            <p className="mt-5 max-w-xl text-base font-semibold leading-7 text-[#f8f4ee] sm:text-lg">
+              Powered by <span className="text-[#e7d281]">AI.</span> Shaped by{" "}
+              <span className="text-[#e7d281]">OI.</span>
+            </p>
+          </div>
+        </section>
 
+        <section className="grid gap-12 py-14 lg:grid-cols-[0.28fr_0.72fr] lg:gap-16">
+          <aside className="lg:sticky lg:top-28 lg:self-start">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#e7d281]">
+              Browse by signal
+            </p>
+            <div className="mt-6 space-y-3">
+              {categories.map((category, index) => (
+                <a
+                  key={category.label}
+                  href={category.href}
+                  className="group flex items-center justify-between border-t border-white/10 py-3 text-left text-base font-semibold text-white/78 transition-colors hover:text-white"
+                >
+                  <span>{category.label}</span>
+                  <span className="text-sm text-[#e7d281]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </aside>
+
+          <div>
+            <section id="startup-ai-work" className="scroll-mt-28">
+              <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#e7d281]">
+                    Xaltris era
+                  </p>
+                  <h2 className="mt-3 text-3xl font-bold leading-tight tracking-[-0.03em] text-[#f8f4ee] sm:text-4xl">
+                    Current case studies, two at a time.
+                  </h2>
+                </div>
+                <p className="max-w-sm text-base leading-7 text-white/66">
+                  Fractional CTO thinking, solo-builder execution, and focused AI
+                  productization.
+                </p>
+              </div>
+
+              <PortfolioCarousel items={caseStudies} />
+            </section>
+
+            <section id="featured-foundation" className="scroll-mt-28 pt-12">
+              <article className="rounded-lg border border-white/12 bg-white/8 p-6 backdrop-blur sm:p-8">
+                <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#e7d281]">
+                      Corporate foundation
+                    </p>
+                    <h2
+                      className={`${playfairDisplay.className} mt-4 max-w-3xl text-4xl font-extrabold leading-[0.98] tracking-[-0.03em] text-[#f8f4ee] sm:text-5xl lg:text-[3.8rem]`}
+                    >
+                      Two decades of operational systems that scaled.
+                    </h2>
+                    <p className="mt-4 text-base font-semibold text-white/66">
+                      Cordys, iNautix / BNY Mellon, Capita
+                    </p>
+                  </div>
+                  <PdfAction href="/case-studies/corporate-longitudinal-case-study.pdf" />
+                </div>
+
+                <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_0.82fr]">
+                  <p className="text-lg leading-8 text-white/80 sm:text-xl sm:leading-9">
+                    A long-running body of enterprise work: workflow systems,
+                    operational intelligence platforms, quality and audit tools,
+                    performance systems, and internal utilities used at
+                    organizational scale.
+                  </p>
+                  <p className="border-l border-white/16 pl-5 text-base leading-7 text-white/66 sm:text-lg sm:leading-8">
+                    Replaced fragile Excel-driven workflows, improved visibility
+                    and auditability, supported thousands of users, and created
+                    sustained gains in cycle time, capacity, and managerial
+                    confidence.
+                  </p>
+                </div>
+
+                <div id="corporate-systems" className="mt-8 grid gap-4 sm:grid-cols-2">
+                  {corporateSystems.map((system) => (
+                    <div key={system} className="flex items-start gap-3 border-t border-white/10 pt-4">
+                      <Building2
+                        className="mt-1 h-5 w-5 shrink-0 text-[#e7d281]"
+                        strokeWidth={1.8}
+                      />
+                      <p className="text-base font-semibold leading-7 text-[#f8f4ee]">
+                        {system}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            </section>
+          </div>
+        </section>
+      </div>
+    </main>
+  );
+}

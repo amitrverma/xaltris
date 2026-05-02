@@ -29,6 +29,15 @@ export default function Footer() {
           >
             Contact
           </a>
+          <span>&middot;</span>
+          <a
+            href="https://www.linkedin.com/in/amitrverma/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-2.5 py-1 rounded-md border border-transparent text-white/95 transition-all duration-200 hover:text-white hover:bg-white/12 hover:border-white/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+          >
+            LinkedIn
+          </a>
         </div>
       </div>
     </footer>

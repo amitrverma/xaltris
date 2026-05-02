@@ -4,16 +4,7 @@ import path from 'path'
 const BASE_URL = 'https://xaltris.com'
 
 export async function GET() {
-  const staticRoutes = [
-    '',
-    '/about',
-    '/blog',
-    '/contact',
-    '/products',
-    '/products/clarity',
-    '/products/momentum',
-    '/solutions',
-  ]
+  const staticRoutes = ['', '/about', '/portfolio', '/blog', '/contact']
 
   const blogDir = path.join(process.cwd(), 'src/content/blog')
   const blogSlugs = readdirSync(blogDir)
@@ -22,7 +13,6 @@ export async function GET() {
 
   const blogRoutes = blogSlugs.map((slug) => `/blog/${slug}`)
   const allRoutes = [...staticRoutes, ...blogRoutes]
-
   const lastMod = new Date().toISOString()
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

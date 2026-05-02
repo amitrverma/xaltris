@@ -85,3 +85,193 @@ body {
 .prose-invert p {
   color: var(--foreground);
 }
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent 78%);
+  opacity: 0.18;
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.42;
+  animation: heroFloat 14s ease-in-out infinite;
+}
+
+.hero-orb-left {
+  top: 8%;
+  left: -8%;
+  height: 18rem;
+  width: 18rem;
+  background: rgba(231, 210, 129, 0.22);
+}
+
+.hero-orb-right {
+  right: -6%;
+  bottom: 18%;
+  height: 20rem;
+  width: 20rem;
+  background: rgba(204, 89, 90, 0.22);
+  animation-delay: -6s;
+}
+
+.hero-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: heroReveal 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-delay-1 {
+  animation-delay: 120ms;
+}
+
+.hero-delay-2 {
+  animation-delay: 240ms;
+}
+
+.hero-delay-3 {
+  animation-delay: 360ms;
+}
+
+.hero-delay-4 {
+  animation-delay: 520ms;
+}
+
+.hero-proof-wrap {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1.5rem;
+}
+
+.hero-proof-rail {
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(231, 210, 129, 0),
+    rgba(231, 210, 129, 0.5) 22%,
+    rgba(231, 210, 129, 0.32) 78%,
+    rgba(231, 210, 129, 0)
+  );
+}
+
+.hero-proof-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.hero-proof-stack p {
+  display: block;
+}
+
+.hero-proof-line {
+  display: block;
+}
+
+.hero-metric-reveal {
+  opacity: 0;
+  transform: translate3d(28px, 0, 0);
+  animation: heroMetricReveal 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-metric-delay-1 {
+  animation-delay: 620ms;
+}
+
+.hero-metric-delay-2 {
+  animation-delay: 980ms;
+}
+
+.hero-metric-delay-3 {
+  animation-delay: 1340ms;
+}
+
+.hero-image-pop {
+  opacity: 0;
+  transform: scale(0.86) translateY(16px);
+  animation: heroImagePop 720ms cubic-bezier(0.2, 1.35, 0.32, 1) 1900ms forwards;
+  transform-origin: center;
+}
+
+@keyframes heroReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(0, -18px, 0) scale(1.05);
+  }
+}
+
+@keyframes heroMetricReveal {
+  0% {
+    opacity: 0;
+    transform: translate3d(28px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(-6px, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes heroImagePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.86) translateY(16px);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.04) translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-proof-wrap {
+    justify-content: flex-end;
+    padding-left: 0;
+    padding-right: 2.25rem;
+  }
+
+  .hero-proof-rail {
+    left: auto;
+    right: 0;
+    top: 1rem;
+    bottom: 1rem;
+  }
+
+  .hero-proof-stack p {
+    text-align: right;
+  }
+}
