@@ -1,6 +1,7 @@
 import {
   BrainCircuit,
   Code2,
+  Download,
   GraduationCap,
   Landmark,
   Linkedin,
@@ -8,6 +9,8 @@ import {
   Target,
 } from "lucide-react";
 import Image from "next/image";
+
+const companyProfileHref = "/case-studies/xaltris-technologies.pdf";
 
 export const metadata = {
   title: "About | Xaltris Technologies",
@@ -109,16 +112,26 @@ export default function AboutPage() {
                   22 years building and scaling technology systems across
                   products, teams, and business contexts.
                 </p>
-                <a
-                  href="https://www.linkedin.com/in/amitrverma/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-5 inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-white/50 hover:bg-white/16 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
-                  aria-label="View Amit Verma on LinkedIn"
-                >
-                  <Linkedin className="h-4 w-4" strokeWidth={2} />
-                  LinkedIn
-                </a>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <a
+                    href="https://www.linkedin.com/in/amitrverma/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-white/50 hover:bg-white/16 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+                    aria-label="View Amit Verma on LinkedIn"
+                  >
+                    <Linkedin className="h-4 w-4" strokeWidth={2} />
+                    LinkedIn
+                  </a>
+                  <a
+                    href={companyProfileHref}
+                    download
+                    className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-white/50 hover:bg-white/16 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+                  >
+                    <Download className="h-4 w-4" strokeWidth={2} />
+                    Company profile
+                  </a>
+                </div>
               </div>
             </div>
           </aside>

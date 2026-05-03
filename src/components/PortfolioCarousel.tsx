@@ -12,6 +12,7 @@ type CaseStudy = {
   outcome: string;
   tags: string[];
   pdfHref: string;
+  websiteHref?: string;
 };
 
 export default function PortfolioCarousel({ items }: { items: CaseStudy[] }) {
@@ -98,7 +99,7 @@ export default function PortfolioCarousel({ items }: { items: CaseStudy[] }) {
               ))}
             </div>
 
-            <div className="mt-auto pt-6">
+            <div className="mt-auto flex flex-wrap items-center gap-3 pt-6">
               <Link
                 href={work.pdfHref}
                 download
@@ -107,6 +108,16 @@ export default function PortfolioCarousel({ items }: { items: CaseStudy[] }) {
                 <Download className="h-4 w-4" strokeWidth={1.8} />
                 Know more
               </Link>
+              {work.websiteHref ? (
+                <Link
+                  href={work.websiteHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-md border border-[#d7ddd6] px-4 py-2 text-sm font-semibold text-[#334c45] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#cc595a] hover:text-[#cc595a]"
+                >
+                  Visit website
+                </Link>
+              ) : null}
             </div>
           </article>
         ))}

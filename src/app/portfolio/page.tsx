@@ -45,27 +45,31 @@ const caseStudies = [
       "Turned fragmented hiring coordination across email, spreadsheets, and informal channels into auditable workflows for trust, mandate execution, collaboration, and commercial closeout.",
     tags: ["Next.js and FastAPI", "PostgreSQL", "B2B marketplace"],
     pdfHref: "/case-studies/veltrix-case-study.pdf",
+    websiteHref: "https://www.veltrixconnect.com/",
   },
   {
     category: "Startup / AI work",
-    title: "SarasAI",
-    context: "AI product and platform work",
+    title: "SarasAI Cloud Labs",
+    context: "AI-assisted governed multi-cloud lab generation platform",
     summary:
-      "A supplied case study for SarasAI. The PDF is available for download; the on-page summary can be deepened once a text-extractable version is available.",
-    outcome: "AI-first product work with a practical delivery lens.",
-    tags: ["AI product", "Platform thinking", "PDF available"],
-    pdfHref: "/case-studies/sarasai-case-study.pdf",
-  },
-  {
-    category: "Startup / AI work",
-    title: "StocAI",
-    context: "Fractional CTO for an AI-driven startup",
-    summary:
-      "Technical strategy, product architecture, and team scaling for an AI-first startup moving from early product direction to structured delivery.",
+      "Built a governed, agentic AI platform that turns natural-language learning objectives into reviewable lab specifications, learner instructions, grading rubrics, and infrastructure provisioning artifacts.",
     outcome:
-      "Senior technical direction where product clarity, architecture, and execution model matter most.",
-    tags: ["Fractional CTO", "AI strategy", "Team scaling"],
+      "Replaced ad-hoc lab authoring with an auditable LMS-integrated workflow grounded in approved AWS, Azure, and GCP service catalogues, with human review, lifecycle tracking, and controlled provisioning.",
+    tags: ["React, Vite, and Tailwind", "FastAPI", "Gemini", "ChromaDB", "PostgreSQL"],
+    pdfHref: "/case-studies/sarasai-case-study.pdf",
+    websiteHref: "https://cloud-lab-frontend-240554129702.us-central1.run.app/",
+  },
+  {
+    category: "Startup / AI work",
+    title: "Better Corporate Life",
+    context: "Domain-specific AI assistant for career progression",
+    summary:
+      "Built a structured professional development platform that combines course video, guided exercises, AI-assisted reflection, accountability partners, and coach support for promotion readiness and leadership growth.",
+    outcome:
+      "Moved career coaching beyond isolated generic LLM conversations by grounding AI interactions in curated domain content, retrieved user context, course progress, and longitudinal analytics.",
+    tags: ["React and FastAPI", "PostgreSQL and pgvector", "OpenAI", "RAG"],
     pdfHref: "/case-studies/stocai-case-study.pdf",
+    websiteHref: "https://www.bettercorporatelife.com/",
   },
   {
     category: "Operational products",
@@ -77,16 +81,19 @@ const caseStudies = [
       "Moved fragmented operational tracking toward live visibility, stronger workflow discipline, reduced manual coordination, and controlled AI experimentation.",
     tags: ["React and .NET", "Azure SQL", "Workflow and AI POCs"],
     pdfHref: "/case-studies/ferox-case-study.pdf",
+    websiteHref: "https://www.ferox-ts.com/",
   },
   {
     category: "Startup / AI work",
-    title: "Neurocient",
-    context: "AI and product engineering",
+    title: "Neurocient Labs",
+    context: "Behavioural intelligence platform for sustainable habit change",
     summary:
-      "A supplied case study for Neurocient. The PDF is available for download; the page can be enriched further when OCR or text extraction is available.",
-    outcome: "Applied AI, product judgment, and engineering execution.",
-    tags: ["AI product", "Product engineering", "PDF available"],
+      "Built a lightweight behavior-change platform that helps users make sense of identity-based tiny actions, daily check-ins, micro-challenges, notes, and friction moments over time.",
+    outcome:
+      "Turned everyday behavioural signals into calm weekly reflections that surface patterns, acknowledge effort, reduce self-judgment, and suggest realistic adjustments for steady progress.",
+    tags: ["React and FastAPI", "PostgreSQL", "OpenAI", "Behavioural design"],
     pdfHref: "/case-studies/neurocient-case-study.pdf",
+    websiteHref: "https://neurocient.com/",
   },
 ];
 

@@ -1,9 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { CalendarClock, Mail, MessageCircle, Phone, Send } from 'lucide-react'
+import { CalendarClock, Download, Mail, MessageCircle, Phone, Send } from 'lucide-react'
 
 const contactEmail = 'hello@xaltris.com'
+const companyProfileHref = '/case-studies/xaltris-technologies.pdf'
 const contactPhoneE164 = '+918551915656'
 const contactPhoneDisplay = '+91-8551915656'
 const encodedWhatsAppMessage = encodeURIComponent(
@@ -93,6 +94,14 @@ export default function ContactPage() {
               <span className="rounded-md border border-white/18 bg-white/8 px-3 py-1.5">
                 Technical direction
               </span>
+              <a
+                href={companyProfileHref}
+                download
+                className="inline-flex items-center gap-2 rounded-md border border-white/28 bg-white/10 px-3 py-1.5 transition-colors hover:border-white/45 hover:bg-white/14"
+              >
+                <Download className="h-4 w-4" strokeWidth={2} />
+                Download company profile
+              </a>
             </div>
           </div>
         </section>
