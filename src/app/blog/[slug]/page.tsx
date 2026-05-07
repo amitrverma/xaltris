@@ -56,24 +56,54 @@ export default async function BlogPost({
   const source = fs.readFileSync(filePath, 'utf-8')
   const { content, data } = matter(source)
 
+  if (data.layout === 'fermat') {
+    return (
+      <main className="fermat-post min-h-screen bg-[#f7f2ea] text-[#162f2a]">
+        <article className="blog-essay fermat-article">
+          <Link
+            href="/blog"
+            className="blog-essay-back"
+          >
+            Back to blog
+          </Link>
+          <header className="blog-essay-header">
+            <p className="blog-essay-kicker">Blog</p>
+            <h1>{data.title}</h1>
+            {data.date && (
+              <p className="blog-essay-meta">
+                {new Date(data.date).toDateString()}
+              </p>
+            )}
+          </header>
+          <div className="fermat-article-content">
+            <MDXRemote source={content} />
+          </div>
+        </article>
+      </main>
+    )
+  }
+
   return (
-    <main className="min-h-screen bg-[#f7f2ea] px-6 py-16 text-[#162f2a] transition-colors duration-300 sm:py-20">
-      <article className="prose mx-auto max-w-5xl rounded-lg border border-[#d7ddd6] bg-white px-6 py-10 shadow-[0_18px_45px_-36px_rgba(22,47,42,0.55)] sm:px-10 sm:py-12">
+    <main className="min-h-screen bg-[#f7f2ea] text-[#162f2a] transition-colors duration-300">
+      <article className="blog-essay">
         <Link
           href="/blog"
-          className="not-prose mb-5 inline-flex text-sm font-semibold text-[#cc595a] transition-colors hover:text-[#a74648]"
+          className="blog-essay-back"
         >
           Back to blog
         </Link>
-        <h1 className="type-section-title mb-3 mt-4 text-[#162f2a]">
-          {data.title}
-        </h1>
-        {data.date && (
-          <p className="type-meta mb-8 text-[#7c8b85]">
-            {new Date(data.date).toDateString()}
-          </p>
-        )}
-        <MDXRemote source={content} />
+        <header className="blog-essay-header">
+          <p className="blog-essay-kicker">Blog</p>
+          <h1>{data.title}</h1>
+          {data.date && (
+            <p className="blog-essay-meta">
+              {new Date(data.date).toDateString()}
+            </p>
+          )}
+        </header>
+        <div className="blog-essay-content">
+          <MDXRemote source={content} />
+        </div>
       </article>
     </main>
   )
