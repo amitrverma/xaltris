@@ -468,6 +468,14 @@ body {
   color: inherit;
 }
 
+.fermat-article a {
+  color: var(--fermat-accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
 .fermat-lead-paragraph::first-letter {
   float: left;
   margin: 0.08em 0.12em 0 0;
@@ -626,6 +634,23 @@ body {
   font-size: clamp(1.2rem, 2vw, 1.45rem);
   font-style: italic;
   line-height: 1.8;
+}
+
+.full-cycle-closing {
+  margin-top: 5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(204, 89, 90, 0.38);
+}
+
+.full-cycle-closing p {
+  margin: 0 0 1.65em;
+  color: #334c45;
+  font-family: var(--font-montserrat), Helvetica, sans-serif;
+  font-size: clamp(1.03rem, 1.7vw, 1.15rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.85;
+  text-align: left;
 }
 
 .fermat-post-footer {
