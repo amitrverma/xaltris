@@ -4,7 +4,6 @@ import path from 'path'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import type { Metadata } from 'next'
-import Link from 'next/link'
 
 export async function generateMetadata({
   params,
@@ -56,18 +55,13 @@ export default async function BlogPost({
   const source = fs.readFileSync(filePath, 'utf-8')
   const { content, data } = matter(source)
 
-  if (data.layout === 'fermat') {
+  // The editorial essay treatment is the default for new posts. Older posts
+  // can retain the original presentation with `layout: "standard"`.
+  if (data.layout !== 'standard') {
     return (
       <main className="fermat-post min-h-screen bg-[#f7f2ea] text-[#162f2a]">
         <article className="blog-essay fermat-article">
-          <Link
-            href="/blog"
-            className="blog-essay-back"
-          >
-            Back to blog
-          </Link>
           <header className="blog-essay-header">
-            <p className="blog-essay-kicker">Blog</p>
             <h1>{data.title}</h1>
             {data.date && (
               <p className="blog-essay-meta">
@@ -86,14 +80,7 @@ export default async function BlogPost({
   return (
     <main className="min-h-screen bg-[#f7f2ea] text-[#162f2a] transition-colors duration-300">
       <article className="blog-essay">
-        <Link
-          href="/blog"
-          className="blog-essay-back"
-        >
-          Back to blog
-        </Link>
         <header className="blog-essay-header">
-          <p className="blog-essay-kicker">Blog</p>
           <h1>{data.title}</h1>
           {data.date && (
             <p className="blog-essay-meta">
