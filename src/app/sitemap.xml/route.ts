@@ -4,7 +4,15 @@ import path from 'path'
 const BASE_URL = 'https://xaltris.com'
 
 export async function GET() {
-  const staticRoutes = ['', '/about', '/portfolio', '/blog', '/contact']
+  const staticRoutes = [
+    '',
+    '/about',
+    '/vibe-to-viable',
+    '/portfolio',
+    '/blog',
+    '/for-good',
+    '/contact',
+  ]
 
   const blogDir = path.join(process.cwd(), 'src/content/blog')
   const blogSlugs = readdirSync(blogDir)

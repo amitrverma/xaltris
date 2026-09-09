@@ -9,13 +9,15 @@ import {
   Target,
 } from "lucide-react";
 import Image from "next/image";
+import ExperienceYears from "../../components/ExperienceYears";
+import { calculateExperienceYears } from "../../lib/experience";
 
 const companyProfileHref = "/case-studies/xaltris-technologies.pdf";
 
 export const metadata = {
   title: "About | Xaltris Technologies",
   description:
-    "About Amit Verma and Xaltris: 22 years of engineering experience, fractional CTO thinking, and AI-accelerated execution for early-stage startups.",
+    "About Amit Verma and Xaltris: deep engineering experience, fractional CTO thinking, and AI-accelerated execution for early-stage startups.",
 };
 
 const strengths = [
@@ -84,6 +86,8 @@ const careerArc = [
 ];
 
 export default function AboutPage() {
+  const experienceYears = calculateExperienceYears();
+
   return (
     <main className="min-h-screen bg-[#4f7466] px-6 py-24 text-white transition-colors duration-300 sm:py-28">
       <div className="mx-auto max-w-7xl">
@@ -109,7 +113,7 @@ export default function AboutPage() {
                   Builder. Technologist. Problem solver.
                 </p>
                 <p className="type-body mt-4 max-w-md text-white">
-                  22 years building and scaling technology systems across
+                  <ExperienceYears initialYears={experienceYears} /> years building and scaling technology systems across
                   products, teams, and business contexts.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3">
@@ -178,7 +182,10 @@ export default function AboutPage() {
           <div className="type-lead space-y-6 text-white">
             <p>
               I am a technology leader with{" "}
-              <span className="font-bold text-[#d9bf69]">22 years</span> of
+              <span className="font-bold text-[#d9bf69]">
+                <ExperienceYears initialYears={experienceYears} /> years
+              </span>{" "}
+              of
               experience building and scaling robust software systems across
               domains.
             </p>

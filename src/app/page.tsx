@@ -1,6 +1,8 @@
 import Link from 'next/link'
 
+import ExperienceYears from '../components/ExperienceYears'
 import FaqSection from '../components/FaqSection'
+import { calculateExperienceYears } from '../lib/experience'
 
 const secondFoldOutcomes = [
   {
@@ -29,7 +31,7 @@ const secondFoldProof = [
   {
     label: '01',
     title: 'Enterprise judgment',
-    copy: '22 years across products, platforms, teams, and production scale.',
+    copy: 'years across products, platforms, teams, and production scale.',
   },
   {
     label: '02',
@@ -73,6 +75,8 @@ export const metadata = {
 }
 
 export default function HomePage() {
+  const experienceYears = calculateExperienceYears()
+
   return (
     <>
       <main className="relative overflow-hidden bg-[#4f7466] px-6 py-6 text-white transition-colors duration-300 sm:py-8">
@@ -136,19 +140,18 @@ export default function HomePage() {
                   <h2
                     className="type-section-title max-w-2xl text-white"
                   >
-                    Fractional CTO, who builds!
-                  </h2>
-                  <p className="type-lead mt-6 max-w-2xl text-white">
                     Xaltris is{" "}
                     <Link
                       href="/about"
-                      className="font-semibold text-white underline decoration-white/45 underline-offset-4 transition-colors hover:text-[#d9bf69] hover:decoration-[#d9bf69]"
+                      className="underline decoration-white/45 underline-offset-6 transition-colors hover:text-[#d9bf69] hover:decoration-[#d9bf69]"
                     >
                       my
                     </Link>{" "}
-                    one-person boutique software studio. I use AI with my OI -
-                    Original Intelligence, to provide strategic technology
-                    solutions (Fractional CTO and software development).
+                    one-person software studio.
+                  </h2>
+                  <p className="type-lead mt-6 max-w-2xl text-white">
+                    I use AI with OI to provide strategic technology solutions:
+                    Fractional CTO and product development.
                   </p>
                   <div className="mt-5 flex max-w-2xl flex-wrap items-center gap-x-5 gap-y-2 text-xl font-semibold leading-8 text-white">
                     <span className="h-px w-12 bg-[#d9bf69]" />
@@ -176,7 +179,13 @@ export default function HomePage() {
                           {title}
                         </p>
                         <p className="type-small mt-3 max-w-[15rem] text-white">
-                          {copy}
+                          {title === 'Enterprise judgment' ? (
+                            <>
+                              <ExperienceYears initialYears={experienceYears} /> {copy}
+                            </>
+                          ) : (
+                            copy
+                          )}
                         </p>
                       </div>
                     ))}

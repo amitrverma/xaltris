@@ -10,7 +10,7 @@ module.exports = {
 
     if (path === '/') priority = 1.0
 
-    if (['/about', '/portfolio', '/contact', '/blog'].includes(path)) {
+    if (['/about', '/vibe-to-viable', '/portfolio', '/contact', '/blog'].includes(path)) {
       priority = 0.8
     }
 
