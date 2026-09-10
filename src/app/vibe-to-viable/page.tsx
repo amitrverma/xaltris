@@ -35,13 +35,6 @@ const auditAreas = [
   },
 ];
 
-const signals = [
-  "You hesitate before inviting more users.",
-  "Security is harder to explain than it should be.",
-  "Every new prompt feels slightly more dangerous.",
-  "You can ship, but cannot yet explain the engineering.",
-];
-
 const riskFindings = [
   {
     title: "A user can see another user's data.",
@@ -75,25 +68,6 @@ const planItems = [
     label: "03",
     title: "Fix before the next stage",
     copy: "Structural issues that will slow you down as the product, customer base, or engineering team grows.",
-  },
-];
-
-const process = [
-  {
-    title: "Find the truth",
-    copy: "Audit the product and separate real risk from code that merely looks unconventional.",
-  },
-  {
-    title: "Close the dangerous gaps",
-    copy: "Fix the security, data, and reliability issues that can hurt users or the business.",
-  },
-  {
-    title: "Strengthen the foundation",
-    copy: "Improve the parts that make future changes safer and the next stage easier to support.",
-  },
-  {
-    title: "Keep shipping safely",
-    copy: "Continue using AI for speed, with senior engineering oversight around what reaches production.",
   },
 ];
 
@@ -133,18 +107,18 @@ export const metadata = {
 
 export default function VibeToViablePage() {
   return (
-    <main className="min-h-screen bg-[#4f7466] text-white">
-      <section className="relative overflow-hidden bg-[#3f6759] px-6 py-14 sm:py-20">
+    <main className="min-h-screen overflow-x-hidden bg-[#4f7466] text-white">
+      <section className="relative overflow-hidden bg-[#3f6759] px-5 py-12 sm:px-6 sm:py-20">
         <div className="pointer-events-none absolute inset-0">
           <div className="hero-grid" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl border-b border-white/18 pb-14">
+        <div className="relative mx-auto max-w-7xl border-b border-white/18 pb-12 sm:pb-14">
           <div className="max-w-5xl">
             <p className="type-kicker text-[#f1d778]">Vibe to Viable</p>
-            <h1 className="mt-6 max-w-[13ch] font-display text-[clamp(3.35rem,7.4vw,6.6rem)] font-extrabold leading-[0.98] text-white">
+            <h1 className="mt-6 max-w-[13ch] font-display text-[clamp(2.85rem,13vw,6.6rem)] font-extrabold leading-[0.98] text-white sm:text-[clamp(3.35rem,7.4vw,6.6rem)]">
               Vibe coded your MVP?
-              <span className="mt-3 block whitespace-nowrap text-[0.68em] text-[#f1d778]">
+              <span className="mt-3 block whitespace-nowrap text-[clamp(1.28rem,5.75vw,4.5rem)] leading-[1.02] text-[#f1d778] min-[380px]:text-[clamp(1.45rem,6.4vw,4.5rem)] sm:text-[0.68em]">
                 Now make it business-ready.
               </span>
             </h1>
@@ -179,63 +153,24 @@ export default function VibeToViablePage() {
         <RiskLens />
       </section>
 
-      <section className="bg-[#f7f2ea] px-6 py-20 text-[#203530] sm:py-24">
+      <section id="audit" className="bg-[#f7f2ea] px-6 py-20 text-[#203530] sm:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
             <div>
-              <p className="type-kicker text-[#cc595a]">The awkward middle</p>
-              <h2 className="type-section-title mt-5 max-w-xl">
-                It is no longer a prototype. But you are not quite sure it is a
-                product either.
-              </h2>
-            </div>
-
-            <div>
-              <p className="type-lead max-w-3xl text-[#334c45]">
-                This is where vibe-built software gets uncomfortable: it works
-                well enough to create momentum, but you do not know which
-                shortcuts are harmless and which ones are waiting to become
-                expensive.
-              </p>
-              <div className="mt-9 grid gap-4 sm:grid-cols-2">
-                {signals.map((signal) => (
-                  <article
-                    key={signal}
-                    className="rounded-lg border border-[#d8d1c3] bg-white/64 p-5"
-                  >
-                    <TriangleAlert
-                      className="h-6 w-6 text-[#cc595a]"
-                      strokeWidth={1.9}
-                    />
-                    <h3 className="type-body-lg mt-4 font-semibold text-[#203530]">
-                      {signal}
-                    </h3>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="audit" className="px-6 py-20 sm:py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
-            <div>
-              <p className="type-kicker text-[#d9bf69]">Start here</p>
-              <h2 className="type-section-title mt-5 max-w-xl text-white">
+              <p className="type-kicker text-[#cc595a]">Start here</p>
+              <h2 className="type-section-title mt-5 max-w-xl text-[#203530]">
                 The Vibe Code Rescue Audit.
               </h2>
-              <p className="type-body-lg mt-6 max-w-lg text-white">
+              <p className="type-body-lg mt-6 max-w-lg text-[#334c45]">
                 Before changing anything, I establish what is actually true.
                 You get a senior-engineering view of the product, translated
                 into decisions you can make.
               </p>
-              <div className="mt-8 rounded-lg border border-white/16 bg-white/8 p-6">
-                <p className="type-body font-semibold text-white">
+              <div className="mt-8 rounded-lg border border-[#d8d1c3] bg-white/64 p-6">
+                <p className="type-body font-semibold text-[#203530]">
                   You are not buying a list of technical complaints.
                 </p>
-                <p className="type-body mt-3 text-white">
+                <p className="type-body mt-3 text-[#334c45]">
                   You are buying clarity: what can stay, what must change, what
                   can wait, and why.
                 </p>
@@ -246,14 +181,14 @@ export default function VibeToViablePage() {
               {auditAreas.map(({ title, copy }) => (
                 <article
                   key={title}
-                  className="rounded-lg border border-white/16 bg-white/8 p-6"
+                  className="rounded-lg border border-[#d8d1c3] bg-white/64 p-6"
                 >
                   <FileSearch
-                    className="h-6 w-6 text-[#d9bf69]"
+                    className="h-6 w-6 text-[#cc595a]"
                     strokeWidth={1.9}
                   />
-                  <h3 className="type-card-title mt-4 text-white">{title}</h3>
-                  <p className="type-body mt-3 text-white">{copy}</p>
+                  <h3 className="type-card-title mt-4 text-[#203530]">{title}</h3>
+                  <p className="type-body mt-3 text-[#334c45]">{copy}</p>
                 </article>
               ))}
             </div>
@@ -291,35 +226,7 @@ export default function VibeToViablePage() {
         </div>
       </section>
 
-      <section className="bg-[#f7f2ea] px-6 py-20 text-[#203530] sm:py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12 max-w-3xl">
-            <p className="type-kicker text-[#cc595a]">From vibe to viable</p>
-            <h2 className="type-section-title mt-5">
-              Rescue what you built. Keep the speed that got you here.
-            </h2>
-          </div>
-
-          <div className="grid gap-5 lg:grid-cols-4">
-            {process.map(({ title, copy }, index) => (
-              <article
-                key={title}
-                className="rounded-lg border border-[#d8d1c3] bg-white/64 p-6"
-              >
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#203530] text-sm font-bold text-white">
-                  {index + 1}
-                </span>
-                <h3 className="type-card-title mt-5 text-[#203530]">
-                  {title}
-                </h3>
-                <p className="type-body mt-3 text-[#334c45]">{copy}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-20 sm:py-24">
+      <section className="bg-[#315348] px-6 py-20 sm:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
             <div>

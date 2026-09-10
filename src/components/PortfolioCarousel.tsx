@@ -61,7 +61,7 @@ export default function PortfolioCarousel({ items }: { items: CaseStudy[] }) {
                 ? "operational-products"
                 : undefined
             }
-            className="flex min-h-[31rem] w-[calc(100vw-3rem)] shrink-0 snap-start flex-col rounded-lg border border-[#d7ddd6] bg-white p-5 shadow-[0_18px_45px_-36px_rgba(22,47,42,0.55)] sm:w-[72%] sm:p-6 lg:w-[calc((100%-1.5rem)/2)]"
+            className="flex min-h-[31rem] w-[calc(100vw-4.5rem)] shrink-0 snap-start flex-col rounded-lg border border-[#d7ddd6] bg-white p-5 shadow-[0_18px_45px_-36px_rgba(22,47,42,0.55)] sm:w-[72%] sm:p-6 lg:w-[calc((100%-1.5rem)/2)]"
           >
             <div className="flex items-start justify-between gap-5">
               <div>

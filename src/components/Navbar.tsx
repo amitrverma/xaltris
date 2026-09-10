@@ -25,14 +25,14 @@ export default function Navbar() {
         {/* Logo + Brand */}
         <Link
           href="/"
-          className="group -ml-[20px] flex flex-col items-center justify-center space-y-0 leading-tight"
+          className="group -ml-3 flex flex-col items-center justify-center space-y-0 leading-tight sm:-ml-[20px]"
         >
           <Image
             src="/logo.png"
             alt="Xaltris logo"
             width={176}
             height={80}
-            className="h-20 w-auto transition-transform group-hover:scale-[1.03]"
+            className="h-16 w-auto transition-transform group-hover:scale-[1.03] sm:h-20"
           />
         </Link>
 
@@ -72,7 +72,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="mx-auto mt-3 max-w-7xl space-y-2 border-t border-white/12 pt-3 text-sm font-semibold md:hidden">
+        <div className="mx-auto mt-3 max-h-[calc(100dvh-5.75rem)] max-w-7xl space-y-2 overflow-y-auto border-t border-white/12 pt-3 text-sm font-semibold md:hidden">
           {navItems.map(({ name, href }) => {
             const isActive = pathname === href;
             return (

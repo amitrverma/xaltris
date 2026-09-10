@@ -70,9 +70,12 @@ export default function ForGoodPage() {
 
             <a
               href="mailto:hello@xaltris.com?subject=Nomination%20for%20The%20Good%20Code%20Project"
-              className="mt-8 inline-flex rounded-md border border-[#e08a8b] bg-[#cc595a] px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_-20px_rgba(204,89,90,0.8)] transition hover:-translate-y-0.5 hover:bg-[#b94f51]"
+              className="mt-8 inline-flex items-center justify-center rounded-md border border-[#e08a8b] bg-[#cc595a] px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_-20px_rgba(204,89,90,0.8)] transition hover:-translate-y-0.5 hover:bg-[#b94f51]"
             >
-              Nominate for <GoodCodeLabel className="ml-1 inline" />
+              <span className="sm:hidden">Nominate a project</span>
+              <span className="hidden sm:inline">
+                Nominate for <GoodCodeLabel className="ml-1 inline" />
+              </span>
             </a>
           </div>
         </div>
@@ -139,9 +142,12 @@ export default function ForGoodPage() {
           </p>
           <a
             href="mailto:hello@xaltris.com?subject=Nomination%20for%20The%20Good%20Code%20Project"
-            className="mt-8 inline-flex rounded-md border border-[#e08a8b] bg-[#cc595a] px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_-20px_rgba(204,89,90,0.8)] transition hover:-translate-y-0.5 hover:bg-[#b94f51]"
+            className="mt-8 inline-flex items-center justify-center rounded-md border border-[#e08a8b] bg-[#cc595a] px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_-20px_rgba(204,89,90,0.8)] transition hover:-translate-y-0.5 hover:bg-[#b94f51]"
           >
-            Nominate for <GoodCodeLabel className="ml-1 inline" />
+            <span className="sm:hidden">Nominate a project</span>
+            <span className="hidden sm:inline">
+              Nominate for <GoodCodeLabel className="ml-1 inline" />
+            </span>
           </a>
         </div>
       </section>

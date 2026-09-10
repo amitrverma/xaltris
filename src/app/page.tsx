@@ -84,6 +84,15 @@ export default function HomePage() {
           <div className="hero-grid" />
         </div>
 
+        <Link
+          href="/vibe-to-viable"
+          className="vibe-sticker"
+          aria-label="Open Vibe to Viable"
+        >
+          <span className="vibe-sticker-eyebrow">New</span>
+          <span className="vibe-sticker-title">Vibe to Viable</span>
+        </Link>
+
         <div className="relative mx-auto max-w-7xl">
           <section className="flex min-h-[70vh] items-start pt-12 pb-2 sm:pt-16 sm:pb-4 lg:pt-20">
             <div className="mx-auto w-full max-w-6xl">
@@ -98,20 +107,22 @@ export default function HomePage() {
                   </span>
                 </h1>
 
-                <div className="hero-proof-wrap hero-reveal hero-delay-3 lg:pb-4">
-                  <div className="hero-proof-rail" />
-                  <div
-                    className="type-hero-metric hero-proof-stack text-left text-[#d9bf69] lg:text-right"
-                  >
-                    <p className="hero-metric-reveal hero-metric-delay-1">
-                      <span className="hero-proof-line whitespace-nowrap">8X Faster</span>
-                    </p>
-                    <p className="hero-metric-reveal hero-metric-delay-2">
-                      <span className="hero-proof-line whitespace-nowrap">4X Cheaper</span>
-                    </p>
-                    <p className="hero-metric-reveal hero-metric-delay-3">
-                      <span className="hero-proof-line whitespace-nowrap">2X Better</span>
-                    </p>
+                <div className="hero-proof-area hero-reveal hero-delay-3 lg:pb-4">
+                  <div className="hero-proof-wrap">
+                    <div className="hero-proof-rail" />
+                    <div
+                      className="type-hero-metric hero-proof-stack text-left text-[#d9bf69] lg:text-right"
+                    >
+                      <p className="hero-metric-reveal hero-metric-delay-1">
+                        <span className="hero-proof-line whitespace-nowrap">8X Faster</span>
+                      </p>
+                      <p className="hero-metric-reveal hero-metric-delay-2">
+                        <span className="hero-proof-line whitespace-nowrap">4X Cheaper</span>
+                      </p>
+                      <p className="hero-metric-reveal hero-metric-delay-3">
+                        <span className="hero-proof-line whitespace-nowrap">2X Better</span>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
