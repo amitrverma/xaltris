@@ -94,13 +94,13 @@ export default function AboutPage() {
         <section className="grid gap-12 border-b border-white/12 pb-14 lg:min-h-[34rem] lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-16">
           <aside className="lg:flex lg:h-full lg:items-center lg:justify-center">
             <div className="grid gap-6 sm:grid-cols-[14rem_1fr] sm:items-end lg:block lg:w-full lg:max-w-[25rem]">
-              <div className="relative mx-auto aspect-square w-full max-w-[18rem] overflow-hidden rounded-full border-[7px] border-white/90 bg-[#dce8ff] shadow-[0_18px_50px_rgba(4,42,43,0.16)] sm:max-w-none lg:max-w-[20rem]">
+              <div className="relative mx-auto aspect-square w-full max-w-[18rem] overflow-hidden rounded-full border-[7px] border-white/90 bg-[#ddd7d1] shadow-[0_18px_50px_rgba(4,42,43,0.16)] sm:max-w-none lg:max-w-[20rem]">
                 <Image
-                  src="/amit-verma-headshot.jpg"
+                  src="/amit-verma.png"
                   alt="Amit Verma"
                   fill
                   priority
-                  className="object-cover"
+                  className="object-contain"
                   sizes="(max-width: 640px) 72vw, (max-width: 1024px) 224px, 320px"
                 />
               </div>
