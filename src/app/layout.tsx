@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Software, done right. Smarter tools, custom platforms, and AI-powered solutions built with experience and delivered with care.",
+    "Fractional CTO leadership and full-cycle product engineering for early-stage startups, from product clarity to production-ready software.",
 
   icons: {
     icon: "/favicon.ico",

@@ -86,9 +86,10 @@ const notFit = [
 ];
 
 export const metadata = {
-  title: "Vibe to Viable | Xaltris Technologies",
+  title: "Vibe to Viable",
   description:
     "Vibe to Viable is my rescue service for vibe-coded MVPs: I audit the risks, fix what matters, and make the product business-ready.",
+  alternates: { canonical: "/vibe-to-viable" },
   openGraph: {
     title: "Vibe to Viable by Xaltris",
     description:
@@ -107,18 +108,18 @@ export const metadata = {
 
 export default function VibeToViablePage() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#4f7466] text-white">
-      <section className="relative overflow-hidden bg-[#3f6759] px-5 py-12 sm:px-6 sm:py-20">
+    <main className="min-h-screen overflow-x-hidden bg-[#3f6759] text-white">
+      <section className="relative overflow-hidden bg-[#3f6759] px-6 py-16 sm:py-20">
         <div className="pointer-events-none absolute inset-0">
           <div className="hero-grid" />
         </div>
 
         <div className="relative mx-auto max-w-7xl border-b border-white/18 pb-12 sm:pb-14">
           <div className="max-w-5xl">
-            <p className="type-kicker text-[#f1d778]">Vibe to Viable</p>
-            <h1 className="mt-6 max-w-[13ch] font-display text-[clamp(2.85rem,13vw,6.6rem)] font-extrabold leading-[0.98] text-white sm:text-[clamp(3.35rem,7.4vw,6.6rem)]">
+            <p className="type-kicker text-[#d9bf69]">Vibe to Viable</p>
+            <h1 className="hero-primary-title mt-6 max-w-[13ch] text-white">
               Vibe coded your MVP?
-              <span className="mt-3 block whitespace-nowrap text-[clamp(1.28rem,5.75vw,4.5rem)] leading-[1.02] text-[#f1d778] min-[380px]:text-[clamp(1.45rem,6.4vw,4.5rem)] sm:text-[0.68em]">
+              <span className="mt-3 block whitespace-nowrap text-[clamp(1.28rem,5.75vw,4.5rem)] leading-[1.02] text-[#d9bf69] min-[380px]:text-[clamp(1.45rem,6.4vw,4.5rem)] sm:text-[0.68em]">
                 Now make it business-ready.
               </span>
             </h1>
@@ -132,7 +133,7 @@ export default function VibeToViablePage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-[#e08a8b] bg-[#cc595a] px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-[#a53f43] bg-[#a53f43] px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#8f3438] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
               >
                 Get a rescue audit
                 <ArrowRight className="h-4 w-4" strokeWidth={2} />
@@ -149,16 +150,16 @@ export default function VibeToViablePage() {
         </div>
       </section>
 
-      <section className="bg-[#315348] px-6 py-14 sm:py-16">
+      <section className="bg-[#315348] px-6 py-20 sm:py-24">
         <RiskLens />
       </section>
 
-      <section id="audit" className="bg-[#f7f2ea] px-6 py-20 text-[#203530] sm:py-24">
+      <section id="audit" className="bg-[#f7f2ea] px-6 py-20 text-[#162f2a] sm:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
             <div>
-              <p className="type-kicker text-[#cc595a]">Start here</p>
-              <h2 className="type-section-title mt-5 max-w-xl text-[#203530]">
+              <p className="type-kicker text-[#a53f43]">Start here</p>
+              <h2 className="type-section-title mt-5 max-w-xl text-[#183a34]">
                 The Vibe Code Rescue Audit.
               </h2>
               <p className="type-body-lg mt-6 max-w-lg text-[#334c45]">
@@ -166,8 +167,8 @@ export default function VibeToViablePage() {
                 You get a senior-engineering view of the product, translated
                 into decisions you can make.
               </p>
-              <div className="mt-8 rounded-lg border border-[#d8d1c3] bg-white/64 p-6">
-                <p className="type-body font-semibold text-[#203530]">
+              <div className="mt-8 rounded-lg border border-[#d7ddd6] bg-white/64 p-6">
+                <p className="type-body font-semibold text-[#183a34]">
                   You are not buying a list of technical complaints.
                 </p>
                 <p className="type-body mt-3 text-[#334c45]">
@@ -181,13 +182,13 @@ export default function VibeToViablePage() {
               {auditAreas.map(({ title, copy }) => (
                 <article
                   key={title}
-                  className="rounded-lg border border-[#d8d1c3] bg-white/64 p-6"
+                  className="rounded-lg border border-[#d7ddd6] bg-white/64 p-6"
                 >
                   <FileSearch
                     className="h-6 w-6 text-[#cc595a]"
                     strokeWidth={1.9}
                   />
-                  <h3 className="type-card-title mt-4 text-[#203530]">{title}</h3>
+                  <h3 className="type-card-title mt-4 text-[#183a34]">{title}</h3>
                   <p className="type-body mt-3 text-[#334c45]">{copy}</p>
                 </article>
               ))}
@@ -196,7 +197,7 @@ export default function VibeToViablePage() {
         </div>
       </section>
 
-      <section className="border-y border-white/12 bg-[#638475] px-6 py-20 sm:py-24">
+      <section className="border-y border-white/12 bg-[#315348] px-6 py-20 sm:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
             <div>
@@ -244,8 +245,8 @@ export default function VibeToViablePage() {
         </div>
       </section>
 
-      <section className="bg-[#f7f2ea] px-6 py-20 text-[#203530] sm:py-24">
-        <div className="mx-auto max-w-7xl rounded-lg bg-[#203530] px-8 py-10 text-white shadow-[0_22px_70px_-32px_rgba(32,53,48,0.85)] sm:px-10">
+      <section className="bg-[#f7f2ea] px-6 py-20 text-[#162f2a] sm:py-24">
+        <div className="mx-auto max-w-7xl rounded-lg bg-[#183a34] px-8 py-10 text-white shadow-[0_22px_70px_-32px_rgba(32,53,48,0.85)] sm:px-10">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
               <p className="type-kicker text-[#d9bf69]">Vibe to Viable</p>
@@ -262,7 +263,7 @@ export default function VibeToViablePage() {
 
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-[#e08a8b] bg-[#cc595a] px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-[#a53f43] bg-[#a53f43] px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#8f3438] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
             >
               Get a rescue audit
               <ArrowRight className="h-4 w-4" strokeWidth={2} />
@@ -278,7 +279,7 @@ function RiskLens() {
   return (
     <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-16">
       <div>
-        <p className="type-kicker text-[#f1d778]">Audit lens</p>
+        <p className="type-kicker text-[#d9bf69]">Audit lens</p>
         <h2 className="type-section-title mt-5 max-w-xl text-white">
           What &quot;it works&quot; can still hide.
         </h2>
@@ -295,7 +296,7 @@ function RiskLens() {
               key={title}
               className="flex gap-4 border-t border-white/12 pt-5 first:border-t-0 first:pt-0"
             >
-              <span className="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-[#f1d778]">
+              <span className="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-[#d9bf69]">
                 <Icon />
               </span>
               <div>

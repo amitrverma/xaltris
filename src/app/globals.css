@@ -3,21 +3,37 @@
 /* ↓ Custom Variables and Styles ↓ */
 
 :root {
-  --background: #4f7466;
+  --background: #3f6759;
   --foreground: #ffffff;
   --secondary: #183a34;
   --brand-deep: #183a34;
-  --brand-green: #4f7466;
+  --brand-green: #3f6759;
   --brand-sage: #d7ddd6;
   --brand-cream: #f7f2ea;
   --brand-ink: #162f2a;
   --brand-muted: #53675f;
   --brand-gold: #d9bf69;
-  --primary: #cc595a;
+  --brand-coral: #cc595a;
+  --primary: #a53f43;
 }
 
 html {
   color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(217, 191, 105, 0.42);
+  color: var(--brand-ink);
+}
+
+:where(a, button, input, textarea, summary):focus-visible {
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 3px;
+}
+
+summary::-webkit-details-marker {
+  display: none;
 }
 
 @theme inline {
@@ -47,16 +63,18 @@ body {
 
 .type-hero {
   font-family: var(--font-playfair), Georgia, serif;
-  font-size: clamp(3.45rem, 12vw, 7rem);
+  font-size: clamp(3.25rem, 6.2vw, 6.35rem);
   font-weight: 800;
-  line-height: 0.94;
+  letter-spacing: -0.035em;
+  line-height: 0.88;
 }
 
-.type-home-hero {
+.hero-primary-title {
   font-family: var(--font-playfair), Georgia, serif;
-  font-size: clamp(3.45rem, 13vw, 8.4rem);
+  font-size: clamp(3.25rem, 6.2vw, 6.35rem);
   font-weight: 800;
-  line-height: 0.9;
+  letter-spacing: -0.035em;
+  line-height: 0.88;
 }
 
 .type-hero-metric {
@@ -734,249 +752,17 @@ body {
   opacity: 0.18;
 }
 
-.hero-reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  animation: heroReveal 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.hero-delay-1 {
-  animation-delay: 120ms;
-}
-
-.hero-delay-2 {
-  animation-delay: 240ms;
-}
-
-.hero-delay-3 {
-  animation-delay: 360ms;
-}
-
-.hero-delay-4 {
-  animation-delay: 520ms;
-}
-
-.hero-proof-area {
-  position: relative;
-}
-
-.hero-proof-wrap {
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 1.5rem;
-}
-
-.hero-proof-rail {
-  position: absolute;
-  left: 0;
-  top: 0.75rem;
-  bottom: 0.75rem;
-  width: 1px;
-  background: linear-gradient(
-    180deg,
-    rgba(231, 210, 129, 0),
-    rgba(231, 210, 129, 0.5) 22%,
-    rgba(231, 210, 129, 0.32) 78%,
-    rgba(231, 210, 129, 0)
-  );
-}
-
-.hero-proof-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.hero-proof-stack p {
-  display: block;
-}
-
-.hero-proof-line {
-  display: block;
-}
-
-.hero-metric-reveal {
-  opacity: 0;
-  transform: translate3d(28px, 0, 0);
-  animation: heroMetricReveal 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.hero-metric-delay-1 {
-  animation-delay: 620ms;
-}
-
-.hero-metric-delay-2 {
-  animation-delay: 980ms;
-}
-
-.hero-metric-delay-3 {
-  animation-delay: 1340ms;
-}
-
-.hero-image-pop {
-  opacity: 0;
-  transform: scale(0.86) translateY(16px);
-  animation: heroImagePop 720ms cubic-bezier(0.2, 1.35, 0.32, 1) 1900ms forwards;
-  transform-origin: center;
-}
-
-.hero-software-word {
-  font-family: Cubao, Impact, Haettenschweiler, "Arial Black", sans-serif;
-  font-stretch: expanded;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-.vibe-sticker {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  isolation: isolate;
-  display: inline-grid;
-  min-width: min(100%, 12rem);
-  max-width: 100%;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.8rem 1.05rem 0.88rem;
-  border: 2px solid rgba(22, 47, 42, 0.9);
-  border-radius: 6px;
-  background: #f7f2ea;
-  box-shadow: 0 14px 0 rgba(24, 58, 52, 0.28), 0 22px 38px rgba(24, 58, 52, 0.28);
-  color: var(--brand-ink);
-  text-decoration: none;
-  transform: rotate(-7deg) translateY(18px) scale(0.94);
-  opacity: 0;
-  animation: vibeStickerIn 640ms cubic-bezier(0.2, 1.25, 0.32, 1) 2350ms forwards;
-  transition:
-    box-shadow 220ms ease,
-    transform 220ms ease,
-    background-color 220ms ease;
-}
-
-.vibe-sticker::before {
-  content: "";
-  position: absolute;
-  inset: 0.45rem;
-  z-index: -1;
-  border: 1px dashed rgba(204, 89, 90, 0.55);
-  border-radius: 3px;
-}
-
-.vibe-sticker:hover,
-.vibe-sticker:focus-visible {
-  background: #fff8ea;
-  box-shadow: 0 9px 0 rgba(24, 58, 52, 0.34), 0 18px 34px rgba(24, 58, 52, 0.3);
-  transform: rotate(-5deg) translateY(-4px) scale(1);
-}
-
-.vibe-sticker:focus-visible {
-  outline: 3px solid rgba(217, 191, 105, 0.8);
-  outline-offset: 4px;
-}
-
-.vibe-sticker-eyebrow {
-  color: var(--primary);
-  font-size: 0.72rem;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.vibe-sticker-title {
-  font-family: var(--font-playfair), Georgia, serif;
-  font-size: clamp(1.2rem, 3vw, 1.55rem);
-  font-weight: 800;
-  line-height: 0.95;
-}
-
-@keyframes heroReveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes heroMetricReveal {
-  0% {
-    opacity: 0;
-    transform: translate3d(28px, 0, 0);
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  60% {
-    opacity: 1;
-    transform: translate3d(-6px, 0, 0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes heroImagePop {
-  0% {
-    opacity: 0;
-    transform: scale(0.86) translateY(16px);
-  }
-
-  70% {
-    opacity: 1;
-    transform: scale(1.04) translateY(0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-@keyframes vibeStickerIn {
-  0% {
-    opacity: 0;
-    transform: rotate(-7deg) translateY(18px) scale(0.94);
-  }
-
-  70% {
-    opacity: 1;
-    transform: rotate(-7deg) translateY(-5px) scale(1.03);
-  }
-
-  100% {
-    opacity: 1;
-    transform: rotate(-7deg) translateY(0) scale(1);
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-proof-wrap {
-    justify-content: flex-end;
-    padding-left: 0;
-    padding-right: 2.25rem;
-  }
-
-  .hero-proof-rail {
-    left: auto;
-    right: 0;
-    top: 1rem;
-    bottom: 1rem;
-  }
-
-  .hero-proof-stack p {
-    text-align: right;
-  }
-}
-
-@media (max-width: 1023px) {
-  .vibe-sticker {
-    top: 1rem;
-    right: 0.9rem;
-    min-width: 8.6rem;
-    padding: 0.62rem 0.74rem 0.66rem;
-  }
-
-  .vibe-sticker-title {
-    font-size: 0.98rem;
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

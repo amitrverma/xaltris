@@ -4,13 +4,15 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import PortfolioCarousel from "../../components/PortfolioCarousel";
+import SiteCta from "../../components/SiteCta";
 
 export const metadata = {
-  title: "Portfolio | Xaltris Technologies",
+  title: "Work",
   description:
     "Case studies, products, and enterprise platforms built by Amit Verma and Xaltris Technologies.",
+  alternates: { canonical: "/portfolio" },
   openGraph: {
-    title: "Portfolio | Xaltris Technologies",
+    title: "Work | Xaltris Technologies",
     description:
       "Selected startup, product, and enterprise platform work from Xaltris and Amit Verma's corporate engineering career.",
     url: "https://xaltris.com/portfolio",
@@ -27,7 +29,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio | Xaltris Technologies",
+    title: "Work | Xaltris Technologies",
     description:
       "A portfolio of case studies, products, and enterprise systems built with technical depth and product judgment.",
     images: ["/logo.png"],
@@ -111,7 +113,7 @@ function PdfAction({ href }: { href: string }) {
     <Link
       href={href}
       download
-      className="inline-flex items-center gap-2 rounded-md border border-[#e08a8b] bg-[#cc595a] px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:brightness-105"
+      className="inline-flex items-center gap-2 rounded-md border border-[#a53f43] bg-[#a53f43] px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#8f3438]"
     >
       <Download className="h-4 w-4" strokeWidth={1.8} />
       Know more
@@ -121,50 +123,35 @@ function PdfAction({ href }: { href: string }) {
 
 export default function PortfolioPage() {
   return (
-    <main className="min-h-screen bg-[#4f7466] px-6 py-24 text-white transition-colors duration-300 sm:py-28">
-      <div className="mx-auto max-w-7xl">
-        <section className="grid gap-12 border-b border-white/12 pb-14 lg:grid-cols-[1.02fr_0.98fr] lg:items-end lg:gap-16">
+    <main className="min-h-screen bg-[#f7f2ea] text-[#162f2a]">
+      <section className="relative overflow-hidden bg-[#3f6759] px-6 py-16 text-white sm:py-20">
+        <div className="pointer-events-none absolute inset-0" aria-hidden="true"><div className="hero-grid" /></div>
+        <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-end lg:gap-16">
           <div>
-            <p className="type-kicker text-[#d9bf69]">
-              Portfolio
-            </p>
-            <h1
-              className="type-hero mt-5 max-w-4xl text-white"
-            >
-              Proof of work.
-            </h1>
+            <p className="type-kicker text-[#d9bf69]">Selected work</p>
+            <h1 className="hero-primary-title mt-6 max-w-4xl text-white">Proof in working systems.</h1>
           </div>
-
-          <div className="border-t border-white/12 pt-6 lg:mb-3">
+          <div className="border-t border-white/18 pt-6 lg:mb-2">
             <p className="type-lead max-w-xl text-white">
-              Current Xaltris work and past enterprise systems built over two
-              decades, showing the same pattern throughout: senior judgment
-              translated into working software.
+              Startup products and enterprise platforms built around real workflows, showing the same pattern throughout: senior judgment translated into working software.
             </p>
-            <div className="mt-5 flex max-w-xl flex-wrap items-center gap-x-5 gap-y-2 text-[1.25rem] font-bold leading-none text-white">
-              <span className="h-px w-12 bg-[#d9bf69]" />
-              <p>
-                Powered by <span className="text-[#d9bf69]">AI.</span> Shaped by{" "}
-                <span className="text-[#d9bf69]">OI.</span>
-              </p>
-              <span className="h-px w-12 bg-[#d9bf69]" />
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="py-14">
-          <div>
+      <section className="px-6 py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl">
             <section id="startup-ai-work" className="scroll-mt-28">
-              <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div className="mb-8 grid gap-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-end lg:gap-16">
                 <div>
-                  <p className="type-kicker text-[#d9bf69]">
+                  <p className="type-kicker text-[#a53f43]">
                     Current Xaltris work
                   </p>
-                  <h2 className="type-subsection-title mt-3 text-white">
+                  <h2 className="type-section-title mt-4 text-[#162f2a]">
                     Startup and AI case studies.
                   </h2>
                 </div>
-                <p className="type-body max-w-sm text-white">
+                <p className="type-body-lg max-w-2xl text-[#53675f] lg:justify-self-end">
                   Fractional CTO thinking, hands-on execution, and focused AI
                   productization for early-stage teams.
                 </p>
@@ -172,12 +159,15 @@ export default function PortfolioPage() {
 
               <PortfolioCarousel items={caseStudies} />
             </section>
+        </div>
+      </section>
 
-            <section id="featured-foundation" className="scroll-mt-28 pt-12">
+      <section id="featured-foundation" className="scroll-mt-28 bg-[#315348] px-6 py-20 text-white sm:py-24">
+        <div className="mx-auto max-w-7xl">
               <article className="rounded-lg border border-[#d7ddd6] bg-white p-6 text-[#162f2a] shadow-[0_18px_45px_-36px_rgba(22,47,42,0.55)] sm:p-8">
                 <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
                   <div>
-                    <p className="type-kicker text-[#cc595a]">
+                    <p className="type-kicker text-[#a53f43]">
                       Enterprise experience
                     </p>
                     <h2
@@ -221,10 +211,14 @@ export default function PortfolioPage() {
                   ))}
                 </div>
               </article>
-            </section>
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      <SiteCta
+        eyebrow="Your product could be next"
+        title="Bring me the workflow that needs to become software."
+        copy="The first conversation is about the business problem, the stage you are at, and what a useful next step would look like."
+      />
     </main>
   );
 }

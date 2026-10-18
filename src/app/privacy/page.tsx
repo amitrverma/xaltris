@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Xaltris Technologies",
+  title: "Privacy Policy",
   description: "Privacy policy for Xaltris Technologies.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {
@@ -31,7 +32,7 @@ export default function PrivacyPage() {
             For privacy requests, contact{" "}
             <a
               href="mailto:hello@xaltris.com"
-              className="font-semibold text-[#cc595a] underline underline-offset-2 transition-colors hover:text-[#a74648]"
+              className="font-semibold text-[#a53f43] underline underline-offset-2 transition-colors hover:text-[#8f3438]"
             >
               hello@xaltris.com
             </a>

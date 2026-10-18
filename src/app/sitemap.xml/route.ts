@@ -7,6 +7,7 @@ const BASE_URL = 'https://xaltris.com'
 export async function GET() {
   const staticRoutes = [
     '',
+    '/how-i-help',
     '/about',
     '/vibe-to-viable',
     '/portfolio',

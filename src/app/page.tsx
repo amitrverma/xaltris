@@ -1,79 +1,147 @@
+import { ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import ExperienceYears from '../components/ExperienceYears'
 import FaqSection from '../components/FaqSection'
+import SiteCta from '../components/SiteCta'
 import { calculateExperienceYears } from '../lib/experience'
 
-const secondFoldOutcomes = [
+const outcomes = [
   {
     label: 'Product clarity',
-    copy:
-      'Shape the problem, scope the first useful version, and separate what matters now from what can wait.',
+    copy: 'Turn an ambiguous idea into a focused product plan, with the first useful release separated from everything that can wait.',
   },
   {
     label: 'Technical direction',
-    copy:
-      'Make architecture, platform, data, integration, and security choices with someone who has lived with systems in production.',
+    copy: 'Make architecture, platform, data, integration, and security decisions with someone who has lived with systems in production.',
   },
   {
-    label: 'Working software',
-    copy:
-      'Turn direction into usable software quickly through a fractional CTO who builds solo, with less handoff drag and more accountability.',
+    label: 'Hands-on delivery',
+    copy: 'Keep product thinking and implementation in the same pair of hands, so less intent is lost between strategy and shipping.',
   },
   {
     label: 'Production discipline',
-    copy:
-      'Build with the habits that matter after launch: maintainability, observability, reliability, and room to evolve.',
+    copy: 'Build for real use with maintainability, observability, reliability, and a clean path for the product and team to grow.',
   },
 ]
 
-const secondFoldProof = [
+const featuredWork = [
   {
-    label: '01',
-    title: 'Enterprise judgment',
-    copy: 'years across products, platforms, teams, and production scale.',
+    category: 'B2B marketplace',
+    title: 'Veltrix Global Connect',
+    context: 'Verified employers and recruitment agencies working through governed mandates, collaboration, and finance workflows.',
+    result: 'Replaced fragmented coordination across email and spreadsheets with an auditable operating platform.',
+    href: '/case-studies/veltrix-case-study.pdf',
   },
   {
-    label: '02',
-    title: 'Single accountable builder',
-    copy: 'Strategy, architecture, and implementation held by the same person.',
+    category: 'Agentic AI platform',
+    title: 'SarasAI Cloud Labs',
+    context: 'Natural-language learning objectives become reviewable cloud labs, learner instructions, rubrics, and provisioning artifacts.',
+    result: 'Turned ad-hoc lab authoring into a governed, human-reviewed workflow across AWS, Azure, and GCP.',
+    href: '/case-studies/sarasai-case-study.pdf',
   },
   {
-    label: '03',
-    title: 'AI directed by experience',
-    copy: 'Faster execution without outsourcing technical judgment or ownership.',
+    category: 'AI-assisted coaching',
+    title: 'Better Corporate Life',
+    context: 'Course content, guided exercises, reflection, accountability, and coach support brought into one longitudinal product.',
+    result: 'Grounded AI conversations in curated domain content, user context, progress, and analytics.',
+    href: '/case-studies/stocai-case-study.pdf',
+  },
+]
+
+const engagementSteps = [
+  {
+    number: '01',
+    title: 'Clarify',
+    copy: 'Understand the business goal, users, constraints, and riskiest assumptions before committing to a large build.',
+  },
+  {
+    number: '02',
+    title: 'Build and learn',
+    copy: 'Ship a useful version early, put it in front of real users, and let evidence shape the next decision.',
+  },
+  {
+    number: '03',
+    title: 'Strengthen',
+    copy: 'Add the operational discipline, documentation, and structure needed for sustained use and future growth.',
+  },
+]
+
+const startingPoints = [
+  {
+    number: '01',
+    label: 'Starting with an idea',
+    title: 'Shape and build the right first product.',
+    copy: 'Move from ambition to a focused release, sound technical direction, and working software.',
+    href: '/how-i-help',
+    action: 'See how I help',
+  },
+  {
+    number: '02',
+    label: 'Starting with a prototype',
+    title: 'Make your AI-built MVP business-ready.',
+    copy: 'Find the security, data, reliability, and change risks—then fix what matters without starting over.',
+    href: '/vibe-to-viable',
+    action: 'Explore Vibe to Viable',
+  },
+  {
+    number: '03',
+    label: 'Looking for evidence',
+    title: 'See the systems behind the promises.',
+    copy: 'Review startup products, AI platforms, and enterprise systems shaped around real operational needs.',
+    href: '/portfolio',
+    action: 'View selected work',
+  },
+]
+
+const startingPointStyles = [
+  {
+    border: 'border-t-[#cc595a]',
+    number: 'bg-[#a53f43] text-white',
+    label: 'text-[#a53f43]',
+  },
+  {
+    border: 'border-t-[#d9bf69]',
+    number: 'bg-[#d9bf69] text-[#183a34]',
+    label: 'text-[#53675f]',
+  },
+  {
+    border: 'border-t-[#315348]',
+    number: 'bg-[#315348] text-white',
+    label: 'text-[#315348]',
   },
 ]
 
 export const metadata = {
-  title: 'Xaltris Technologies',
+  title: { absolute: 'Fractional CTO & Product Engineering for Startups | Xaltris' },
   description:
-    'Xaltris is a one-person software studio for early-stage startups that need sharp technical direction, clean execution, and fewer layers between strategy and shipping.',
+    'Xaltris helps early-stage founders turn product ideas into production-ready software through fractional CTO leadership and hands-on engineering.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Xaltris Technologies',
+    title: 'Fractional CTO & Product Engineering for Startups | Xaltris',
     description:
-      'A boutique software studio offering technical direction, product thinking, and clean execution without unnecessary layers.',
+      'Senior technical direction and hands-on product engineering for early-stage founders—from product clarity to production-ready software.',
     url: 'https://xaltris.com',
     siteName: 'Xaltris',
     images: [
       {
-        url: '/logo.png',
-        width: 1200,
-        height: 630,
-        alt: 'Xaltris Technologies Banner',
+        url: '/xaltris-social.png',
+        width: 1500,
+        height: 1500,
+        alt: 'Xaltris Technologies',
       },
     ],
     type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Xaltris Technologies',
+    card: 'summary',
+    title: 'Fractional CTO & Product Engineering for Startups | Xaltris',
     description:
-      'Technical direction, product thinking, and clean execution for early-stage startups that want a technical co-pilot, not a committee.',
-    images: ['/logo.png'],
+      'Senior technical direction and hands-on product engineering for early-stage founders.',
+    images: ['/xaltris-social.png'],
   },
 }
 
@@ -82,181 +150,251 @@ export default function HomePage() {
 
   return (
     <>
-      <main className="relative overflow-hidden bg-[#4f7466] px-6 py-6 text-white transition-colors duration-300 sm:py-8">
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="hero-grid" />
-        </div>
+      <main>
+        <section className="relative flex min-h-[calc(100svh-5rem)] items-center overflow-hidden bg-[#3f6759] px-6 py-14 text-white sm:py-16 lg:py-14">
+          <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+            <div className="hero-grid" />
+            <div className="absolute -right-24 top-10 h-72 w-72 rounded-full bg-[#d9bf69]/10 blur-3xl" />
+            <div className="absolute -bottom-28 left-[36%] h-64 w-64 rounded-full bg-[#cc595a]/10 blur-3xl" />
+          </div>
 
-        <Link
-          href="/vibe-to-viable"
-          className="vibe-sticker"
-          aria-label="Open Vibe to Viable"
-        >
-          <span className="vibe-sticker-eyebrow">New</span>
-          <span className="vibe-sticker-title">Vibe to Viable</span>
-        </Link>
+          <div className="relative mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-16 xl:gap-20">
+            <div>
+              <p className="type-kicker text-[#d9bf69]">
+                Fractional CTO + full cycle product engineer
+              </p>
+              <h1 className="hero-primary-title mt-6 max-w-4xl text-balance text-white">
+                From early idea to
+                <span className="block text-[#d9bf69]">production-ready product.</span>
+              </h1>
+              <p className="type-lead mt-7 max-w-2xl text-white">
+                I work with early-stage startups to turn product ambition into clear
+                technical direction and working software—one accountable partner from
+                concept to launch.
+              </p>
 
-        <div className="relative mx-auto max-w-7xl">
-          <section className="flex min-h-[70vh] items-start pt-12 pb-2 sm:pt-16 sm:pb-4 lg:pt-20">
-            <div className="mx-auto w-full max-w-6xl">
-              <div className="grid gap-12 lg:grid-cols-[1.28fr_0.72fr] lg:items-end">
-                <h1
-                  className="type-home-hero max-w-none text-white"
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-md border border-[#a53f43] bg-[#a53f43] px-7 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#8f3438] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#3f6759]"
                 >
-                  <span className="hero-reveal block whitespace-nowrap">From idea</span>
-                  <span className="hero-reveal block whitespace-nowrap hero-delay-1">to working</span>
-                  <span className="hero-reveal block whitespace-nowrap hero-delay-2 text-white">
-                    software
-                  </span>
-                </h1>
-
-                <div className="hero-proof-area hero-reveal hero-delay-3 lg:pb-4">
-                  <div className="hero-proof-wrap">
-                    <div className="hero-proof-rail" />
-                    <div
-                      className="type-hero-metric hero-proof-stack text-left text-[#d9bf69] lg:text-right"
-                    >
-                      <p className="hero-metric-reveal hero-metric-delay-1">
-                        <span className="hero-proof-line whitespace-nowrap">8X Faster</span>
-                      </p>
-                      <p className="hero-metric-reveal hero-metric-delay-2">
-                        <span className="hero-proof-line whitespace-nowrap">4X Cheaper</span>
-                      </p>
-                      <p className="hero-metric-reveal hero-metric-delay-3">
-                        <span className="hero-proof-line whitespace-nowrap">2X Better</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                  Talk through your idea
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+                <Link
+                  href="/portfolio"
+                  className="inline-flex items-center justify-center rounded-md border border-white/35 bg-white/10 px-7 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-white/60 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                >
+                  See selected work
+                </Link>
               </div>
 
-              <div className="mx-auto mt-12 h-px w-36 bg-gradient-to-r from-transparent via-white/28 to-transparent sm:mt-14 sm:w-48 lg:mt-16" />
-
-              <div className="hero-image-pop mx-auto mt-12 flex w-full justify-center sm:mt-14 lg:mt-16">
-                <div className="text-center">
-                  <p className="hero-software-word text-[3.4rem] font-extrabold leading-none text-white sm:text-[5.4rem] md:text-[7rem] lg:text-[8rem]">
-                    SOFTW<span className="text-[#d67f67]">A</span>RE
-                  </p>
-                  <p
-                    className="font-display mt-4 text-[2.8rem] font-extrabold leading-none text-white sm:text-[4rem] md:text-[5rem]"
-                  >
-                    Done right!
-                  </p>
-                </div>
-              </div>
+              <p className="mt-6 max-w-xl border-l border-white/35 pl-4 text-sm leading-6 text-white">
+                Start with a rough concept or early prototype. For AI-built MVPs,
+                Vibe to Viable is a separate audit-and-hardening path.
+              </p>
             </div>
-          </section>
 
-          <section className="relative py-16 sm:py-20 lg:py-24">
-            <div className="mx-auto w-full max-w-6xl border-t border-white/12 pt-12 sm:pt-14 lg:pt-16">
-              <div className="grid gap-14 lg:grid-cols-[0.98fr_1.02fr] lg:gap-16">
+            <aside className="relative overflow-hidden rounded-2xl border border-white/25 border-t-4 border-t-[#d9bf69] bg-[#f7f2ea] p-7 text-[#162f2a] shadow-[0_30px_90px_-44px_rgba(10,32,28,0.95)] sm:p-9">
+              <span className="pointer-events-none absolute -right-2 -top-10 font-display text-[9rem] font-extrabold leading-none text-[#cc595a]/[0.08]" aria-hidden="true">
+                01
+              </span>
+
+              <div className="relative flex items-center gap-4 border-b border-[#d7ddd6] pb-6">
+                <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border-2 border-white bg-[#ddd7d1] shadow-[0_10px_30px_-18px_rgba(22,47,42,0.7)]">
+                  <Image
+                    src="/amit-verma.png"
+                    alt=""
+                    fill
+                    sizes="64px"
+                    className="object-contain"
+                  />
+                </div>
                 <div>
-                  <h2
-                    className="type-section-title max-w-2xl text-white"
-                  >
-                    Xaltris is{" "}
-                    <Link
-                      href="/about"
-                      className="underline decoration-white/45 underline-offset-6 transition-colors hover:text-[#d9bf69] hover:decoration-[#d9bf69]"
-                    >
-                      my
-                    </Link>{" "}
-                    one-person software studio.
-                  </h2>
-                  <p className="type-lead mt-6 max-w-2xl text-white">
-                    I use AI with OI to provide strategic technology solutions:
-                    Fractional CTO and product development.
+                  <p className="type-meta text-[#53675f]">Work directly with</p>
+                  <p className="mt-1 text-xl font-bold leading-tight text-[#162f2a]">
+                    Amit Verma
                   </p>
-                  <div className="mt-5 flex max-w-2xl flex-wrap items-center gap-x-5 gap-y-2 text-xl font-semibold leading-8 text-white">
-                    <span className="h-px w-12 bg-[#d9bf69]" />
-                    <p>
-                      Powered by <span className="text-[#d9bf69]">AI.</span> Shaped
-                      by <span className="text-[#d9bf69]">OI.</span>
-                    </p>
-                    <span className="h-px w-12 bg-[#d9bf69]" />
-                  </div>
-
-                  <div className="mt-9 grid gap-0 border-y border-white/12 sm:grid-cols-3">
-                    {secondFoldProof.map(({ label, title, copy }, index) => (
-                      <div
-                        key={title}
-                        className={`py-5 ${
-                          index > 0
-                            ? 'border-t border-white/12 sm:border-l sm:border-t-0 sm:pl-5'
-                            : ''
-                        } ${index < secondFoldProof.length - 1 ? 'sm:pr-5' : ''}`}
-                      >
-                        <p className="type-meta text-[#d9bf69]">
-                          {label}
-                        </p>
-                        <p className="mt-3 text-xl font-extrabold leading-tight text-white">
-                          {title}
-                        </p>
-                        <p className="type-small mt-3 max-w-[15rem] text-white">
-                          {title === 'Enterprise judgment' ? (
-                            <>
-                              <ExperienceYears initialYears={experienceYears} /> {copy}
-                            </>
-                          ) : (
-                            copy
-                          )}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center justify-center rounded-md border border-[#e08a8b] bg-[#cc595a] px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:brightness-105"
-                    >
-                      Start a conversation
-                    </Link>
-                    <Link
-                      href="/about"
-                      className="inline-flex items-center justify-center rounded-md border border-white/28 bg-white/10 px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/45 hover:bg-white/14"
-                    >
-                      More About Me
-                    </Link>
-                  </div>
-
-                  <p className="type-body-lg mt-8 max-w-xl border-l border-white/16 pl-5 text-white">
-                    Built for the phase where you need senior judgment before you
-                    are ready for a full senior team.
+                  <p className="mt-1 text-sm font-semibold text-[#53675f]">
+                    Founder &amp; Fractional CTO
                   </p>
-                </div>
-
-                <div className="lg:pt-2">
-                  <p className="type-kicker text-[#d9bf69]">
-                    What you get
-                  </p>
-                  <div className="mt-6 grid gap-7">
-                    {secondFoldOutcomes.map(({ label, copy }, index) => (
-                      <article key={label} className="border-t border-white/10 pt-6">
-                        <div className="grid gap-4 sm:grid-cols-[4rem_1fr]">
-                            <p className="type-meta text-[#d9bf69]">
-                            {String(index + 1).padStart(2, '0')}
-                          </p>
-                          <div>
-                            <h3 className="type-card-title text-white">
-                              {label}
-                            </h3>
-                            <p className="type-body-lg mt-3 max-w-xl text-white">
-                              {copy}
-                            </p>
-                          </div>
-                        </div>
-                      </article>
-                    ))}
-                  </div>
                 </div>
               </div>
+
+              <h2 className="type-subsection-title relative mt-6 max-w-lg">
+                One partner from product decision to production.
+              </h2>
+
+              <ol className="relative mt-7 space-y-4">
+                {[
+                  ['01', 'Shape', 'Scope the right first version.'],
+                  ['02', 'Build', 'Turn decisions into working software.'],
+                  ['03', 'Strengthen', 'Prepare for real use and growth.'],
+                ].map(([number, title, copy]) => (
+                  <li key={number} className="grid grid-cols-[2rem_1fr] gap-4 border-t border-[#d7ddd6] pt-4 first:border-t-0 first:pt-0">
+                    <span className="type-meta pt-1 text-[#a53f43]">{number}</span>
+                    <span>
+                      <span className="block text-base font-bold leading-6 text-[#162f2a]">{title}</span>
+                      <span className="mt-0.5 block text-sm leading-6 text-[#53675f]">{copy}</span>
+                    </span>
+                  </li>
+                ))}
+              </ol>
+
+              <div className="relative mt-7 border-t border-[#d7ddd6] pt-5">
+                <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#53675f]">
+                  Powered by AI. Shaped by OI.
+                </p>
+                <Link
+                  href="/vibe-to-viable"
+                  className="mt-3 inline-flex items-center gap-2 font-semibold text-[#a53f43] underline decoration-[#a53f43]/35 underline-offset-4 hover:decoration-[#a53f43] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a53f43]"
+                >
+                  Explore Vibe to Viable
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section className="bg-[#315348] px-6 pb-20 text-white sm:pb-24">
+          <div className="mx-auto max-w-7xl border-t border-white/15 pt-16">
+            <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
+              <div>
+                <p className="type-kicker text-[#d9bf69]">What you gain</p>
+                <h2 className="type-section-title mt-5 max-w-xl text-white">
+                  Senior judgment before you need a full senior team.
+                </h2>
+                <p className="type-body-lg mt-6 max-w-xl text-white">
+                  Xaltris is Amit Verma&apos;s one-person software studio, combining
+                  fractional CTO leadership with hands-on product delivery.
+                </p>
+                <p className="type-body mt-5 max-w-xl border-l-2 border-[#d9bf69] pl-5 text-white">
+                  <ExperienceYears initialYears={experienceYears} /> years across
+                  products, platforms, teams, and production systems inform every
+                  engagement.
+                </p>
+              </div>
+
+              <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2">
+                {outcomes.map(({ label, copy }, index) => (
+                  <article key={label} className="border-t border-white/20 pt-6">
+                    <p className="type-meta text-[#d9bf69]">
+                      {String(index + 1).padStart(2, '0')}
+                    </p>
+                    <h3 className="type-card-title mt-3 text-white">{label}</h3>
+                    <p className="type-body mt-3 text-white">{copy}</p>
+                  </article>
+                ))}
+              </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
+
+        <section className="bg-white px-6 py-20 text-[#162f2a] sm:py-24">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end lg:gap-16">
+              <div>
+                <p className="type-kicker text-[#a53f43]">Where are you now?</p>
+                <h2 className="type-section-title mt-5">Start from the situation you actually have.</h2>
+              </div>
+              <p className="type-body-lg max-w-2xl text-[#334c45] lg:justify-self-end">
+                You do not need to diagnose the engagement model. Choose the closest starting point and we can work out the right next move.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-5 lg:grid-cols-3">
+              {startingPoints.map((item, index) => (
+                <article key={item.number} className={`flex flex-col rounded-xl border border-[#d7ddd6] border-t-4 bg-[#f7f2ea] p-6 shadow-[0_18px_50px_-42px_rgba(22,47,42,0.65)] sm:p-7 ${startingPointStyles[index].border}`}>
+                  <div className="flex items-center justify-between gap-4">
+                    <p className={`inline-flex h-9 w-9 items-center justify-center rounded-full type-meta ${startingPointStyles[index].number}`}>{item.number}</p>
+                    <p className={`type-meta text-right ${startingPointStyles[index].label}`}>{item.label}</p>
+                  </div>
+                  <h3 className="type-card-title mt-6">{item.title}</h3>
+                  <p className="type-body mt-4 text-[#53675f]">{item.copy}</p>
+                  <Link href={item.href} className="mt-auto inline-flex items-center gap-2 pt-7 font-semibold text-[#a53f43] underline decoration-[#a53f43]/30 underline-offset-4 hover:decoration-[#a53f43]">
+                    {item.action}<ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#f7f2ea] px-6 py-20 text-[#162f2a] sm:py-24">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
+              <div>
+                <p className="type-kicker text-[#a53f43]">Selected work</p>
+                <h2 className="type-section-title mt-5">Proof in working systems.</h2>
+              </div>
+              <div className="lg:justify-self-end">
+                <p className="type-body-lg max-w-2xl text-[#334c45]">
+                  Products built across marketplaces, cloud learning, operations,
+                  and AI-assisted experiences—each shaped around a real workflow.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12 grid gap-6 lg:grid-cols-3">
+              {featuredWork.map((work) => (
+                <article
+                  key={work.title}
+                  className="flex flex-col rounded-xl border border-[#d7ddd6] border-t-4 border-t-[#d9bf69] bg-white p-6 shadow-[0_18px_50px_-40px_rgba(22,47,42,0.65)]"
+                >
+                  <p className="type-meta text-[#a53f43]">{work.category}</p>
+                  <h3 className="type-card-title mt-3">{work.title}</h3>
+                  <p className="type-body mt-4 text-[#334c45]">{work.context}</p>
+                  <p className="type-body mt-5 border-l-2 border-[#cc595a] pl-4 text-[#53675f]">
+                    {work.result}
+                  </p>
+                  <Link
+                    href={work.href}
+                    className="mt-auto inline-flex items-center gap-2 pt-7 font-semibold text-[#a53f43] underline decoration-[#a53f43]/30 underline-offset-4 hover:decoration-[#a53f43] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a53f43]"
+                  >
+                    Read the case study
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-10 text-center">
+              <Link
+                href="/portfolio"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-[#183a34] px-6 py-3 font-semibold text-[#183a34] transition-colors hover:bg-[#183a34] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#183a34] focus-visible:ring-offset-2"
+              >
+                Explore the full portfolio
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#183a34] px-6 py-20 text-white sm:py-24">
+          <div className="mx-auto max-w-7xl">
+            <div className="max-w-3xl">
+              <p className="type-kicker text-[#d9bf69]">How the work moves</p>
+              <h2 className="type-section-title mt-5 text-white">
+                Clarity first. Working software early. Discipline throughout.
+              </h2>
+            </div>
+
+            <div className="mt-12 grid gap-8 md:grid-cols-3">
+              {engagementSteps.map((step) => (
+                <article key={step.number} className="border-t border-white/20 pt-6">
+                  <p className="type-meta text-[#d9bf69]">{step.number}</p>
+                  <h3 className="type-card-title mt-3 text-white">{step.title}</h3>
+                  <p className="type-body mt-3 text-white/90">{step.copy}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
 
       <FaqSection />
+      <SiteCta />
     </>
   )
 }

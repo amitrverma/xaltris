@@ -1,43 +1,66 @@
+import Link from "next/link";
+
+const footerGroups = [
+  {
+    title: "Explore",
+    links: [
+      ["How I help", "/how-i-help"],
+      ["Vibe to Viable", "/vibe-to-viable"],
+      ["Work", "/portfolio"],
+    ],
+  },
+  {
+    title: "Xaltris",
+    links: [
+      ["About", "/about"],
+      ["Blog", "/blog"],
+      ["For Good", "/for-good"],
+    ],
+  },
+];
+
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-white/10 bg-[#183a34] py-9 text-center text-sm text-white transition-colors duration-300">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 sm:flex-row sm:justify-between">
-        <p className="text-white">
-          &copy; {new Date().getFullYear()}{" "}
-          <span className="font-semibold">Xaltris Technologies</span>. All rights
-          reserved.
-        </p>
+    <footer className="w-full border-t border-white/10 bg-[#183a34] px-6 py-12 text-sm text-white">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-10 border-b border-white/12 pb-10 md:grid-cols-[1.4fr_0.7fr_0.7fr_1fr]">
+          <div>
+            <p className="font-display text-3xl font-extrabold leading-tight">Xaltris</p>
+            <p className="mt-4 max-w-sm leading-7 text-white/78">
+              Fractional CTO leadership and full-cycle product engineering for early-stage startups.
+            </p>
+          </div>
+          {footerGroups.map((group) => (
+            <div key={group.title}>
+              <p className="type-meta text-[#d9bf69]">{group.title}</p>
+              <ul className="mt-4 space-y-2.5">
+                {group.links.map(([label, href]) => (
+                  <li key={href}>
+                    <Link className="text-white/78 transition-colors hover:text-white" href={href}>
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          <div>
+            <p className="type-meta text-[#d9bf69]">Start a conversation</p>
+            <p className="mt-4 leading-7 text-white/78">Have a new product idea or an early prototype that needs senior technical judgment?</p>
+            <Link href="/contact" className="mt-5 inline-flex rounded-md bg-[#a53f43] px-5 py-2.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#8f3438]">
+              Tell me where you are
+            </Link>
+          </div>
+        </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-2 text-sm">
-          <a
-            href="/privacy"
-            className="rounded-full px-3 py-1.5 text-white transition-all duration-200 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
-          >
-            Privacy
-          </a>
-          <span className="text-white/25">&middot;</span>
-          <a
-            href="/terms"
-            className="rounded-full px-3 py-1.5 text-white transition-all duration-200 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
-          >
-            Terms
-          </a>
-          <span className="text-white/25">&middot;</span>
-          <a
-            href="mailto:hello@xaltris.com"
-            className="rounded-full px-3 py-1.5 text-white transition-all duration-200 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
-          >
-            Contact
-          </a>
-          <span className="text-white/25">&middot;</span>
-          <a
-            href="https://www.linkedin.com/in/amitrverma/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full px-3 py-1.5 text-white transition-all duration-200 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
-          >
-            LinkedIn
-          </a>
+        <div className="flex flex-col gap-4 pt-7 text-white/64 sm:flex-row sm:items-center sm:justify-between">
+          <p>&copy; {new Date().getFullYear()} Xaltris Technologies.</p>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            <Link href="/privacy" className="hover:text-white">Privacy</Link>
+            <Link href="/terms" className="hover:text-white">Terms</Link>
+            <a href="mailto:hello@xaltris.com" className="hover:text-white">Email</a>
+            <a href="https://www.linkedin.com/in/amitrverma/" target="_blank" rel="noopener noreferrer" className="hover:text-white">LinkedIn</a>
+          </div>
         </div>
       </div>
     </footer>

@@ -49,7 +49,7 @@ function BlogPostHeader({ data, title }: { data: PostData; title: string }) {
         By{' '}
         <Link
           href="/about"
-          className="text-[#cc595a] underline decoration-1 underline-offset-4 transition-colors hover:text-[#a74648]"
+          className="text-[#a53f43] underline decoration-1 underline-offset-4 transition-colors hover:text-[#8f3438]"
         >
           {author}
         </Link>
@@ -87,7 +87,7 @@ export async function generateMetadata({
   const postUrl = `${SITE_URL}/blog/${slug}`
 
   return {
-    title: `${title} | Blog - Xaltris`,
+    title: `${title} | Blog`,
     description,
     alternates: {
       canonical: postUrl,
@@ -136,6 +136,7 @@ export default async function BlogPost({
   const { content, data: rawData } = matter(source)
   const data = rawData as PostData
   const title = data.title ?? slug
+  const articleContent = content.replace(/^\s*#\s+.*(?:\r?\n|$)+/, '')
   const description = data.description ?? 'Read this blog post on xaltris.com'
   const author = data.author ?? DEFAULT_AUTHOR
   const postUrl = `${SITE_URL}/blog/${slug}`
@@ -179,7 +180,7 @@ export default async function BlogPost({
           <article className="blog-essay fermat-article">
             <BlogPostHeader data={data} title={title} />
             <div className="fermat-article-content">
-              <MDXRemote source={content} />
+              <MDXRemote source={articleContent} />
             </div>
           </article>
         </main>
@@ -194,7 +195,7 @@ export default async function BlogPost({
         <article className="blog-essay">
           <BlogPostHeader data={data} title={title} />
           <div className="blog-essay-content">
-            <MDXRemote source={content} />
+            <MDXRemote source={articleContent} />
           </div>
         </article>
       </main>

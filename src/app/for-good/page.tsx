@@ -2,9 +2,10 @@ import GoodCodeTitle from "@/components/GoodCodeTitle";
 import GoodCodeLabel from "@/components/GoodCodeLabel";
 
 export const metadata = {
-  title: "The Good Code Project - For Good | Xaltris Technologies",
+  title: "The Good Code Project",
   description:
     "A quarterly initiative by Xaltris offering pro bono strategy, mentorship, AI guidance, and technical support to mission-driven teams.",
+  alternates: { canonical: "/for-good" },
 };
 
 const causes = [
@@ -33,14 +34,15 @@ const causes = [
 export default function ForGoodPage() {
   return (
     <main className="bg-[#f7f2ea] text-[#162f2a]">
-      <section className="bg-[#4f7466] px-6 py-20 text-white sm:py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-16">
+      <section className="relative overflow-hidden bg-[#3f6759] px-6 py-16 text-white sm:py-20">
+        <div className="pointer-events-none absolute inset-0" aria-hidden="true"><div className="hero-grid" /></div>
+        <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-16">
           <div>
             <p className="type-kicker text-[#d9bf69]">
               For Good
             </p>
             <h1
-              className="type-hero mt-5 max-w-4xl text-white"
+              className="hero-primary-title mt-6 max-w-4xl text-white"
             >
               <GoodCodeTitle className="text-white" />
             </h1>
@@ -70,7 +72,7 @@ export default function ForGoodPage() {
 
             <a
               href="mailto:hello@xaltris.com?subject=Nomination%20for%20The%20Good%20Code%20Project"
-              className="mt-8 inline-flex items-center justify-center rounded-md border border-[#e08a8b] bg-[#cc595a] px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_-20px_rgba(204,89,90,0.8)] transition hover:-translate-y-0.5 hover:bg-[#b94f51]"
+              className="mt-8 inline-flex items-center justify-center rounded-md border border-[#a53f43] bg-[#a53f43] px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_-20px_rgba(165,63,67,0.8)] transition hover:-translate-y-0.5 hover:bg-[#8f3438]"
             >
               <span className="sm:hidden">Nominate a project</span>
               <span className="hidden sm:inline">
@@ -81,10 +83,10 @@ export default function ForGoodPage() {
         </div>
       </section>
 
-      <section className="border-b border-[#d7ddd6] px-6 py-16 sm:py-20">
+      <section className="border-b border-[#d7ddd6] px-6 py-20 sm:py-24">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:gap-16">
           <div>
-            <p className="type-kicker text-[#cc595a]">
+            <p className="type-kicker text-[#a53f43]">
               Causes I Support
             </p>
             <h2
@@ -124,9 +126,9 @@ export default function ForGoodPage() {
         </div>
       </section>
 
-      <section className="px-6 py-16 sm:py-20">
+      <section className="px-6 py-20 sm:py-24">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="type-kicker text-[#cc595a]">
+          <p className="type-kicker text-[#a53f43]">
             The Core Principle
           </p>
           <h2
@@ -142,7 +144,7 @@ export default function ForGoodPage() {
           </p>
           <a
             href="mailto:hello@xaltris.com?subject=Nomination%20for%20The%20Good%20Code%20Project"
-            className="mt-8 inline-flex items-center justify-center rounded-md border border-[#e08a8b] bg-[#cc595a] px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_-20px_rgba(204,89,90,0.8)] transition hover:-translate-y-0.5 hover:bg-[#b94f51]"
+            className="mt-8 inline-flex items-center justify-center rounded-md border border-[#a53f43] bg-[#a53f43] px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_30px_-20px_rgba(165,63,67,0.8)] transition hover:-translate-y-0.5 hover:bg-[#8f3438]"
           >
             <span className="sm:hidden">Nominate a project</span>
             <span className="hidden sm:inline">

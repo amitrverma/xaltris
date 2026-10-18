@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Use | Xaltris Technologies",
+  title: "Terms of Use",
   description: "Terms of use for Xaltris Technologies.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {
@@ -30,7 +31,7 @@ export default function TermsPage() {
             Questions about these terms can be sent to{" "}
             <a
               href="mailto:hello@xaltris.com"
-              className="font-semibold text-[#cc595a] underline underline-offset-2 transition-colors hover:text-[#a74648]"
+              className="font-semibold text-[#a53f43] underline underline-offset-2 transition-colors hover:text-[#8f3438]"
             >
               hello@xaltris.com
             </a>

@@ -35,7 +35,7 @@ export default function PortfolioCarousel({ items }: { items: CaseStudy[] }) {
           type="button"
           aria-label="Previous case studies"
           onClick={() => scrollByPage(-1)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white text-[#183a34] transition-all hover:-translate-y-0.5 hover:bg-[#f7f2ea] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#d7ddd6] bg-white text-[#183a34] transition-all hover:-translate-y-0.5 hover:border-[#cc595a]/40 hover:bg-[#f7f2ea] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#cc595a]/60"
         >
           <ChevronLeft className="h-5 w-5" strokeWidth={2} />
         </button>
@@ -43,7 +43,7 @@ export default function PortfolioCarousel({ items }: { items: CaseStudy[] }) {
           type="button"
           aria-label="Next case studies"
           onClick={() => scrollByPage(1)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white text-[#183a34] transition-all hover:-translate-y-0.5 hover:bg-[#f7f2ea] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#d7ddd6] bg-white text-[#183a34] transition-all hover:-translate-y-0.5 hover:border-[#cc595a]/40 hover:bg-[#f7f2ea] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#cc595a]/60"
         >
           <ChevronRight className="h-5 w-5" strokeWidth={2} />
         </button>
@@ -65,7 +65,7 @@ export default function PortfolioCarousel({ items }: { items: CaseStudy[] }) {
           >
             <div className="flex items-start justify-between gap-5">
               <div>
-                <p className="type-meta text-[#cc595a]">
+                <p className="type-meta text-[#a53f43]">
                   {work.category}
                 </p>
                 <h3 className="type-subsection-title mt-3 text-[#162f2a]">
@@ -103,7 +103,7 @@ export default function PortfolioCarousel({ items }: { items: CaseStudy[] }) {
               <Link
                 href={work.pdfHref}
                 download
-                className="inline-flex items-center gap-2 rounded-md border border-[#e08a8b] bg-[#cc595a] px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:brightness-105"
+                className="inline-flex items-center gap-2 rounded-md border border-[#a53f43] bg-[#a53f43] px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#8f3438]"
               >
                 <Download className="h-4 w-4" strokeWidth={1.8} />
                 Know more
@@ -113,7 +113,7 @@ export default function PortfolioCarousel({ items }: { items: CaseStudy[] }) {
                   href={work.websiteHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center rounded-md border border-[#d7ddd6] px-4 py-2 text-sm font-semibold text-[#334c45] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#cc595a] hover:text-[#cc595a]"
+                  className="inline-flex items-center rounded-md border border-[#d7ddd6] px-4 py-2 text-sm font-semibold text-[#334c45] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#a53f43] hover:text-[#a53f43]"
                 >
                   Visit website
                 </Link>
