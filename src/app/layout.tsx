@@ -3,6 +3,13 @@ import type { Metadata } from 'next'
 import { Montserrat, Playfair_Display } from 'next/font/google'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import JsonLd from '../components/JsonLd'
+import {
+  AMIT_PERSON_ID,
+  ORGANIZATION_ID,
+  SITE_URL,
+  WEBSITE_ID,
+} from '../lib/site-metadata'
 import Script from 'next/script'
 
 const montserrat = Montserrat({
@@ -35,6 +42,36 @@ export const metadata: Metadata = {
   },
 };
 
+const siteStructuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': ORGANIZATION_ID,
+      name: 'Xaltris Technologies',
+      alternateName: 'Xaltris',
+      url: SITE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/logo.png`,
+      },
+      founder: {
+        '@id': AMIT_PERSON_ID,
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': WEBSITE_ID,
+      name: 'Xaltris',
+      url: SITE_URL,
+      publisher: {
+        '@id': ORGANIZATION_ID,
+      },
+      inLanguage: 'en',
+    },
+  ],
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${playfairDisplay.variable}`}>
@@ -59,6 +96,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="font-sans">
+        <JsonLd data={siteStructuredData} />
         <Navbar />
         <div className="pt-[80px]">{children}</div>
         <Footer />

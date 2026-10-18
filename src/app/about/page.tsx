@@ -9,8 +9,14 @@ import {
   Target,
 } from "lucide-react";
 import Image from "next/image";
+import JsonLd from "../../components/JsonLd";
 import ExperienceYears from "../../components/ExperienceYears";
 import { calculateExperienceYears } from "../../lib/experience";
+import {
+  AMIT_PERSON_ID,
+  ORGANIZATION_ID,
+  SITE_URL,
+} from "../../lib/site-metadata";
 
 const companyProfileHref = "/case-studies/xaltris-technologies.pdf";
 
@@ -18,6 +24,23 @@ export const metadata = {
   title: "About | Xaltris Technologies",
   description:
     "About Amit Verma and Xaltris: deep engineering experience, fractional CTO thinking, and AI-accelerated execution for early-stage startups.",
+  alternates: {
+    canonical: "/about",
+  },
+};
+
+const personStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": AMIT_PERSON_ID,
+  name: "Amit Verma",
+  url: `${SITE_URL}/about`,
+  image: `${SITE_URL}/amit-verma.png`,
+  jobTitle: "Founder and Fractional CTO",
+  worksFor: {
+    "@id": ORGANIZATION_ID,
+  },
+  sameAs: ["https://www.linkedin.com/in/amitrverma/"],
 };
 
 const strengths = [
@@ -89,7 +112,9 @@ export default function AboutPage() {
   const experienceYears = calculateExperienceYears();
 
   return (
-    <main className="min-h-screen bg-[#4f7466] px-6 py-24 text-white transition-colors duration-300 sm:py-28">
+    <>
+      <JsonLd data={personStructuredData} />
+      <main className="min-h-screen bg-[#4f7466] px-6 py-24 text-white transition-colors duration-300 sm:py-28">
       <div className="mx-auto max-w-7xl">
         <section className="grid gap-12 border-b border-white/12 pb-14 lg:min-h-[34rem] lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-16">
           <aside className="lg:flex lg:h-full lg:items-center lg:justify-center">
@@ -351,6 +376,7 @@ export default function AboutPage() {
           </div>
         </section>
       </div>
-    </main>
+      </main>
+    </>
   );
 }

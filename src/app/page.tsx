@@ -49,6 +49,9 @@ export const metadata = {
   title: 'Xaltris Technologies',
   description:
     'Xaltris is a one-person software studio for early-stage startups that need sharp technical direction, clean execution, and fewer layers between strategy and shipping.',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'Xaltris Technologies',
     description:

@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: 'Blog | Xaltris Technologies',
   description:
     'Ideas, insights, and updates from the builders at Xaltris. Read about software, scale, and smarter execution.',
+  alternates: {
+    canonical: '/blog',
+  },
   openGraph: {
     title: 'Xaltris Blog',
     description:
@@ -72,10 +75,6 @@ export default function Blog() {
           >
             My Notes.
           </h1>
-          <p className="type-lead mt-5 max-w-2xl text-[#53675f]">
-            Practical writing on product thinking, software delivery, AI leverage,
-            and the engineering choices that matter after launch.
-          </p>
         </div>
 
         <ul className="grid gap-5">
