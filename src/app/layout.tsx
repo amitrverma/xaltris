@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Fractional CTO leadership and full-cycle product engineering for early-stage startups, from product clarity to production-ready software.",
+    "Product building and Fractional CTO leadership for founder-led product teams, from product clarity to dependable delivery.",
 
   icons: {
     icon: "/favicon.ico",

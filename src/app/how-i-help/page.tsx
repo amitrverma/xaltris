@@ -13,36 +13,36 @@ const paths = [
       "Make architecture and platform decisions",
       "Build, integrate, deploy, and strengthen",
     ],
-    href: "/contact",
-    action: "Talk through your idea",
+    href: "/product-build",
+    action: "Explore Product Build",
     Icon: Code2,
   },
   {
-    label: "Rescue",
-    title: "Turn an AI-built prototype into viable software.",
-    copy: "For teams that moved fast with AI and now need to understand the security, data, reliability, and change risks underneath the demo.",
+    label: "Fractional CTO",
+    title: "Senior technology leadership for teams already building.",
+    copy: "For founders with engineers who need business priorities connected to technical direction, delivery, team capability, and production health.",
     points: [
-      "Establish what is actually safe",
-      "Rank risks by business consequence",
-      "Fix what matters without starting over",
+      "Make the important technical choices",
+      "Keep priorities connected to execution",
+      "Strengthen the team and production discipline",
     ],
-    href: "/vibe-to-viable",
-    action: "Explore Vibe to Viable",
-    Icon: ShieldCheck,
+    href: "/fractional-cto",
+    action: "Explore Fractional CTO",
+    Icon: Compass,
   },
 ];
 
 const stages = [
   ["01", "Clarify", "Get the product goal, users, constraints, and riskiest assumptions into the open."],
-  ["02", "Commit", "Choose the smallest responsible path and make the decisions that unblock delivery."],
-  ["03", "Build and learn", "Ship working software early, then let real evidence shape what comes next."],
-  ["04", "Strengthen", "Add the operational discipline the product needs for sustained use and growth."],
+  ["02", "Decide", "Choose the smallest responsible path and make the decisions that unblock the work."],
+  ["03", "Move the work", "Build directly or guide the existing team, keeping intent close to execution."],
+  ["04", "Strengthen", "Improve the product, engineering capability, and production discipline for what comes next."],
 ];
 
 export const metadata = {
   title: "How I Help | Fractional CTO & Product Engineering",
   description:
-    "Fractional CTO leadership, full-cycle product engineering, and engineering rescue for early-stage startups.",
+    "Fractional CTO leadership and full-cycle product engineering for founder-led teams, from product clarity to production-ready software.",
   alternates: { canonical: "/how-i-help" },
 };
 
@@ -60,7 +60,7 @@ export default function HowIHelpPage() {
           </div>
           <div className="border-t border-white/18 pt-6 lg:mb-2">
             <p className="type-lead max-w-2xl text-white/92">
-              I work with early-stage startups to shape the product, set the technical direction, and build the software—one accountable partner from concept to launch.
+              I work with founders to shape products, lead technical direction, strengthen delivery, and build software—either as the hands-on builder or alongside an existing team.
             </p>
           </div>
         </div>
@@ -109,8 +109,8 @@ export default function HowIHelpPage() {
           <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
             <div>
               <p className="type-kicker text-[#d9bf69]">How the work moves</p>
-              <h2 className="type-section-title mt-5 text-white">A direct path from ambiguity to evidence.</h2>
-              <p className="type-body-lg mt-6 text-white/84">Strategy and implementation stay connected, so decisions do not disappear between decks, handoffs, and delivery teams.</p>
+              <h2 className="type-section-title mt-5 text-white">A direct path from ambiguity to useful movement.</h2>
+              <p className="type-body-lg mt-6 text-white/84">Product intent, technical judgment, and delivery stay connected—whether I am building the product or leading alongside your team.</p>
             </div>
             <ol className="grid gap-x-8 gap-y-8 sm:grid-cols-2">
               {stages.map(([number, title, copy]) => (
@@ -129,12 +129,29 @@ export default function HowIHelpPage() {
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
           <div>
             <p className="type-kicker text-[#a53f43]">The operating model</p>
-            <h2 className="type-section-title mt-5">Senior enough to decide. Hands-on enough to deliver.</h2>
+            <h2 className="type-section-title mt-5">One standard of ownership. Two ways to apply it.</h2>
           </div>
           <div className="rounded-xl border border-[#d7ddd6] bg-white p-7 sm:p-9">
             <Compass className="h-8 w-8 text-[#cc595a]" strokeWidth={1.8} />
-            <p className="type-lead mt-6 text-[#183a34]">The same judgment stays with the work—from the first product question through architecture, implementation, launch, and the next real constraint.</p>
-            <p className="type-body mt-5 text-[#53675f]">This model works best when you want a senior technical partner who can reduce ambiguity and produce the software—not a strategy-only adviser or a staffed development agency.</p>
+            <p className="type-lead mt-6 text-[#183a34]">For a new product, I carry the thread from product decisions through implementation and production. With an existing team, I own the technical direction and help that team deliver with greater confidence.</p>
+            <p className="type-body mt-5 text-[#53675f]">In both cases, senior judgment stays close to execution. The difference is who writes the software—not the standard of ownership around the outcome.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-6 py-20 sm:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-center lg:gap-16">
+          <div>
+            <p className="type-kicker text-[#a53f43]">A specialist intervention</p>
+            <h2 className="type-section-title mt-5">Already have an AI-built MVP?</h2>
+          </div>
+          <div className="rounded-xl border border-[#d7ddd6] bg-[#f7f2ea] p-7 sm:p-9">
+            <ShieldCheck className="h-8 w-8 text-[#cc595a]" strokeWidth={1.8} aria-hidden="true" />
+            <h3 className="type-subsection-title mt-5">Vibe to Viable hardens the product without throwing away its momentum.</h3>
+            <p className="type-body-lg mt-4 text-[#334c45]">A focused review identifies the risks that matter; the work then centres on strengthening security, data safety, reliability, operability, and confidence in future changes.</p>
+            <Link href="/vibe-to-viable" className="mt-6 inline-flex items-center gap-2 font-semibold text-[#a53f43] underline decoration-[#a53f43]/30 underline-offset-4 hover:decoration-[#a53f43]">
+              Explore Vibe to Viable<ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

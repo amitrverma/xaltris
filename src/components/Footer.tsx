@@ -5,6 +5,8 @@ const footerGroups = [
     title: "Explore",
     links: [
       ["How I help", "/how-i-help"],
+      ["Product Build", "/product-build"],
+      ["Fractional CTO", "/fractional-cto"],
       ["Vibe to Viable", "/vibe-to-viable"],
       ["Work", "/portfolio"],
     ],
@@ -27,7 +29,7 @@ export default function Footer() {
           <div>
             <p className="font-display text-3xl font-extrabold leading-tight">Xaltris</p>
             <p className="mt-4 max-w-sm leading-7 text-white/78">
-              Fractional CTO leadership and full-cycle product engineering for early-stage startups.
+              Product building and Fractional CTO leadership for founder-led product teams.
             </p>
           </div>
           {footerGroups.map((group) => (
@@ -46,9 +48,9 @@ export default function Footer() {
           ))}
           <div>
             <p className="type-meta text-[#d9bf69]">Start a conversation</p>
-            <p className="mt-4 leading-7 text-white/78">Have a new product idea or an early prototype that needs senior technical judgment?</p>
+            <p className="mt-4 leading-7 text-white/78">Have an idea, an existing product, or a team that needs senior technical judgment?</p>
             <Link href="/contact" className="mt-5 inline-flex rounded-md bg-[#a53f43] px-5 py-2.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#8f3438]">
-              Tell me where you are
+              Start with the current situation
             </Link>
           </div>
         </div>

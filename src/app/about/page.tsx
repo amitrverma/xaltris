@@ -7,11 +7,11 @@ import SiteCta from "../../components/SiteCta";
 import { calculateExperienceYears } from "../../lib/experience";
 import { AMIT_PERSON_ID, ORGANIZATION_ID, SITE_URL } from "../../lib/site-metadata";
 
-const companyProfileHref = "/case-studies/xaltris-technologies.pdf";
+const companyProfileHref = "/profile-assets/xaltris-profile.pdf";
 
 export const metadata = {
   title: "About Amit Verma",
-  description: "About Amit Verma and Xaltris: deep engineering experience, fractional CTO thinking, and AI-accelerated execution for early-stage startups.",
+  description: "About Amit Verma and Xaltris: deep engineering experience, Fractional CTO leadership, and hands-on product building for founder-led teams.",
   alternates: { canonical: "/about" },
 };
 
@@ -56,8 +56,8 @@ export default function AboutPage() {
             <div>
               <p className="type-kicker text-[#d9bf69]">About Amit</p>
               <h1 className="hero-primary-title mt-6 max-w-4xl text-white">Fractional CTO. Hands-on builder.</h1>
-              <p className="type-lead mt-7 max-w-2xl text-white/92">I founded Xaltris to help early-stage startups turn product ambition into clear technical direction and working software.</p>
-              <p className="type-body-lg mt-5 max-w-2xl text-white/82">I combine CTO-level judgment with full-cycle product engineering, personally carrying the work through architecture, implementation, integrations, deployment, and production discipline.</p>
+              <p className="type-lead mt-7 max-w-2xl text-white/92">I founded Xaltris to help founder-led product teams turn ambition into clear technical direction and dependable delivery.</p>
+              <p className="type-body-lg mt-5 max-w-2xl text-white/82">I apply that judgment in two ways: building a new product directly, or working alongside an existing development team as its Fractional CTO.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href="https://www.linkedin.com/in/amitrverma/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md border border-white/28 bg-white/10 px-4 py-2.5 font-semibold text-white transition hover:bg-white/15"><Linkedin className="h-4 w-4" />LinkedIn</a>
                 <a href={companyProfileHref} download className="inline-flex items-center gap-2 rounded-md border border-white/28 bg-white/10 px-4 py-2.5 font-semibold text-white transition hover:bg-white/15"><Download className="h-4 w-4" />Company profile</a>
@@ -92,7 +92,7 @@ export default function AboutPage() {
 
         <section className="bg-[#315348] px-6 py-20 text-white sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
-            <div><p className="type-kicker text-[#d9bf69]">How I work</p><h2 className="type-section-title mt-5 text-white">One clear operating model.</h2><p className="type-body-lg mt-6 text-white/82">The same person shaping the product guides the technical direction, the build, and the path to a working system.</p></div>
+            <div><p className="type-kicker text-[#d9bf69]">How I work</p><h2 className="type-section-title mt-5 text-white">One standard of ownership.</h2><p className="type-body-lg mt-6 text-white/82">For a new product, I carry the work through the build. With an existing team, I lead the technical direction and strengthen how that team delivers.</p></div>
             <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2">
               {strengths.map(({ title, description, Icon }) => (
                 <article key={title} className="border-t border-white/18 pt-5"><Icon className="h-7 w-7 text-[#d9bf69]" strokeWidth={1.8} /><h3 className="type-card-title mt-4 text-white">{title}</h3><p className="type-body mt-3 text-white/80">{description}</p></article>
@@ -122,7 +122,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <SiteCta eyebrow="Work directly with Amit" title="One partner from the first product decision to production." copy="If you need senior technical judgment and someone prepared to stay close to implementation, let’s talk about where the product is now." />
+        <SiteCta eyebrow="Work directly with Amit" title="Senior judgment that stays close to delivery." copy="Bring the idea, the existing product, or the team that needs stronger technical ownership. We will work out the right starting point." />
       </main>
     </>
   );

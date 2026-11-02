@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Talk directly with Amit Verma about a new product, an early prototype, or a Vibe to Viable audit.",
+    "Talk directly with Amit Verma about building a product, hardening an AI-built MVP, or bringing senior technology leadership to an existing engineering team.",
   alternates: { canonical: "/contact" },
 };
 

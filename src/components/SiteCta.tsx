@@ -9,10 +9,10 @@ type SiteCtaProps = {
 };
 
 export default function SiteCta({
-  eyebrow = "Start with clarity",
-  title = "Tell me what you are trying to make real.",
-  copy = "Bring the idea or early prototype. We will work out what matters first and whether this is the right engagement.",
-  action = "Start a conversation",
+  eyebrow = "Start with the current situation",
+  title = "Tell me where the product and team are now.",
+  copy = "Bring the idea, the product, or the delivery problem. We will work out what matters first and which kind of support fits.",
+  action = "Tell me where you are",
 }: SiteCtaProps) {
   return (
     <section className="bg-[#f7f2ea] px-6 py-16 text-[#162f2a] sm:py-20">

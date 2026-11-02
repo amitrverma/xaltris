@@ -8,6 +8,8 @@ export async function GET() {
   const staticRoutes = [
     '',
     '/how-i-help',
+    '/product-build',
+    '/fractional-cto',
     '/about',
     '/vibe-to-viable',
     '/portfolio',

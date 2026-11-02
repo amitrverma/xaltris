@@ -4,10 +4,10 @@ import { useState } from 'react'
 import { CalendarClock, Download, Mail, MessageCircle, Phone, Send } from 'lucide-react'
 
 const contactEmail = 'hello@xaltris.com'
-const companyProfileHref = '/case-studies/xaltris-technologies.pdf'
+const companyProfileHref = '/profile-assets/xaltris-profile.pdf'
 const contactPhoneE164 = '+918551915656'
 const contactPhoneDisplay = '+91-8551915656'
-const whatsAppHref = `https://wa.me/${contactPhoneE164.replace(/^\+/, '')}?text=${encodeURIComponent('Hi Amit, I would like to talk about building software with Xaltris.')}`
+const whatsAppHref = `https://wa.me/${contactPhoneE164.replace(/^\+/, '')}?text=${encodeURIComponent('Hi Amit, I would like to talk about my product and where I need senior technology support.')}`
 
 const contactChannels = [
   { label: 'WhatsApp', detail: 'Fastest for a quick first conversation.', value: 'Start a chat', href: whatsAppHref, Icon: MessageCircle, external: true },
@@ -50,14 +50,14 @@ export default function ContactPage() {
         <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-end lg:gap-16">
           <div>
             <p className="type-kicker text-[#d9bf69]">Contact</p>
-            <h1 className="hero-primary-title mt-6 max-w-4xl text-white">Start with the real situation.</h1>
+            <h1 className="hero-primary-title mt-6 max-w-4xl text-white">Start with the current situation.</h1>
           </div>
           <div className="border-t border-white/18 pt-6">
             <p className="type-lead max-w-2xl text-white/92">Tell me what you are building, where it stands, and what is getting in the way. We can work out whether I am the right person to help.</p>
             <div className="mt-6 flex flex-wrap gap-2 text-sm font-semibold text-white/90">
               <span className="rounded-md border border-white/18 bg-white/8 px-3 py-1.5">Fractional CTO</span>
               <span className="rounded-md border border-white/18 bg-white/8 px-3 py-1.5">Product build</span>
-              <span className="rounded-md border border-white/18 bg-white/8 px-3 py-1.5">Vibe Code Rescue</span>
+              <span className="rounded-md border border-white/18 bg-white/8 px-3 py-1.5">Vibe to Viable</span>
             </div>
           </div>
         </div>

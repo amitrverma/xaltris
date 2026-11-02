@@ -2,98 +2,57 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle2,
+  Eye,
   FileSearch,
   Gauge,
   ShieldCheck,
-  TriangleAlert,
+  Wrench,
 } from "lucide-react";
 
-const auditAreas = [
-  {
-    title: "Architecture",
-    copy: "Where the product is structurally sound, tightly coupled, fragile, or unnecessarily complex.",
-  },
-  {
-    title: "Security",
-    copy: "Authentication, authorization, data exposure, secrets, unsafe endpoints, and obvious abuse paths.",
-  },
-  {
-    title: "Data",
-    copy: "Validation, integrity, destructive operations, migrations, backups, and places bad input can create bad state.",
-  },
-  {
-    title: "Reliability",
-    copy: "Error handling, logging, third-party failures, and whether you can tell what happened when something breaks.",
-  },
-  {
-    title: "Change safety",
-    copy: "Tests, deployments, risky dependencies, and how likely the next feature is to damage an old one.",
-  },
-  {
-    title: "Scale",
-    copy: "The bottlenecks that matter for your likely next stage, without prematurely engineering for millions.",
-  },
+const hardeningAreas = [
+  { title: "Security boundaries", copy: "Strengthen authentication, authorization, secrets, data exposure, unsafe endpoints, and obvious abuse paths.", Icon: ShieldCheck },
+  { title: "Data safety", copy: "Protect validation, integrity, destructive operations, migrations, backups, and the places bad input can create bad state.", Icon: Wrench },
+  { title: "Reliability", copy: "Improve error handling, third-party failure behavior, recovery paths, and the product's ability to fail safely.", Icon: Gauge },
+  { title: "Change confidence", copy: "Add the tests, deployment checks, and structural improvements needed to change the product without quietly breaking it.", Icon: CheckCircle2 },
+  { title: "Production visibility", copy: "Add useful logging, monitoring, and diagnostic context so failures become visible and actionable.", Icon: Eye },
+  { title: "Right-sized foundations", copy: "Remove the constraints that threaten the next stage without rebuilding the product or engineering for imaginary scale.", Icon: FileSearch },
 ];
 
-const riskFindings = [
-  {
-    title: "A user can see another user's data.",
-    copy: "The screens look right, but the access rules underneath may not be enforcing ownership.",
-    Icon: LockSignal,
-  },
-  {
-    title: "A small change quietly breaks something old.",
-    copy: "The product keeps moving, but the important flows have no reliable safety net.",
-    Icon: ChangeSignal,
-  },
-  {
-    title: "Errors disappear instead of becoming traceable.",
-    copy: "When something fails, you need enough signal to know what happened and what to fix first.",
-    Icon: TraceSignal,
-  },
+const stages = [
+  { label: "01", title: "Locate the consequential risks", copy: "A focused review establishes what is safe, what is fragile, and where hardening will create the most useful change." },
+  { label: "02", title: "Harden the critical paths", copy: "Fix the security, data, reliability, and structural problems that could damage users, trust, or delivery momentum." },
+  { label: "03", title: "Prove the stronger behavior", copy: "Add tests, operational signals, and deployment confidence around the flows that now need to survive real use." },
+  { label: "04", title: "Leave the product easier to evolve", copy: "Document the important decisions and leave a clear view of what is strong now, what can wait, and what to watch next." },
 ];
 
-const planItems = [
-  {
-    label: "01",
-    title: "Safe to leave alone",
-    copy: "Things that may be inelegant but are not currently hurting the product. No gold-plating.",
-  },
-  {
-    label: "02",
-    title: "Fix before more users",
-    copy: "Security, data, and reliability risks that can become incidents, lost trust, or expensive rework.",
-  },
-  {
-    label: "03",
-    title: "Fix before the next stage",
-    copy: "Structural issues that will slow you down as the product, customer base, or engineering team grows.",
-  },
+const outcomes = [
+  "Critical user and data boundaries are enforced more deliberately.",
+  "Important failures become visible, traceable, and safer to recover from.",
+  "The next product change is less likely to damage something that already works.",
+  "The existing product and momentum are preserved wherever that is responsible.",
 ];
 
 const fit = [
-  "You used Claude, Cursor, Lovable, Replit, Bolt, or similar tools to build a real working product.",
-  "You already have users, pilots, or a launch close enough that reliability now matters.",
-  "You like the product and want to rescue the engineering underneath it.",
-  "You want one senior person accountable for judgment and execution.",
+  "You used Claude, Cursor, Lovable, Replit, Bolt, or similar tools to build a working product.",
+  "You have users, pilots, or a launch close enough that production behavior now matters.",
+  "You want the engineering strengthened without automatically starting again.",
+  "You want one senior person accountable for both judgment and targeted remediation.",
 ];
 
 const notFit = [
-  "You only have an idea and need someone to build the first version.",
-  "You want a generic code quality score with no remediation.",
+  "You only have an idea and need the first version built.",
+  "You want a generic code-quality score without implementation work.",
   "You want the cheapest possible patch regardless of future consequences.",
-  "You need a staffed development agency rather than focused engineering ownership.",
+  "You need an ongoing staffed development team rather than a focused intervention.",
 ];
 
 export const metadata = {
   title: "Vibe to Viable",
-  description:
-    "Vibe to Viable is my rescue service for vibe-coded MVPs: I audit the risks, fix what matters, and make the product business-ready.",
+  description: "Targeted engineering hardening for AI-built MVPs that need stronger security, data safety, reliability, production visibility, and change confidence.",
   alternates: { canonical: "/vibe-to-viable" },
   openGraph: {
     title: "Vibe to Viable by Xaltris",
-    description:
-      "Engineering rescue for vibe-coded MVPs that need security, reliability, and change safety before the next stage.",
+    description: "Harden an AI-built MVP for real users without discarding the product momentum already created.",
     url: "https://xaltris.com/vibe-to-viable",
     siteName: "Xaltris",
     type: "website",
@@ -101,8 +60,7 @@ export const metadata = {
   twitter: {
     card: "summary",
     title: "Vibe to Viable by Xaltris",
-    description:
-      "A rescue audit and targeted hardening path for vibe-coded MVPs moving from prototype to viable software.",
+    description: "Targeted hardening for AI-built MVPs moving from a working prototype to dependable software.",
   },
 };
 
@@ -110,84 +68,38 @@ export default function VibeToViablePage() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#3f6759] text-white">
       <section className="relative overflow-hidden bg-[#3f6759] px-6 py-16 sm:py-20">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="hero-grid" />
-        </div>
-
+        <div className="pointer-events-none absolute inset-0" aria-hidden="true"><div className="hero-grid" /></div>
         <div className="relative mx-auto max-w-7xl border-b border-white/18 pb-12 sm:pb-14">
           <div className="max-w-5xl">
-            <p className="type-kicker text-[#d9bf69]">Vibe to Viable</p>
+            <p className="type-kicker text-[#d9bf69]">Vibe to Viable · Product hardening</p>
             <h1 className="hero-primary-title mt-6 max-w-[13ch] text-white">
-              Vibe coded your MVP?
-              <span className="mt-3 block whitespace-nowrap text-[clamp(1.28rem,5.75vw,4.5rem)] leading-[1.02] text-[#d9bf69] min-[380px]:text-[clamp(1.45rem,6.4vw,4.5rem)] sm:text-[0.68em]">
-                Now make it business-ready.
-              </span>
+              Your AI-built MVP works.
+              <span className="mt-3 block text-[clamp(1.28rem,5.75vw,4.5rem)] leading-[1.02] text-[#d9bf69] min-[380px]:text-[clamp(1.45rem,6.4vw,4.5rem)] sm:text-[0.68em]">Now make it dependable.</span>
             </h1>
-            <p className="type-lead mt-8 max-w-2xl text-white/94">
-              You used AI to get from idea to working product fast. I help find
-              the hidden security, data, reliability, and change risks, then fix
-              what matters so you can put real users and customers on it with
-              confidence.
-            </p>
-
+            <p className="type-lead mt-8 max-w-2xl text-white/94">I strengthen the parts of an AI-built product that can damage trust when real users arrive: security boundaries, data safety, failure behavior, production visibility, and confidence in future changes.</p>
+            <p className="type-body-lg mt-5 max-w-2xl border-l border-white/30 pl-5 text-white/86">A focused review identifies where intervention matters. The center of the engagement is the hardening work that follows.</p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-[#a53f43] bg-[#a53f43] px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#8f3438] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
-              >
-                Get a rescue audit
-                <ArrowRight className="h-4 w-4" strokeWidth={2} />
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-md border border-[#a53f43] bg-[#a53f43] px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#8f3438] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
+                Discuss product hardening<ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
               </Link>
-              <a
-                href="#audit"
-                className="inline-flex items-center justify-center rounded-md border border-white/28 bg-white/10 px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/45 hover:bg-white/14 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
-              >
-                See what gets checked
-              </a>
+              <a href="#hardening" className="inline-flex items-center justify-center rounded-md border border-white/28 bg-white/10 px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/45 hover:bg-white/14 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70">See what gets strengthened</a>
             </div>
-
           </div>
         </div>
       </section>
 
-      <section className="bg-[#315348] px-6 py-20 sm:py-24">
-        <RiskLens />
-      </section>
-
-      <section id="audit" className="bg-[#f7f2ea] px-6 py-20 text-[#162f2a] sm:py-24">
+      <section id="hardening" className="bg-[#f7f2ea] px-6 py-20 text-[#162f2a] sm:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
             <div>
-              <p className="type-kicker text-[#a53f43]">Start here</p>
-              <h2 className="type-section-title mt-5 max-w-xl text-[#183a34]">
-                The Vibe Code Rescue Audit.
-              </h2>
-              <p className="type-body-lg mt-6 max-w-lg text-[#334c45]">
-                Before changing anything, I establish what is actually true.
-                You get a senior-engineering view of the product, translated
-                into decisions you can make.
-              </p>
-              <div className="mt-8 rounded-lg border border-[#d7ddd6] bg-white/64 p-6">
-                <p className="type-body font-semibold text-[#183a34]">
-                  You are not buying a list of technical complaints.
-                </p>
-                <p className="type-body mt-3 text-[#334c45]">
-                  You are buying clarity: what can stay, what must change, what
-                  can wait, and why.
-                </p>
-              </div>
+              <p className="type-kicker text-[#a53f43]">What gets hardened</p>
+              <h2 className="type-section-title mt-5 max-w-xl text-[#183a34]">Strengthen what real use will expose.</h2>
+              <p className="type-body-lg mt-6 max-w-lg text-[#334c45]">The goal is not to make every line elegant. It is to change the product where weak engineering can become lost data, broken trust, repeated incidents, or a product nobody can safely extend.</p>
             </div>
-
             <div className="grid gap-4 sm:grid-cols-2">
-              {auditAreas.map(({ title, copy }) => (
-                <article
-                  key={title}
-                  className="rounded-lg border border-[#d7ddd6] bg-white/64 p-6"
-                >
-                  <FileSearch
-                    className="h-6 w-6 text-[#cc595a]"
-                    strokeWidth={1.9}
-                  />
+              {hardeningAreas.map(({ title, copy, Icon }) => (
+                <article key={title} className="rounded-lg border border-[#d7ddd6] bg-white/70 p-6">
+                  <Icon className="h-6 w-6 text-[#cc595a]" strokeWidth={1.9} aria-hidden="true" />
                   <h3 className="type-card-title mt-4 text-[#183a34]">{title}</h3>
                   <p className="type-body mt-3 text-[#334c45]">{copy}</p>
                 </article>
@@ -197,33 +109,41 @@ export default function VibeToViablePage() {
         </div>
       </section>
 
-      <section className="border-y border-white/12 bg-[#315348] px-6 py-20 sm:py-24">
+      <section className="bg-[#315348] px-6 py-20 sm:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
             <div>
-              <p className="type-kicker text-[#d9bf69]">What you leave with</p>
-              <h2 className="type-section-title mt-5 max-w-xl text-white">
-                A rescue plan, not a code review.
-              </h2>
-              <p className="type-body-lg mt-6 max-w-lg text-white">
-                Everything is ranked by business consequence, not engineering
-                neatness.
-              </p>
+              <p className="type-kicker text-[#d9bf69]">How the work moves</p>
+              <h2 className="type-section-title mt-5 max-w-xl text-white">Diagnose briefly. Harden deliberately.</h2>
+              <p className="type-body-lg mt-6 max-w-lg text-white/88">The initial review prevents effort being wasted on cosmetic cleanup. Most of the work is spent changing and proving the product where it materially needs to become stronger.</p>
             </div>
-
-            <div className="grid gap-5 md:grid-cols-3">
-              {planItems.map(({ label, title, copy }) => (
-                <article
-                  key={title}
-                  className="rounded-lg border border-white/16 bg-white/8 p-6"
-                >
+            <ol className="grid gap-5 sm:grid-cols-2">
+              {stages.map(({ label, title, copy }) => (
+                <li key={label} className="rounded-lg border border-white/16 bg-white/8 p-6">
                   <p className="type-meta text-[#d9bf69]">{label}</p>
-                  <h3 className="type-card-title mt-5 text-white">{title}</h3>
-                  <p className="type-body mt-3 text-white">{copy}</p>
-                </article>
+                  <h3 className="type-card-title mt-4 text-white">{title}</h3>
+                  <p className="type-body mt-3 text-white/86">{copy}</p>
+                </li>
               ))}
-            </div>
+            </ol>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-6 py-20 text-[#162f2a] sm:py-24">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
+          <div>
+            <p className="type-kicker text-[#a53f43]">What changes</p>
+            <h2 className="type-section-title mt-5 max-w-xl">A product better prepared for users, incidents, and the next release.</h2>
+          </div>
+          <ul className="rounded-xl border border-[#d7ddd6] bg-[#f7f2ea] p-7 sm:p-8">
+            {outcomes.map((outcome) => (
+              <li key={outcome} className="flex gap-3 border-t border-[#d7ddd6] pt-5 first:border-t-0 first:pt-0">
+                <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#cc595a]" aria-hidden="true" />
+                <span className="type-body-lg text-[#334c45]">{outcome}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -232,14 +152,11 @@ export default function VibeToViablePage() {
           <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
             <div>
               <p className="type-kicker text-[#d9bf69]">Good fit / bad fit</p>
-              <h2 className="type-section-title mt-5 max-w-xl text-white">
-                For founders who want to preserve momentum, not start over.
-              </h2>
+              <h2 className="type-section-title mt-5 max-w-xl text-white">For founders who want to preserve momentum and strengthen what they have.</h2>
             </div>
-
             <div className="grid gap-5 md:grid-cols-2">
-              <FitList title="Good fit" items={fit} tone="good" />
-              <FitList title="Probably not a fit" items={notFit} tone="risk" />
+              <FitList title="Good fit" items={fit} />
+              <FitList title="Probably not a fit" items={notFit} muted />
             </div>
           </div>
         </div>
@@ -250,23 +167,11 @@ export default function VibeToViablePage() {
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
               <p className="type-kicker text-[#d9bf69]">Vibe to Viable</p>
-              <h2 className="type-section-title mt-4 max-w-3xl text-white">
-                You vibe coded the app.
-                <span className="block text-[#d9bf69]">I make it viable.</span>
-              </h2>
-              <p className="type-body-lg mt-5 max-w-3xl text-white">
-                Start with a rescue audit. You will get a straight answer on
-                what is safe, what is risky, what to fix first, and what not to
-                waste time on.
-              </p>
+              <h2 className="type-section-title mt-4 max-w-3xl text-white">Keep the momentum.<span className="block text-[#d9bf69]">Strengthen the product underneath it.</span></h2>
+              <p className="type-body-lg mt-5 max-w-3xl text-white/88">Start with the product as it exists. I will identify the consequential risks, harden what matters, and leave the system safer to use and change.</p>
             </div>
-
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-[#a53f43] bg-[#a53f43] px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#8f3438] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
-            >
-              Get a rescue audit
-              <ArrowRight className="h-4 w-4" strokeWidth={2} />
+            <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-md border border-[#a53f43] bg-[#a53f43] px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#8f3438] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
+              Discuss product hardening<ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
             </Link>
           </div>
         </div>
@@ -275,88 +180,19 @@ export default function VibeToViablePage() {
   );
 }
 
-function RiskLens() {
-  return (
-    <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-16">
-      <div>
-        <p className="type-kicker text-[#d9bf69]">Audit lens</p>
-        <h2 className="type-section-title mt-5 max-w-xl text-white">
-          What &quot;it works&quot; can still hide.
-        </h2>
-        <p className="type-body-lg mt-6 max-w-lg text-white/88">
-          The demo can look solid while the product underneath is carrying risks
-          a non-technical founder should not have to guess about.
-        </p>
-      </div>
-
-      <div className="rounded-lg border border-white/18 bg-[#183a34] p-6 shadow-[0_28px_90px_-44px_rgba(0,0,0,0.95)] sm:p-7">
-        <div className="grid gap-5">
-          {riskFindings.map(({ title, copy, Icon }) => (
-            <article
-              key={title}
-              className="flex gap-4 border-t border-white/12 pt-5 first:border-t-0 first:pt-0"
-            >
-              <span className="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-[#d9bf69]">
-                <Icon />
-              </span>
-              <div>
-                <h3 className="type-body-lg font-semibold text-white">
-                  {title}
-                </h3>
-                <p className="type-body mt-2 text-white/84">{copy}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function LockSignal() {
-  return <ShieldCheck className="h-5 w-5" strokeWidth={1.9} />;
-}
-
-function ChangeSignal() {
-  return <TriangleAlert className="h-5 w-5" strokeWidth={1.9} />;
-}
-
-function TraceSignal() {
-  return <FileSearch className="h-5 w-5" strokeWidth={1.9} />;
-}
-
-function FitList({
-  title,
-  items,
-  tone,
-}: {
-  title: string;
-  items: string[];
-  tone: "good" | "risk";
-}) {
-  const Icon = tone === "good" ? CheckCircle2 : TriangleAlert;
-
+function FitList({ title, items, muted = false }: { title: string; items: string[]; muted?: boolean }) {
   return (
     <article className="rounded-lg border border-white/16 bg-white/8 p-6">
       <div className="flex items-center gap-3">
         <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-[#d9bf69]">
-          {tone === "good" ? (
-            <ShieldCheck className="h-6 w-6" strokeWidth={1.9} />
-          ) : (
-            <Gauge className="h-6 w-6" strokeWidth={1.9} />
-          )}
+          {muted ? <Gauge className="h-6 w-6" strokeWidth={1.9} /> : <ShieldCheck className="h-6 w-6" strokeWidth={1.9} />}
         </span>
         <h3 className="type-card-title text-white">{title}</h3>
       </div>
       <ul className="mt-6 space-y-4">
         {items.map((item) => (
           <li key={item} className="flex gap-3 text-white">
-            <Icon
-              className={`mt-1 h-5 w-5 shrink-0 ${
-                tone === "good" ? "text-[#d9bf69]" : "text-[#f0b3a6]"
-              }`}
-              strokeWidth={2}
-            />
+            <CheckCircle2 className={`mt-1 h-5 w-5 shrink-0 ${muted ? "text-[#f0b3a6]" : "text-[#d9bf69]"}`} strokeWidth={2} aria-hidden="true" />
             <span className="type-body">{item}</span>
           </li>
         ))}

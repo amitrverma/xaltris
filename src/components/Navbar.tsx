@@ -16,6 +16,10 @@ const navItems = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const isHowIHelpDetail =
+    pathname === "/product-build" ||
+    pathname === "/vibe-to-viable" ||
+    pathname === "/fractional-cto";
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-white/12 bg-[#638475] px-4 text-white shadow-[0_14px_40px_-28px_rgba(0,0,0,0.8)] transition-colors duration-300 sm:px-8">
@@ -37,7 +41,7 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-1 rounded-full border border-white/12 bg-[#183a34]/20 p-1 text-sm font-semibold md:flex">
           {navItems.map(({ name, href }) => {
-            const isActive = pathname === href || Boolean(pathname?.startsWith(`${href}/`)) || (href === "/how-i-help" && pathname === "/vibe-to-viable");
+            const isActive = pathname === href || Boolean(pathname?.startsWith(`${href}/`)) || (href === "/how-i-help" && isHowIHelpDetail);
             return (
               <Link
                 key={name}
@@ -83,7 +87,7 @@ export default function Navbar() {
       {isOpen && (
         <div id="mobile-navigation" className="mx-auto mt-3 max-h-[calc(100dvh-5.75rem)] max-w-7xl space-y-2 overflow-y-auto rounded-t-lg border-t border-white/12 bg-[#183a34]/24 p-3 pb-4 text-sm font-semibold md:hidden">
           {navItems.map(({ name, href }) => {
-            const isActive = pathname === href || Boolean(pathname?.startsWith(`${href}/`)) || (href === "/how-i-help" && pathname === "/vibe-to-viable");
+            const isActive = pathname === href || Boolean(pathname?.startsWith(`${href}/`)) || (href === "/how-i-help" && isHowIHelpDetail);
             return (
               <Link
                 key={name}

@@ -152,8 +152,8 @@ export default function PortfolioPage() {
                   </h2>
                 </div>
                 <p className="type-body-lg max-w-2xl text-[#53675f] lg:justify-self-end">
-                  Fractional CTO thinking, hands-on execution, and focused AI
-                  productization for early-stage teams.
+                  Senior product judgment, hands-on execution, and focused AI
+                  productization for founder-led teams.
                 </p>
               </div>
 

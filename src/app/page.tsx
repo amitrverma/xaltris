@@ -54,17 +54,17 @@ const engagementSteps = [
   {
     number: '01',
     title: 'Clarify',
-    copy: 'Understand the business goal, users, constraints, and riskiest assumptions before committing to a large build.',
+    copy: 'Understand the business goal, users, constraints, and decisions that matter before committing the product or team to a direction.',
   },
   {
     number: '02',
-    title: 'Build and learn',
-    copy: 'Ship a useful version early, put it in front of real users, and let evidence shape the next decision.',
+    title: 'Move the work',
+    copy: 'Build directly or guide the existing team, keeping product intent and technical execution connected.',
   },
   {
     number: '03',
     title: 'Strengthen',
-    copy: 'Add the operational discipline, documentation, and structure needed for sustained use and future growth.',
+    copy: 'Add the engineering capability, production discipline, and structure needed for sustained use and future growth.',
   },
 ]
 
@@ -74,24 +74,24 @@ const startingPoints = [
     label: 'Starting with an idea',
     title: 'Shape and build the right first product.',
     copy: 'Move from ambition to a focused release, sound technical direction, and working software.',
-    href: '/how-i-help',
-    action: 'See how I help',
+    href: '/product-build',
+    action: 'Explore Product Build',
   },
   {
     number: '02',
-    label: 'Starting with a prototype',
-    title: 'Make your AI-built MVP business-ready.',
-    copy: 'Find the security, data, reliability, and change risks—then fix what matters without starting over.',
-    href: '/vibe-to-viable',
-    action: 'Explore Vibe to Viable',
+    label: 'Already have engineers',
+    title: 'Strengthen the team already building.',
+    copy: 'Connect business priorities to technical direction, delivery leadership, engineering capability, and production health.',
+    href: '/fractional-cto',
+    action: 'Explore Fractional CTO',
   },
   {
     number: '03',
-    label: 'Looking for evidence',
-    title: 'See the systems behind the promises.',
-    copy: 'Review startup products, AI platforms, and enterprise systems shaped around real operational needs.',
-    href: '/portfolio',
-    action: 'View selected work',
+    label: 'Starting with a prototype',
+    title: 'Harden your AI-built MVP for real use.',
+    copy: 'Strengthen security, data safety, reliability, and change confidence without discarding the progress already made.',
+    href: '/vibe-to-viable',
+    action: 'Explore Vibe to Viable',
   },
 ]
 
@@ -114,16 +114,16 @@ const startingPointStyles = [
 ]
 
 export const metadata = {
-  title: { absolute: 'Fractional CTO & Product Engineering for Startups | Xaltris' },
+  title: { absolute: 'Product Build & Fractional CTO for Founder-Led Teams | Xaltris' },
   description:
-    'Xaltris helps early-stage founders turn product ideas into production-ready software through fractional CTO leadership and hands-on engineering.',
+    'Xaltris helps founder-led product teams build new products or strengthen existing teams through hands-on product engineering and Fractional CTO leadership.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Fractional CTO & Product Engineering for Startups | Xaltris',
+    title: 'Product Build & Fractional CTO for Founder-Led Teams | Xaltris',
     description:
-      'Senior technical direction and hands-on product engineering for early-stage founders—from product clarity to production-ready software.',
+      'Senior technical direction and dependable delivery for founder-led teams building a new product or strengthening an existing one.',
     url: 'https://xaltris.com',
     siteName: 'Xaltris',
     images: [
@@ -138,9 +138,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Fractional CTO & Product Engineering for Startups | Xaltris',
+    title: 'Product Build & Fractional CTO for Founder-Led Teams | Xaltris',
     description:
-      'Senior technical direction and hands-on product engineering for early-stage founders.',
+      'Product building and Fractional CTO leadership for founder-led product teams.',
     images: ['/xaltris-social.png'],
   },
 }
@@ -168,9 +168,9 @@ export default function HomePage() {
                 <span className="block text-[#d9bf69]">production-ready product.</span>
               </h1>
               <p className="type-lead mt-7 max-w-2xl text-white">
-                I work with early-stage startups to turn product ambition into clear
-                technical direction and working software—one accountable partner from
-                concept to launch.
+                I work with founder-led product teams to turn product ambition into
+                clear technical direction and dependable delivery—building a new
+                product or strengthening the team already building it.
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -178,7 +178,7 @@ export default function HomePage() {
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 rounded-md border border-[#a53f43] bg-[#a53f43] px-7 py-3.5 text-base font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#8f3438] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#3f6759]"
                 >
-                  Talk through your idea
+                  Tell me where you are
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
                 <Link
@@ -190,8 +190,8 @@ export default function HomePage() {
               </div>
 
               <p className="mt-6 max-w-xl border-l border-white/35 pl-4 text-sm leading-6 text-white">
-                Start with a rough concept or early prototype. For AI-built MVPs,
-                Vibe to Viable is a separate audit-and-hardening path.
+                Start with an idea, an existing product, or a team that needs clearer
+                technical ownership.
               </p>
             </div>
 
@@ -222,14 +222,14 @@ export default function HomePage() {
               </div>
 
               <h2 className="type-subsection-title relative mt-6 max-w-lg">
-                One partner from product decision to production.
+                Senior judgment stays close to the work.
               </h2>
 
               <ol className="relative mt-7 space-y-4">
                 {[
-                  ['01', 'Shape', 'Scope the right first version.'],
-                  ['02', 'Build', 'Turn decisions into working software.'],
-                  ['03', 'Strengthen', 'Prepare for real use and growth.'],
+                  ['01', 'Shape', 'Clarify the product and the next useful move.'],
+                  ['02', 'Direct', 'Connect technical choices to business priorities.'],
+                  ['03', 'Deliver', 'Build directly or strengthen the team doing the work.'],
                 ].map(([number, title, copy]) => (
                   <li key={number} className="grid grid-cols-[2rem_1fr] gap-4 border-t border-[#d7ddd6] pt-4 first:border-t-0 first:pt-0">
                     <span className="type-meta pt-1 text-[#a53f43]">{number}</span>
@@ -245,11 +245,14 @@ export default function HomePage() {
                 <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#53675f]">
                   Powered by AI. Shaped by OI.
                 </p>
+                <p className="mt-1 text-xs text-[#53675f]">
+                  Original Intelligence.
+                </p>
                 <Link
-                  href="/vibe-to-viable"
+                  href="/how-i-help"
                   className="mt-3 inline-flex items-center gap-2 font-semibold text-[#a53f43] underline decoration-[#a53f43]/35 underline-offset-4 hover:decoration-[#a53f43] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a53f43]"
                 >
-                  Explore Vibe to Viable
+                  See the ways I help
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </div>
@@ -293,14 +296,9 @@ export default function HomePage() {
 
         <section className="bg-white px-6 py-20 text-[#162f2a] sm:py-24">
           <div className="mx-auto max-w-7xl">
-            <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end lg:gap-16">
-              <div>
-                <p className="type-kicker text-[#a53f43]">Where are you now?</p>
-                <h2 className="type-section-title mt-5">Start from the situation you actually have.</h2>
-              </div>
-              <p className="type-body-lg max-w-2xl text-[#334c45] lg:justify-self-end">
-                You do not need to diagnose the engagement model. Choose the closest starting point and we can work out the right next move.
-              </p>
+            <div>
+              <p className="type-kicker text-[#a53f43]">Where are you now?</p>
+              <h2 className="type-section-title mt-5 max-w-3xl">Start from the situation you actually have.</h2>
             </div>
 
             <div className="mt-12 grid gap-5 lg:grid-cols-3">
@@ -376,7 +374,7 @@ export default function HomePage() {
             <div className="max-w-3xl">
               <p className="type-kicker text-[#d9bf69]">How the work moves</p>
               <h2 className="type-section-title mt-5 text-white">
-                Clarity first. Working software early. Discipline throughout.
+                Clarity first. Decisions close to delivery. Discipline throughout.
               </h2>
             </div>
 
