@@ -8,6 +8,7 @@ import {
   ShieldCheck,
   Wrench,
 } from "lucide-react";
+import { createPageMetadata } from "../../lib/site-metadata";
 
 const hardeningAreas = [
   { title: "Security boundaries", copy: "Strengthen authentication, authorization, secrets, data exposure, unsafe endpoints, and obvious abuse paths.", Icon: ShieldCheck },
@@ -46,23 +47,14 @@ const notFit = [
   "You need an ongoing staffed development team rather than a focused intervention.",
 ];
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: "Vibe to Viable",
   description: "Targeted engineering hardening for AI-built MVPs that need stronger security, data safety, reliability, production visibility, and change confidence.",
-  alternates: { canonical: "/vibe-to-viable" },
-  openGraph: {
-    title: "Vibe to Viable by Xaltris",
-    description: "Harden an AI-built MVP for real users without discarding the product momentum already created.",
-    url: "https://xaltris.com/vibe-to-viable",
-    siteName: "Xaltris",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Vibe to Viable by Xaltris",
-    description: "Targeted hardening for AI-built MVPs moving from a working prototype to dependable software.",
-  },
-};
+  path: "/vibe-to-viable",
+  label: "Vibe to Viable",
+  socialTitle: "Your AI-built MVP works. Now make it dependable.",
+  socialDescription: "Harden an AI-built MVP for real users without discarding the product momentum already created.",
+});
 
 export default function VibeToViablePage() {
   return (

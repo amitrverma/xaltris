@@ -16,6 +16,10 @@ export const profileDocument = `<!doctype html>
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Xaltris: senior technology judgment for founder-led product teams.">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Senior technology judgment, applied where it matters. | Xaltris">
+  <meta name="twitter:description" content="Product Build, Fractional CTO, and focused hardening for founder-led product teams.">
+  <meta name="twitter:image" content="https://xaltris.com/profile-assets/profile-social.png">
+  <meta name="twitter:image:alt" content="Xaltris: senior technology judgment for founder-led product teams.">
   <link rel="icon" href="/profile-assets/logo.webp" type="image/webp">
   <link rel="preload" href="/profile-assets/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/profile-assets/profile.css">

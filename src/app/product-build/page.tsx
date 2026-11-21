@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 
 import SiteCta from "../../components/SiteCta";
+import { createPageMetadata } from "../../lib/site-metadata";
 
 const outcomes = [
   "A focused first release",
@@ -64,20 +65,16 @@ const fit = [
   "You value a focused first release and evidence over a large speculative roadmap.",
 ];
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: "Product Build for Founder-Led Teams",
   description:
     "Direct, full-cycle product engineering for founder-led teams—from product clarity and architecture through implementation, launch, and production discipline.",
-  alternates: { canonical: "/product-build" },
-  openGraph: {
-    title: "Product Build for Founder-Led Teams | Xaltris",
-    description:
-      "One accountable partner from the first product decision through architecture, implementation, launch, and evolution.",
-    url: "https://xaltris.com/product-build",
-    siteName: "Xaltris",
-    type: "website",
-  },
-};
+  path: "/product-build",
+  label: "Product Build",
+  socialTitle: "Turn an early product idea into dependable software.",
+  socialDescription:
+    "One accountable partner from the first product decision through architecture, implementation, launch, and evolution.",
+});
 
 export default function ProductBuildPage() {
   return (

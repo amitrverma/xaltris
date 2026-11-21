@@ -5,36 +5,18 @@ import {
 import Link from "next/link";
 import PortfolioCarousel from "../../components/PortfolioCarousel";
 import SiteCta from "../../components/SiteCta";
+import { createPageMetadata } from "../../lib/site-metadata";
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: "Work",
   description:
     "Case studies, products, and enterprise platforms built by Amit Verma and Xaltris Technologies.",
-  alternates: { canonical: "/portfolio" },
-  openGraph: {
-    title: "Work | Xaltris Technologies",
-    description:
-      "Selected startup, product, and enterprise platform work from Xaltris and Amit Verma's corporate engineering career.",
-    url: "https://xaltris.com/portfolio",
-    siteName: "Xaltris",
-    images: [
-      {
-        url: "/logo.png",
-        width: 1200,
-        height: 630,
-        alt: "Xaltris portfolio",
-      },
-    ],
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Work | Xaltris Technologies",
-    description:
-      "A portfolio of case studies, products, and enterprise systems built with technical depth and product judgment.",
-    images: ["/logo.png"],
-  },
-};
+  path: "/portfolio",
+  label: "Selected Work",
+  socialTitle: "Proof beneath the interface.",
+  socialDescription:
+    "Selected startup, product, and enterprise platform work built with technical depth and product judgment.",
+});
 
 const caseStudies = [
   {

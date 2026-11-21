@@ -2,6 +2,7 @@ import { ArrowRight, CheckCircle2, Code2, Compass, ShieldCheck } from "lucide-re
 import Link from "next/link";
 
 import SiteCta from "../../components/SiteCta";
+import { createPageMetadata } from "../../lib/site-metadata";
 
 const paths = [
   {
@@ -39,12 +40,14 @@ const stages = [
   ["04", "Strengthen", "Improve the product, engineering capability, and production discipline for what comes next."],
 ];
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: "How I Help | Fractional CTO & Product Engineering",
   description:
     "Fractional CTO leadership and full-cycle product engineering for founder-led teams, from product clarity to production-ready software.",
-  alternates: { canonical: "/how-i-help" },
-};
+  path: "/how-i-help",
+  label: "How I Help",
+  socialTitle: "Senior product judgment, applied where it matters most.",
+});
 
 export default function HowIHelpPage() {
   return (

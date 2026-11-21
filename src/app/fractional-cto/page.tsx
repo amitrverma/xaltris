@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 
 import SiteCta from "../../components/SiteCta";
+import { createPageMetadata } from "../../lib/site-metadata";
 
 const changes = [
   "Clearer technology decisions",
@@ -73,20 +74,16 @@ const workingPractices = [
   ["Founder and stakeholder translation", "Make technical consequences understandable so business decisions are made with the right context."],
 ];
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: "Fractional CTO for Founder-Led Product Teams",
   description:
     "Ongoing senior technology leadership for founders and engineering teams: technical direction, delivery leadership, stronger engineering capability, and production health.",
-  alternates: { canonical: "/fractional-cto" },
-  openGraph: {
-    title: "Fractional CTO for Founder-Led Product Teams | Xaltris",
-    description:
-      "Senior technology leadership that connects business priorities to technical direction, team execution, and production outcomes.",
-    url: "https://xaltris.com/fractional-cto",
-    siteName: "Xaltris",
-    type: "website",
-  },
-};
+  path: "/fractional-cto",
+  label: "Fractional CTO",
+  socialTitle: "Senior technology leadership for teams already building.",
+  socialDescription:
+    "Connect business priorities to technical direction, team execution, engineering capability, and production outcomes.",
+});
 
 export default function FractionalCtoPage() {
   return (

@@ -1,12 +1,15 @@
 import GoodCodeTitle from "@/components/GoodCodeTitle";
 import GoodCodeLabel from "@/components/GoodCodeLabel";
+import { createPageMetadata } from "@/lib/site-metadata";
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: "The Good Code Project",
   description:
     "A quarterly initiative by Xaltris offering pro bono strategy, mentorship, AI guidance, and technical support to mission-driven teams.",
-  alternates: { canonical: "/for-good" },
-};
+  path: "/for-good",
+  label: "For Good",
+  socialTitle: "Because good code should do good, too.",
+});
 
 const causes = [
   {

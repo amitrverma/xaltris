@@ -85,6 +85,7 @@ export async function generateMetadata({
   const description = data.description ?? 'Read this blog post on xaltris.com'
   const author = data.author ?? DEFAULT_AUTHOR
   const postUrl = `${SITE_URL}/blog/${slug}`
+  const socialImageUrl = `${postUrl}/opengraph-image`
 
   return {
     title: `${title} | Blog`,
@@ -108,10 +109,10 @@ export async function generateMetadata({
       authors: [`${SITE_URL}/about`],
       images: [
         {
-          url: `${SITE_URL}/logo.png`,
+          url: socialImageUrl,
           width: 1200,
           height: 630,
-          alt: title,
+          alt: `${title} — Xaltris`,
         },
       ],
       type: 'article',
@@ -120,7 +121,12 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title,
       description,
-      images: [`${SITE_URL}/logo.png`],
+      images: [
+        {
+          url: `${postUrl}/twitter-image`,
+          alt: `${title} — Xaltris`,
+        },
+      ],
     },
   }
 }
@@ -140,6 +146,7 @@ export default async function BlogPost({
   const description = data.description ?? 'Read this blog post on xaltris.com'
   const author = data.author ?? DEFAULT_AUTHOR
   const postUrl = `${SITE_URL}/blog/${slug}`
+  const socialImageUrl = `${postUrl}/opengraph-image`
   const modifiedDate = data.updated ?? data.date
   const articleStructuredData = {
     '@context': 'https://schema.org',
@@ -152,7 +159,7 @@ export default async function BlogPost({
       '@type': 'WebPage',
       '@id': postUrl,
     },
-    image: `${SITE_URL}/logo.png`,
+    image: socialImageUrl,
     author: {
       '@type': 'Person',
       '@id': AMIT_PERSON_ID,

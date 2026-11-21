@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "../../lib/site-metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Terms of Use",
   description: "Terms of use for Xaltris Technologies.",
-  alternates: { canonical: "/terms" },
-};
+  path: "/terms",
+  label: "Legal",
+});
 
 export default function TermsPage() {
   return (

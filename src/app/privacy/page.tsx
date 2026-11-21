@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "../../lib/site-metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Privacy Policy",
   description: "Privacy policy for Xaltris Technologies.",
-  alternates: { canonical: "/privacy" },
-};
+  path: "/privacy",
+  label: "Legal",
+});
 
 export default function PrivacyPage() {
   return (

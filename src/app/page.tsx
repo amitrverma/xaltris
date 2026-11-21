@@ -6,6 +6,7 @@ import ExperienceYears from '../components/ExperienceYears'
 import FaqSection from '../components/FaqSection'
 import SiteCta from '../components/SiteCta'
 import { calculateExperienceYears } from '../lib/experience'
+import { createPageMetadata } from '../lib/site-metadata'
 
 const outcomes = [
   {
@@ -113,37 +114,17 @@ const startingPointStyles = [
   },
 ]
 
-export const metadata = {
-  title: { absolute: 'Product Build & Fractional CTO for Founder-Led Teams | Xaltris' },
+export const metadata = createPageMetadata({
+  title: 'Product Build & Fractional CTO for Founder-Led Teams | Xaltris',
   description:
     'Xaltris helps founder-led product teams build new products or strengthen existing teams through hands-on product engineering and Fractional CTO leadership.',
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    title: 'Product Build & Fractional CTO for Founder-Led Teams | Xaltris',
-    description:
-      'Senior technical direction and dependable delivery for founder-led teams building a new product or strengthening an existing one.',
-    url: 'https://xaltris.com',
-    siteName: 'Xaltris',
-    images: [
-      {
-        url: '/xaltris-social.png',
-        width: 1500,
-        height: 1500,
-        alt: 'Xaltris Technologies',
-      },
-    ],
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary',
-    title: 'Product Build & Fractional CTO for Founder-Led Teams | Xaltris',
-    description:
-      'Product building and Fractional CTO leadership for founder-led product teams.',
-    images: ['/xaltris-social.png'],
-  },
-}
+  path: '/',
+  label: 'Product Build · Fractional CTO',
+  socialTitle: 'From early idea to production-ready product.',
+  socialDescription:
+    'Senior technical direction and dependable delivery for founder-led teams building a new product or strengthening an existing one.',
+  absoluteTitle: true,
+})
 
 export default function HomePage() {
   const experienceYears = calculateExperienceYears()

@@ -5,15 +5,17 @@ import ExperienceYears from "../../components/ExperienceYears";
 import JsonLd from "../../components/JsonLd";
 import SiteCta from "../../components/SiteCta";
 import { calculateExperienceYears } from "../../lib/experience";
-import { AMIT_PERSON_ID, ORGANIZATION_ID, SITE_URL } from "../../lib/site-metadata";
+import { AMIT_PERSON_ID, createPageMetadata, ORGANIZATION_ID, SITE_URL } from "../../lib/site-metadata";
 
 const companyProfileHref = "/profile-assets/xaltris-profile.pdf";
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: "About Amit Verma",
   description: "About Amit Verma and Xaltris: deep engineering experience, Fractional CTO leadership, and hands-on product building for founder-led teams.",
-  alternates: { canonical: "/about" },
-};
+  path: "/about",
+  label: "About Amit",
+  socialTitle: "Fractional CTO. Hands-on builder.",
+});
 
 const personStructuredData = {
   "@context": "https://schema.org",

@@ -2,9 +2,9 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import Link from 'next/link'
-import type { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 import SiteCta from '../../components/SiteCta'
+import { createPageMetadata } from '../../lib/site-metadata'
 
 type PostMeta = {
   title?: string
@@ -16,37 +16,14 @@ type BlogPost = {
   slug: string
 } & PostMeta
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'My Notes',
   description:
     'Essays from Amit Verma on technology, work, organizations, science, history, and the human patterns that connect them.',
-  alternates: {
-    canonical: '/blog',
-  },
-  openGraph: {
-    title: 'Xaltris Blog',
-    description:
-      'Essays from Amit Verma on technology, work, organizations, science, history, and the human patterns that connect them.',
-    url: 'https://xaltris.com/blog',
-    siteName: 'Xaltris',
-    images: [
-      {
-        url: 'https://xaltris.com/logo.png',
-        width: 1200,
-        height: 630,
-        alt: 'Xaltris Blog Banner',
-      },
-    ],
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Xaltris Blog',
-    description:
-      'Essays from Amit Verma on technology, work, organizations, science, history, and the human patterns that connect them.',
-    images: ['https://xaltris.com/logo.png'],
-  },
-}
+  path: '/blog',
+  label: 'My Notes',
+  socialTitle: 'Ideas, observations, and useful questions.',
+})
 
 export default function Blog() {
   const postsDir = path.join(process.cwd(), 'src/content/blog')
